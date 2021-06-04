@@ -4,7 +4,7 @@ import Home from '../views/Home';
 import GlobalSearch from '../views/GlobalSearch';
 import Service from '../views/Service';
 import Documentation from '../views/Documentation';
-import Formation from '../views/Formation';
+import Training from '../views/Training';
 import Profile from '../views/Profile';
 import SignUpSummary from '../views/SignUpSummary';
 import SignIn from '../views/SignIn';
@@ -29,8 +29,8 @@ function GeneralRouter() {
           <Route exact path="/documentation">
             <Documentation />
           </Route>
-          <Route exact path="/formation">
-            <Formation />
+          <Route exact path="/training">
+            <Training />
           </Route>
           <Route exact path="/profil">
             <Profile />

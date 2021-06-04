@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Formation() {
+function Training() {
   return (
     <div>
       <h1>Formation</h1>
@@ -8,4 +8,4 @@ function Formation() {
   );
 }
 
-export default Formation;
+export default Training;

@@ -24,7 +24,7 @@ function NavBar() {
       <Link to="/doc">
         <img className="logo-navbar" src={doc} alt="logo doc navbar" />
       </Link>
-      <Link to="/formation">
+      <Link to="/training">
         <img
           className="logo-navbar"
           src={formation}
