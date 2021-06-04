@@ -1,0 +1,33 @@
+.doc-container {
+  width:30%;
+    display: grid;
+  grid-template-columns: 3;
+  grid-template-rows: 4;
+}
+
+.image {
+  grid-column: 1;
+  grid-row: 1/4;
+  border-radius: 10%;
+  margin-right: 1em;
+  width: 36vw;
+  height: 24vw;
+}
+.titre{
+ margin:auto;
+  font-size:4vw;
+  grid-column: 2/4;
+  grid-row: 1;
+}
+.auteur{
+  grid-column: 2/3;
+  grid-row: 2;
+}
+.description{
+
+}
+
+.price{
+  grid-column: 3;
+  grid-row: 4/5;
+}
