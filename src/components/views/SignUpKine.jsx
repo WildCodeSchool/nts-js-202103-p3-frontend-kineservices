@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SignUp.css';
 
 export default function SignUpKine() {
-  // instert into role : kine
+  // instert into role : kine //event.target.value
+
+  const [formContent, setFormContent] = useState({});
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const content = {};
+    for (let i = 0; i < event.target.length; i += 1) {
+      // console.log(event.target[i].value);
+      content[event.target[i].name] = event.target[i].value;
+    }
+    // console.log(event.target[0].value);
+    console.log(formContent);
+    setFormContent(content);
+  };
+
   return (
     <div>
       <div className="title">
         <h3>Je suis Kinésitherapeute</h3>
       </div>
       <div className="signUpForm">
-        <form>
+        <form onSubmit={handleSubmit}>
           <label className="field" htmlFor="lastname">
-            <input id="name" type="text" name="name" placeholder="Nom :" />
+            <input id="name" type="text" name="lastname" placeholder="Nom :" />
           </label>
           <label className="field" htmlFor="firstname">
             <input
               id="firstname"
               type="text"
-              name="name"
+              name="firstname"
               placeholder="prenom : "
             />
           </label>
@@ -30,13 +45,13 @@ export default function SignUpKine() {
             />
           </label>
           <label className="field" htmlFor="email">
-            <input id="email" type="text" name="name" placeholder="email :" />
+            <input id="email" type="text" name="email" placeholder="email :" />
           </label>
           <label className="field" htmlFor="password">
             <input
               id="password"
               type="text"
-              name="name"
+              name="password"
               placeholder="Mot de passe :"
             />
           </label>
@@ -44,23 +59,28 @@ export default function SignUpKine() {
             <input
               id="firstname"
               type="text"
-              name="name"
+              name="RPPS"
               placeholder="RPPS : "
             />
           </label>
           <label className="field" htmlFor="SIRET">
             <p>Je suis une entreprise ?</p>
-            <input id="phone" type="text" name="name" placeholder="SIRET :" />
+            <input id="SIRET" type="text" name="SIRET" placeholder="SIRET :" />
           </label>
 
           <label className="field" htmlFor="country">
-            <input id="country" type="text" name="name" placeholder="pays :" />
+            <input
+              id="country"
+              type="text"
+              name="country"
+              placeholder="pays :"
+            />
           </label>
           <label className="field" htmlFor="adress">
             <input
               id="adress"
               type="text"
-              name="name"
+              name="adress"
               placeholder="Adresse :"
             />
           </label>
@@ -68,7 +88,7 @@ export default function SignUpKine() {
             <input
               id="phone"
               type="text"
-              name="name"
+              name="phone"
               placeholder="Téléphone :"
             />
           </label>
@@ -76,11 +96,11 @@ export default function SignUpKine() {
             <input
               id="website"
               type="text"
-              name="name"
+              name="website"
               placeholder="Site web :"
             />
           </label>
-          <input type="submit" value="Envoyer" />
+          <button type="submit">Envoyer</button>
         </form>
       </div>
     </div>
