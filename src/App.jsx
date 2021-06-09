@@ -1,10 +1,14 @@
 import React from 'react';
-import GeneralRouter from './components/commons/GeneralRouter';
+import Home from './components/views/Home';
+import SignUpSummary from './components/views/SignUpSummary';
+import SignUpKine from './components/views/SignUpKine';
 
 function App() {
   return (
-    <div>
-      <GeneralRouter />
+    <div className="App">
+      <Home />
+      <SignUpSummary />
+      <SignUpKine />
     </div>
   );
 }
