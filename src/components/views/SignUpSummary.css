@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.kine,
+.pasKine,
+.supa2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid black;
+}
+
+.bouton {
+  margin-bottom: 10px;
+}
+
+.titre {
+  text-align: center;
+}
