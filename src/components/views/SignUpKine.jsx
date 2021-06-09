@@ -3,7 +3,6 @@ import './SignUp.css';
 
 export default function SignUpKine() {
   // instert into role : kine //event.target.value
-
   const [formContent, setFormContent] = useState({});
 
   const handleSubmit = (event) => {
@@ -40,7 +39,7 @@ export default function SignUpKine() {
             <input
               id="birthdate"
               type="text"
-              name="name"
+              name="birthdate"
               placeholder="Date de naissance :"
             />
           </label>
@@ -76,11 +75,11 @@ export default function SignUpKine() {
               placeholder="pays :"
             />
           </label>
-          <label className="field" htmlFor="adress">
+          <label className="field" htmlFor="address">
             <input
               id="adress"
               type="text"
-              name="adress"
+              name="address"
               placeholder="Adresse :"
             />
           </label>
