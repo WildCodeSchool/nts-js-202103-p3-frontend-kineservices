@@ -25,9 +25,10 @@ export default function Home() {
       <p>Interessé ?</p>
       <img className="prices" alt="" src={tarif} />
       <button type="button" className="signUp">
-        {' '}
-        Je m&lsquo;inscris{' '}
+        Je m&lsquo;inscris
       </button>
+
+      <div>FOOTER</div>
     </div>
   );
 }
