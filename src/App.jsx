@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from './components/views/Home';
+import SignUpKine from './components/views/SignUpKine';
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <SignUpKine />
     </div>
   );
 }
