@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 function DocumentationForm() {
   const [title, setTitle] = useState('');
-  // TODO : un state par champ
+  // TODO : un state par champ (commenté mais vu avec Bastien)
   const handleChange = (event) => {
     setTitle(event.target.value);
   };
@@ -13,7 +13,7 @@ function DocumentationForm() {
     axios
       .post('http://localhost:8000/documentation', {
         title,
-        // description: '',
+        // TODO description: '',
         // price: '',
         // category_id: 12,
         // user_id: 2,
