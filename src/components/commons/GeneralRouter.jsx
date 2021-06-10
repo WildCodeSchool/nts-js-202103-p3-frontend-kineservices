@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from '../views/Home';
 import GlobalSearch from '../views/GlobalSearch';
 import Service from '../views/Service';
-import Documentation from '../views/Documentation';
+import DocumentationList from '../views/DocumentationList';
 import Training from '../views/Training';
 import Profile from '../views/Profile';
 import SignUpSummary from '../views/SignUpSummary';
@@ -27,7 +27,7 @@ function GeneralRouter() {
             <Service />
           </Route>
           <Route exact path="/documentation">
-            <Documentation />
+            <DocumentationList />
           </Route>
           <Route exact path="/training">
             <Training />
