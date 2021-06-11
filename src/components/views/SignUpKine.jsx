@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './SignUp.css';
 
 export default function SignUpKine() {
-  // instert into role : kine
+  // TODO : instert into role : kine
   const [formContent, setFormContent] = useState({});
 
   const handleSubmit = (event) => {
@@ -15,7 +15,7 @@ export default function SignUpKine() {
     console.log(formContent);
     setFormContent(content);
     axios
-      .post('http://localhost:8080/signup', { formContent })
+      .post('http://localhost:8080/signup', { formContent, setFormContent })
       .then((response) => {
         console.log(response);
       });
@@ -59,12 +59,7 @@ export default function SignUpKine() {
             />
           </label>
           <label className="field" htmlFor="RPPS">
-            <input
-              id="firstname"
-              type="text"
-              name="RPPS"
-              placeholder="RPPS : "
-            />
+            <input id="RPPS" type="text" name="RPPS" placeholder="RPPS : " />
           </label>
           <p className="field">Je suis une entreprise ?</p>
           <label className="field" htmlFor="SIRET">
@@ -81,7 +76,7 @@ export default function SignUpKine() {
               id="country"
               type="text"
               name="country"
-              placeholder="pays :"
+              placeholder="Pays :"
             />
           </label>
           <label className="field" htmlFor="address">
