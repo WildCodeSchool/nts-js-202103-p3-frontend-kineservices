@@ -5,9 +5,6 @@ import tarif from './temp/wix-prix-business.jpg';
 export default function Home() {
   return (
     <div className="home">
-      {/* <Header /> */}
-      {/* <Navbar /> */}
-
       <p>
         Bienvenue sur <h3>Kiné.fr</h3>
       </p>

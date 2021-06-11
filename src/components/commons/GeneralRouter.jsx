@@ -20,7 +20,7 @@ function GeneralRouter() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/global-search">
+          <Route exact path="/recherche-globale">
             <GlobalSearch />
           </Route>
           <Route exact path="/service">
@@ -29,22 +29,22 @@ function GeneralRouter() {
           <Route exact path="/documentation">
             <DocumentationList />
           </Route>
-          <Route exact path="/training">
+          <Route exact path="/formation">
             <Training />
           </Route>
           <Route exact path="/profil">
             <Profile />
           </Route>
-          <Route exact path="/sign-in">
+          <Route exact path="/connexion">
             <SignIn />
           </Route>
-          <Route exact path="/signup-summary">
+          <Route exact path="/inscription">
             <SignUpSummary />
           </Route>
-          <Route exact path="/signup-kine">
+          <Route exact path="/inscription-kine">
             <SignUpKine />
           </Route>
-          <Route exact path="/signup-company">
+          <Route exact path="/inscription-entreprise">
             <SignUpCompany />
           </Route>
         </Switch>
