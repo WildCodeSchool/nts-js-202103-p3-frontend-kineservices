@@ -1,20 +1,24 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import './SignUp.css';
 
 export default function SignUpKine() {
-  // instert into role : kine //event.target.value
+  // instert into role : kine
   const [formContent, setFormContent] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const content = {};
     for (let i = 0; i < event.target.length; i += 1) {
-      // console.log(event.target[i].value);
       content[event.target[i].name] = event.target[i].value;
     }
-    // console.log(event.target[0].value);
     console.log(formContent);
     setFormContent(content);
+    axios
+      .post('http://localhost:8080/signup', { formContent })
+      .then((response) => {
+        console.log(response);
+      });
   };
 
   return (
@@ -38,18 +42,18 @@ export default function SignUpKine() {
           <label className="field" htmlFor="birthdate">
             <input
               id="birthdate"
-              type="text"
+              type="date"
               name="birthdate"
               placeholder="Date de naissance :"
             />
           </label>
           <label className="field" htmlFor="email">
-            <input id="email" type="text" name="email" placeholder="email :" />
+            <input id="email" type="email" name="email" placeholder="email :" />
           </label>
           <label className="field" htmlFor="password">
             <input
               id="password"
-              type="text"
+              type="password"
               name="password"
               placeholder="Mot de passe :"
             />
@@ -62,9 +66,14 @@ export default function SignUpKine() {
               placeholder="RPPS : "
             />
           </label>
+          <p className="field">Je suis une entreprise ?</p>
           <label className="field" htmlFor="SIRET">
-            <p>Je suis une entreprise ?</p>
-            <input id="SIRET" type="text" name="SIRET" placeholder="SIRET :" />
+            <input
+              id="SIRET"
+              type="number"
+              name="SIRET"
+              placeholder="SIRET :"
+            />
           </label>
 
           <label className="field" htmlFor="country">
