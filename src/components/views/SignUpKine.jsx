@@ -1,25 +1,35 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import './SignUp.css';
 
 export default function SignUpKine() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   // instert into role : kine //event.target.value
+=======
+>>>>>>> 3bfe7ee87081145db3b32e54c7e65e8ebbaa4df0
   const [formContent, setFormContent] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const content = {};
     for (let i = 0; i < event.target.length; i += 1) {
-      // console.log(event.target[i].value);
       content[event.target[i].name] = event.target[i].value;
     }
-    // console.log(event.target[0].value);
     console.log(formContent);
     setFormContent(content);
+    axios
+      .post('http://localhost:8080/signup', { formContent })
+      .then((response) => {
+        console.log(response);
+      });
   };
 
+<<<<<<< HEAD
 =======
 >>>>>>> 950ee3a304cbaa7cb30ff07c1682f07b051a3b48
+=======
+>>>>>>> 3bfe7ee87081145db3b32e54c7e65e8ebbaa4df0
   return (
     <div>
       <div className="title">
@@ -49,26 +59,35 @@ export default function SignUpKine() {
               type="text"
               name="firstname"
 <<<<<<< HEAD
+<<<<<<< HEAD
               placeholder="prenom : "
               required
 =======
               placeholder="Prénom : "
 >>>>>>> 950ee3a304cbaa7cb30ff07c1682f07b051a3b48
+=======
+              placeholder="Prénom : "
+>>>>>>> 3bfe7ee87081145db3b32e54c7e65e8ebbaa4df0
             />
           </label>
           <label className="field" htmlFor="birthdate">
             <input
               id="birthdate"
 <<<<<<< HEAD
+<<<<<<< HEAD
               type="date"
 =======
               type="text"
 >>>>>>> 950ee3a304cbaa7cb30ff07c1682f07b051a3b48
+=======
+              type="date"
+>>>>>>> 3bfe7ee87081145db3b32e54c7e65e8ebbaa4df0
               name="birthdate"
               placeholder="Date de naissance :"
             />
           </label>
           <label className="field" htmlFor="email">
+<<<<<<< HEAD
 <<<<<<< HEAD
             <input id="email" type="email" name="email" placeholder="email :" />
           </label>
@@ -83,20 +102,28 @@ export default function SignUpKine() {
 =======
             <input id="email" type="text" name="email" placeholder="Email :" />
 >>>>>>> 950ee3a304cbaa7cb30ff07c1682f07b051a3b48
+=======
+            <input id="email" type="email" name="email" placeholder="email :" />
+>>>>>>> 3bfe7ee87081145db3b32e54c7e65e8ebbaa4df0
           </label>
           <label className="field" htmlFor="password">
             <input
               id="password"
 <<<<<<< HEAD
+<<<<<<< HEAD
               type="password"
 =======
               type="text"
 >>>>>>> 950ee3a304cbaa7cb30ff07c1682f07b051a3b48
+=======
+              type="password"
+>>>>>>> 3bfe7ee87081145db3b32e54c7e65e8ebbaa4df0
               name="password"
               placeholder="Mot de passe :"
               required
             />
           </label>
+<<<<<<< HEAD
           <label className="field" htmlFor="confirmPassword">
             <input
               id="confirmPassword"
@@ -151,6 +178,19 @@ export default function SignUpKine() {
             </select>
 =======
             <input id="siret" type="text" name="siret" placeholder="SIRET :" />
+=======
+          <label className="field" htmlFor="rpps">
+            <input id="rpps" type="text" name="rpps" placeholder="RPPS : " />
+          </label>
+          <p className="field">Je suis une entreprise ?</p>
+          <label className="field" htmlFor="SIRET">
+            <input
+              id="SIRET"
+              type="number"
+              name="SIRET"
+              placeholder="SIRET :"
+            />
+>>>>>>> 3bfe7ee87081145db3b32e54c7e65e8ebbaa4df0
           </label>
 
           <label className="field" htmlFor="country">
