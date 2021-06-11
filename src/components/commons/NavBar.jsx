@@ -10,7 +10,7 @@ import './NavBar.css';
 function NavBar() {
   return (
     <div className="navbar">
-      <Link to="/global-search">
+      <Link to="/recherche-globale">
         <img
           className="logo-navbar"
           src={explorer}
@@ -20,17 +20,17 @@ function NavBar() {
       <Link to="/service">
         <img className="logo-navbar" src={service} alt="logo service navbar" />
       </Link>
-      <Link to="/doc">
+      <Link to="/documentation">
         <img className="logo-navbar" src={document} alt="logo doc navbar" />
       </Link>
-      <Link to="/training">
+      <Link to="/formation">
         <img
           className="logo-navbar"
           src={formation}
           alt="logo formation navbar"
         />
       </Link>
-      <Link to="/user">
+      <Link to="/utilisateur">
         <img className="logo-navbar" src={profil} alt="logo user navbar" />
       </Link>
     </div>
