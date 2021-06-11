@@ -25,7 +25,13 @@ export default function SignUpKine() {
       <div className="signUpForm">
         <form onSubmit={handleSubmit}>
           <label className="field" htmlFor="lastname">
-            <input id="name" type="text" name="lastname" placeholder="Nom :" />
+            <input
+              id="name"
+              type="text"
+              name="lastname"
+              placeholder="Nom :"
+              required
+            />
           </label>
           <label className="field" htmlFor="firstname">
             <input
@@ -33,47 +39,84 @@ export default function SignUpKine() {
               type="text"
               name="firstname"
               placeholder="prenom : "
+              required
             />
           </label>
           <label className="field" htmlFor="birthdate">
             <input
               id="birthdate"
-              type="text"
+              type="date"
               name="birthdate"
               placeholder="Date de naissance :"
             />
           </label>
           <label className="field" htmlFor="email">
-            <input id="email" type="text" name="email" placeholder="email :" />
+            <input id="email" type="email" name="email" placeholder="email :" />
+          </label>
+          <label className="field" htmlFor="confirmEmail">
+            <input
+              id="confirmEmail"
+              type="email"
+              name="confirmEmail"
+              placeholder="confirm email :"
+              required
+            />
           </label>
           <label className="field" htmlFor="password">
             <input
               id="password"
-              type="text"
+              type="password"
               name="password"
               placeholder="Mot de passe :"
+              required
+            />
+          </label>
+          <label className="field" htmlFor="confirmPassword">
+            <input
+              id="confirmPassword"
+              type="password"
+              name="confirmPassword"
+              placeholder="Mot de passe :"
+              required
             />
           </label>
           <label className="field" htmlFor="RPPS">
             <input
               id="firstname"
-              type="text"
+              type="number"
               name="RPPS"
               placeholder="RPPS : "
+              required
             />
           </label>
           <label className="field" htmlFor="SIRET">
             <p>Je suis une entreprise ?</p>
-            <input id="SIRET" type="text" name="SIRET" placeholder="SIRET :" />
+            <input
+              id="SIRET"
+              type="text"
+              name="SIRET"
+              placeholder="SIRET :"
+              required
+            />
           </label>
 
           <label className="field" htmlFor="country">
-            <input
-              id="country"
-              type="text"
-              name="country"
-              placeholder="pays :"
-            />
+            <select id="country" name="country" required>
+              <optgroup label="Europe">
+                <option value="france">France</option>
+                <option value="espagne">Espagne</option>
+                <option value="italie">Italie</option>
+                <option value="royaume-uni">Royaume-Uni</option>
+              </optgroup>
+              <optgroup label="Amérique">
+                <option value="canada">Canada</option>
+                <option value="etats-unis">Etats-Unis</option>
+              </optgroup>
+              <optgroup label="Asie">
+                <option value="chine">Chine</option>
+                <option value="japon">Japon</option>
+              </optgroup>
+            </select>
           </label>
           <label className="field" htmlFor="address">
             <input
@@ -86,7 +129,7 @@ export default function SignUpKine() {
           <label className="field" htmlFor="phone">
             <input
               id="phone"
-              type="text"
+              type="tel"
               name="phone"
               placeholder="Téléphone :"
             />
