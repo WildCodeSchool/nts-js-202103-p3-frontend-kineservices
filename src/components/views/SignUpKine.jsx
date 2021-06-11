@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SignUp.css';
 
 export default function SignUpKine() {
-  // instert into role : kine //event.target.value
+  // insert into role : kine //event.target.value
   const [formContent, setFormContent] = useState({});
 
   const handleSubmit = (event) => {
@@ -25,14 +25,19 @@ export default function SignUpKine() {
       <div className="signUpForm">
         <form onSubmit={handleSubmit}>
           <label className="field" htmlFor="lastname">
-            <input id="name" type="text" name="lastname" placeholder="Nom :" />
+            <input
+              id="lastname"
+              type="text"
+              name="lastname"
+              placeholder="Nom :"
+            />
           </label>
           <label className="field" htmlFor="firstname">
             <input
               id="firstname"
               type="text"
               name="firstname"
-              placeholder="prenom : "
+              placeholder="Prénom : "
             />
           </label>
           <label className="field" htmlFor="birthdate">
@@ -44,7 +49,7 @@ export default function SignUpKine() {
             />
           </label>
           <label className="field" htmlFor="email">
-            <input id="email" type="text" name="email" placeholder="email :" />
+            <input id="email" type="text" name="email" placeholder="Email :" />
           </label>
           <label className="field" htmlFor="password">
             <input
@@ -54,17 +59,12 @@ export default function SignUpKine() {
               placeholder="Mot de passe :"
             />
           </label>
-          <label className="field" htmlFor="RPPS">
-            <input
-              id="firstname"
-              type="text"
-              name="RPPS"
-              placeholder="RPPS : "
-            />
+          <label className="field" htmlFor="rpps">
+            <input id="rpps" type="text" name="rpps" placeholder="RPPS : " />
           </label>
-          <label className="field" htmlFor="SIRET">
+          <label className="field" htmlFor="siret">
             <p>Je suis une entreprise ?</p>
-            <input id="SIRET" type="text" name="SIRET" placeholder="SIRET :" />
+            <input id="siret" type="text" name="siret" placeholder="SIRET :" />
           </label>
 
           <label className="field" htmlFor="country">
@@ -72,12 +72,12 @@ export default function SignUpKine() {
               id="country"
               type="text"
               name="country"
-              placeholder="pays :"
+              placeholder="Pays :"
             />
           </label>
           <label className="field" htmlFor="address">
             <input
-              id="adress"
+              id="address"
               type="text"
               name="address"
               placeholder="Adresse :"

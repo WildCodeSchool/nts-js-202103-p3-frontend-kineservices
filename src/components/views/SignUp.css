@@ -11,3 +11,10 @@ p {
   display: flex;
   flex-direction: column;
 }
+
+#firstname:valid {
+  border: 1px solid black;
+}
+#firstname :invalid{
+  border: 2px dashed red;
+}
