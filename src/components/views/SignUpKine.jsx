@@ -1,20 +1,23 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import './SignUp.css';
 
 export default function SignUpKine() {
-  // insert into role : kine //event.target.value
   const [formContent, setFormContent] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const content = {};
     for (let i = 0; i < event.target.length; i += 1) {
-      // console.log(event.target[i].value);
       content[event.target[i].name] = event.target[i].value;
     }
-    // console.log(event.target[0].value);
     console.log(formContent);
     setFormContent(content);
+    axios
+      .post('http://localhost:8080/signup', { formContent })
+      .then((response) => {
+        console.log(response);
+      });
   };
 
   return (
@@ -43,18 +46,18 @@ export default function SignUpKine() {
           <label className="field" htmlFor="birthdate">
             <input
               id="birthdate"
-              type="text"
+              type="date"
               name="birthdate"
               placeholder="Date de naissance :"
             />
           </label>
           <label className="field" htmlFor="email">
-            <input id="email" type="text" name="email" placeholder="Email :" />
+            <input id="email" type="email" name="email" placeholder="email :" />
           </label>
           <label className="field" htmlFor="password">
             <input
               id="password"
-              type="text"
+              type="password"
               name="password"
               placeholder="Mot de passe :"
             />
@@ -62,9 +65,14 @@ export default function SignUpKine() {
           <label className="field" htmlFor="rpps">
             <input id="rpps" type="text" name="rpps" placeholder="RPPS : " />
           </label>
-          <label className="field" htmlFor="siret">
-            <p>Je suis une entreprise ?</p>
-            <input id="siret" type="text" name="siret" placeholder="SIRET :" />
+          <p className="field">Je suis une entreprise ?</p>
+          <label className="field" htmlFor="SIRET">
+            <input
+              id="SIRET"
+              type="number"
+              name="SIRET"
+              placeholder="SIRET :"
+            />
           </label>
 
           <label className="field" htmlFor="country">
