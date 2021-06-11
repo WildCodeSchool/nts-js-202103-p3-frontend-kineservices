@@ -11,47 +11,57 @@ export default function SignUpCompany() {
       <div className="signUpForm">
         <form>
           <label className="field" htmlFor="lastname">
-            <input id="name" type="text" name="name" placeholder="Nom :" />
+            <input
+              id="lastname"
+              type="text"
+              name="lastname"
+              placeholder="Nom :"
+            />
           </label>
           <label className="field" htmlFor="firstname">
             <input
               id="firstname"
               type="text"
-              name="name"
-              placeholder="prenom : "
+              name="firstname"
+              placeholder="prénom : "
             />
           </label>
           <label className="field" htmlFor="birthdate">
             <input
               id="birthdate"
               type="text"
-              name="name"
+              name="birthdate"
               placeholder="Date de naissance :"
             />
           </label>
           <label className="field" htmlFor="email">
-            <input id="email" type="text" name="name" placeholder="email :" />
+            <input id="email" type="text" name="email" placeholder="email :" />
           </label>
           <label className="field" htmlFor="password">
             <input
               id="password"
               type="text"
-              name="name"
+              name="password"
               placeholder="Mot de passe :"
             />
           </label>
-          <label className="field" htmlFor="SIRET">
-            <input id="phone" type="text" name="name" placeholder="SIRET :" />
+          <label className="field" htmlFor="siret">
+            <input id="siret" type="text" name="siret" placeholder="SIRET :" />
           </label>
 
           <label className="field" htmlFor="country">
-            <input id="country" type="text" name="name" placeholder="pays :" />
-          </label>
-          <label className="field" htmlFor="adress">
             <input
-              id="adress"
+              id="country"
               type="text"
-              name="name"
+              name="country"
+              placeholder="Pays :"
+            />
+          </label>
+          <label className="field" htmlFor="address">
+            <input
+              id="address"
+              type="text"
+              name="address"
               placeholder="Adresse :"
             />
           </label>
@@ -59,7 +69,7 @@ export default function SignUpCompany() {
             <input
               id="phone"
               type="text"
-              name="name"
+              name="phone"
               placeholder="Téléphone :"
             />
           </label>
@@ -67,7 +77,7 @@ export default function SignUpCompany() {
             <input
               id="website"
               type="text"
-              name="name"
+              name="website"
               placeholder="Site web :"
             />
           </label>

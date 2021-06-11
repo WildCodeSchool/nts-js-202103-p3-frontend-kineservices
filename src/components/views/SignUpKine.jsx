@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import './SignUp.css';
 
 export default function SignUpKine() {
-  // TODO : instert into role : kine
   const [formContent, setFormContent] = useState({});
 
   const handleSubmit = (event) => {
@@ -15,7 +14,10 @@ export default function SignUpKine() {
     console.log(formContent);
     setFormContent(content);
     axios
-      .post('http://localhost:8080/signup', { formContent, setFormContent })
+      .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
+        formContent,
+        setFormContent,
+      })
       .then((response) => {
         console.log(response);
       });
@@ -29,14 +31,21 @@ export default function SignUpKine() {
       <div className="signUpForm">
         <form onSubmit={handleSubmit}>
           <label className="field" htmlFor="lastname">
-            <input id="name" type="text" name="lastname" placeholder="Nom :" />
+            <input
+              id="lastname"
+              type="text"
+              name="lastname"
+              placeholder="Nom :"
+              required
+            />
           </label>
           <label className="field" htmlFor="firstname">
             <input
               id="firstname"
               type="text"
               name="firstname"
-              placeholder="prenom : "
+              placeholder="Prénom : "
+              required
             />
           </label>
           <label className="field" htmlFor="birthdate">
@@ -45,10 +54,20 @@ export default function SignUpKine() {
               type="date"
               name="birthdate"
               placeholder="Date de naissance :"
+              required
             />
           </label>
           <label className="field" htmlFor="email">
             <input id="email" type="email" name="email" placeholder="email :" />
+          </label>
+          <label className="field" htmlFor="confirmEmail">
+            <input
+              id="confirmEmail"
+              type="email"
+              name="confirmEmail"
+              placeholder="confirm email :"
+              required
+            />
           </label>
           <label className="field" htmlFor="password">
             <input
@@ -56,19 +75,56 @@ export default function SignUpKine() {
               type="password"
               name="password"
               placeholder="Mot de passe :"
+              required
+            />
+          </label>
+
+          <label className="field" htmlFor="confirmPassword">
+            <input
+              id="confirmPassword"
+              type="password"
+              name="confirmPassword"
+              placeholder="Mot de passe :"
+              required
             />
           </label>
           <label className="field" htmlFor="RPPS">
-            <input id="RPPS" type="text" name="RPPS" placeholder="RPPS : " />
-          </label>
-          <p className="field">Je suis une entreprise ?</p>
-          <label className="field" htmlFor="SIRET">
             <input
-              id="SIRET"
+              id="firstname"
               type="number"
-              name="SIRET"
-              placeholder="SIRET :"
+              name="RPPS"
+              placeholder="RPPS : "
+              required
             />
+          </label>
+          <p>Je suis une entreprise ?</p>
+          <label className="field" htmlFor="siret">
+            <input
+              id="siret"
+              type="text"
+              name="siret"
+              placeholder="Siret :"
+              required
+            />
+          </label>
+
+          <label className="field" htmlFor="country">
+            <select id="country" name="country" required>
+              <optgroup label="Europe">
+                <option value="france">France</option>
+                <option value="espagne">Espagne</option>
+                <option value="italie">Italie</option>
+                <option value="royaume-uni">Royaume-Uni</option>
+              </optgroup>
+              <optgroup label="Amérique">
+                <option value="canada">Canada</option>
+                <option value="etats-unis">Etats-Unis</option>
+              </optgroup>
+              <optgroup label="Asie">
+                <option value="chine">Chine</option>
+                <option value="japon">Japon</option>
+              </optgroup>
+            </select>
           </label>
 
           <label className="field" htmlFor="country">
@@ -81,7 +137,7 @@ export default function SignUpKine() {
           </label>
           <label className="field" htmlFor="address">
             <input
-              id="adress"
+              id="address"
               type="text"
               name="address"
               placeholder="Adresse :"
