@@ -12,9 +12,6 @@ p {
   flex-direction: column;
 }
 
-#firstname:valid {
-  border: 1px solid black;
-}
-#firstname :invalid{
-  border: 2px dashed red;
+input:invalid{
+  border: 1.5px solid red;
 }
