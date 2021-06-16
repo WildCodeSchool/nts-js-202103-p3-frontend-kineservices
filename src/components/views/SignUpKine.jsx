@@ -173,14 +173,6 @@ export default function SignUpKine() {
             </select>
           </label>
 
-          <label className="field" htmlFor="country">
-            <input
-              id="country"
-              type="text"
-              name="country"
-              placeholder="Pays :"
-            />
-          </label>
           <label className="field" htmlFor="address">
             <input
               id="address"
