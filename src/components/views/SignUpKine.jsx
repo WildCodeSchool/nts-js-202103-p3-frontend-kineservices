@@ -4,6 +4,21 @@ import './SignUp.css';
 
 export default function SignUpKine() {
   const [formContent, setFormContent] = useState({});
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [isError, setIsError] = useState('');
+
+  const checkValidation = (e) => {
+    const confPass = e.target.value;
+    setConfirmPassword(confPass);
+    if (password !== confPass) {
+      setIsError('Confirm Password should be match with password');
+      console.log(isError.length);
+    } else {
+      setIsError('');
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -58,7 +73,14 @@ export default function SignUpKine() {
             />
           </label>
           <label className="field" htmlFor="email">
-            <input id="email" type="email" name="email" placeholder="email :" />
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              id="email"
+              type="email"
+              name="email"
+              placeholder="email :"
+            />
           </label>
           <label className="field" htmlFor="confirmEmail">
             <input
@@ -71,6 +93,8 @@ export default function SignUpKine() {
           </label>
           <label className="field" htmlFor="password">
             <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               id="password"
               type="password"
               name="password"
@@ -81,6 +105,8 @@ export default function SignUpKine() {
 
           <label className="field" htmlFor="confirmPassword">
             <input
+              value={confirmPassword}
+              onChange={(e) => checkValidation(e)}
               id="confirmPassword"
               type="password"
               name="confirmPassword"
@@ -88,6 +114,7 @@ export default function SignUpKine() {
               required
             />
           </label>
+          <span>{isError}</span>
           <label className="field" htmlFor="RPPS">
             <input
               id="firstname"
