@@ -11,12 +11,10 @@ export default function SignUpKine() {
     for (let i = 0; i < event.target.length; i += 1) {
       content[event.target[i].name] = event.target[i].value;
     }
-    console.log(formContent);
     setFormContent(content);
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
         formContent,
-        setFormContent,
       })
       .then((response) => {
         console.log(response);
@@ -90,7 +88,7 @@ export default function SignUpKine() {
           </label>
           <label className="field" htmlFor="RPPS">
             <input
-              id="firstname"
+              id="RPPS"
               type="number"
               name="RPPS"
               placeholder="RPPS : "
@@ -127,14 +125,6 @@ export default function SignUpKine() {
             </select>
           </label>
 
-          <label className="field" htmlFor="country">
-            <input
-              id="country"
-              type="text"
-              name="country"
-              placeholder="Pays :"
-            />
-          </label>
           <label className="field" htmlFor="address">
             <input
               id="address"
