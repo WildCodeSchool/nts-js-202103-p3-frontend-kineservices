@@ -1,31 +1,36 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import axios from 'axios';
+import FormInput from '../commons/FormInput';
 
-function DocumentationItem({ id, title }) {
-  const [newTitle, setNewTitle] = useState(title);
+function DocumentationItem() {
+  const [documentation, setDocumentation] = useState({
+    title: '',
+    description: '',
+    categorie: '',
+    price: '',
+  });
 
-  const handleCreate = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     axios
-      .put(`http://localhost8000/documentation/${id}`, { content: newTitle })
-      .then((response) => alert(`Updated ${JSON.stringify(response)}`))
-      .catch((error) => console.error(error.message));
+      .get(`${process.env.REACT_APP_BACKEND_URL}/documentation`, documentation)
+      .then((response) => {
+        alert(JSON.stringify(response));
+      })
+      .catch((error) => alert(JSON.stringify(error)));
   };
   return (
-    <div>
-      <span>Identifiant: {id}</span>
-      <br />
-      <form onSubmit={handleCreate}>
-        <textarea
-          type="text"
-          value={title}
-          onChange={(event) => setNewTitle(event.target.value)}
-        />
-        <br />
-        <input type="submit" value="Create" />
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <FormInput
+        label="Titre"
+        name="title"
+        type="text"
+        value={documentation}
+        setValue={setDocumentation}
+      />
+      <input type="submit" value="Envoyer" />
+    </form>
   );
 }
 

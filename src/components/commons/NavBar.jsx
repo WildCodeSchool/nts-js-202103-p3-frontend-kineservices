@@ -9,31 +9,37 @@ import './NavBar.css';
 
 function NavBar() {
   return (
-    <div className="navbar">
-      <Link to="/recherche-globale">
-        <img
-          className="logo-navbar"
-          src={explorer}
-          alt="logo globalsearch navbar"
-        />
-      </Link>
-      <Link to="/service">
-        <img className="logo-navbar" src={service} alt="logo service navbar" />
-      </Link>
-      <Link to="/documentation">
-        <img className="logo-navbar" src={document} alt="logo doc navbar" />
-      </Link>
-      <Link to="/formation">
-        <img
-          className="logo-navbar"
-          src={formation}
-          alt="logo formation navbar"
-        />
-      </Link>
-      <Link to="/utilisateur">
-        <img className="logo-navbar" src={profil} alt="logo user navbar" />
-      </Link>
-    </div>
+    <>
+      <div className="navbar">
+        <Link to="/recherche-globale">
+          <img
+            className="logo-navbar"
+            src={explorer}
+            alt="logo globalsearch navbar"
+          />
+        </Link>
+        <Link to="/service">
+          <img
+            className="logo-navbar"
+            src={service}
+            alt="logo service navbar"
+          />
+        </Link>
+        <Link to="/documentation">
+          <img className="logo-navbar" src={document} alt="logo doc navbar" />
+        </Link>
+        <Link to="/formation">
+          <img
+            className="logo-navbar"
+            src={formation}
+            alt="logo formation navbar"
+          />
+        </Link>
+        <Link to="/utilisateur">
+          <img className="logo-navbar" src={profil} alt="logo user navbar" />
+        </Link>
+      </div>
+    </>
   );
 }
 
