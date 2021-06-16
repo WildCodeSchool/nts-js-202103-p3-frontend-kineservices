@@ -6,11 +6,12 @@
   align-items: center;
   position: fixed;
   bottom: 0;
-  background-color: #FFE400;
   background-size: 40px;
+  background-color: #ffe400;
 }
 
 .logo-navbar {
-  max-width: 80%;
+  max-width: 80vw;
   margin: 5px;
 }
+
