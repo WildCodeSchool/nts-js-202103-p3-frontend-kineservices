@@ -13,7 +13,6 @@ export default function SignUpKine() {
       setIsKine(false);
     }
   }
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const content = {};
@@ -96,13 +95,22 @@ export default function SignUpKine() {
             />
           </label>
           <label className="field" htmlFor="RPPS">
-            <input
-              id="firstname"
-              type="number"
-              name="RPPS"
-              placeholder="RPPS : "
-              required
-            />
+            {isKine ? (
+              <input
+                id="firstname"
+                type="number"
+                name="RPPS"
+                placeholder="RPPS : "
+                required
+              />
+            ) : (
+              <input
+                id="firstname"
+                type="number"
+                name="RPPS"
+                placeholder="RPPS : "
+              />
+            )}
           </label>
           <div>
             <label className="check" htmlFor="kineCheck">
