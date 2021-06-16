@@ -4,6 +4,16 @@ import './SignUp.css';
 
 export default function SignUpKine() {
   const [formContent, setFormContent] = useState({});
+  // eslint-disable-next-line no-unused-vars
+  const [isKine, setIsKine] = useState(true);
+  function handleCheck(event) {
+    console.log(event.target.name, event.target.value);
+    if (event.target.value === 'kineCheck') {
+      setIsKine(true);
+    } else {
+      setIsKine(false);
+    }
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,9 +35,7 @@ export default function SignUpKine() {
 
   return (
     <div>
-      <div className="title">
-        <h3>Je suis Kinésitherapeute</h3>
-      </div>
+      <div className="title" />
       <div className="signUpForm">
         <form onSubmit={handleSubmit}>
           <label className="field" htmlFor="lastname">
@@ -103,32 +111,40 @@ export default function SignUpKine() {
                 type="radio"
                 id="kineCheck"
                 name="check"
-                value="kinecheck"
-                checked
+                value="kineCheck"
+                checked={isKine}
+                onChange={handleCheck}
               />
               Je suis un.e kiné
             </label>
           </div>
 
           <div>
-            <label className="check" htmlFor="compagnyCheck">
+            <label className="check" htmlFor="companyCheck">
               <input
                 type="radio"
-                id="compagnyCheck"
+                id="companyCheck"
                 name="check"
-                value="compagnyCheck"
+                value="companyCheck"
+                checked={!isKine}
+                onChange={handleCheck}
               />
               Je suis une entreprise
             </label>
           </div>
           <label className="field" htmlFor="siret">
-            <input
-              id="siret"
-              type="text"
-              name="siret"
-              placeholder="Siret :"
-              required
-            />
+            {isKine ? (
+              <input
+                className="siret"
+                id="siret"
+                type="text"
+                name="siret"
+                placeholder="Siret :"
+                required
+              />
+            ) : (
+              ''
+            )}
           </label>
 
           <label className="field" htmlFor="country">
@@ -182,7 +198,7 @@ export default function SignUpKine() {
               placeholder="Site web :"
             />
           </label>
-          <button type="submit">Envoyer</button>
+          <button type="submit">Créer mon compte</button>
         </form>
       </div>
     </div>
