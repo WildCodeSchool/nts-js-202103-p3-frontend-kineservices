@@ -4,7 +4,6 @@ import './SignUp.css';
 
 export default function SignUpKine() {
   const [formContent, setFormContent] = useState({});
-  // eslint-disable-next-line no-unused-vars
   const [isKine, setIsKine] = useState(true);
   function handleCheck(event) {
     console.log(event.target.name, event.target.value);
@@ -133,7 +132,7 @@ export default function SignUpKine() {
             </label>
           </div>
           <label className="field" htmlFor="siret">
-            {isKine ? (
+            {!isKine ? (
               <input
                 className="siret"
                 id="siret"
