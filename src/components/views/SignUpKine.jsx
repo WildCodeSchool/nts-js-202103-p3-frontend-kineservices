@@ -97,7 +97,30 @@ export default function SignUpKine() {
               required
             />
           </label>
-          <p>Je suis une entreprise ?</p>
+          <div>
+            <label className="check" htmlFor="kineCheck">
+              <input
+                type="radio"
+                id="kineCheck"
+                name="check"
+                value="kinecheck"
+                checked
+              />
+              Je suis un.e kiné
+            </label>
+          </div>
+
+          <div>
+            <label className="check" htmlFor="compagnyCheck">
+              <input
+                type="radio"
+                id="compagnyCheck"
+                name="check"
+                value="compagnyCheck"
+              />
+              Je suis une entreprise
+            </label>
+          </div>
           <label className="field" htmlFor="siret">
             <input
               id="siret"
