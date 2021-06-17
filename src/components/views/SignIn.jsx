@@ -15,9 +15,11 @@ export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/connexion`)
+      .post(`${process.env.REACT_APP_BACKEND_URL}/connexion`, {
+        email,
+        password,
+      })
       .then((response) => {
-        console.log(response, password, email);
         console.log(response.data);
       });
   };
@@ -30,7 +32,7 @@ export default function SignIn() {
             id="email"
             type="email"
             name="email"
-            onChange={handlePassword}
+            onChange={handleEmail}
             placeholder="E-mail :"
             required
           />
@@ -40,7 +42,7 @@ export default function SignIn() {
             id="password"
             type="password"
             name="password"
-            onChange={handleEmail}
+            onChange={handlePassword}
             placeholder="Mot de passe : "
             required
           />
