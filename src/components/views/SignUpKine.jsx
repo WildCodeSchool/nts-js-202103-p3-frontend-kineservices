@@ -223,12 +223,13 @@ export default function SignUpKine() {
                 )}
               </label>
               <TextField
-                id="standard-select-currency"
+                htmlFor="country"
+                id="country"
                 select
-                choix="sélectionner"
                 label="Select"
                 value={currency}
                 onChange={handleChange}
+                name="country"
               >
                 {currencies.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -237,7 +238,7 @@ export default function SignUpKine() {
                 ))}
               </TextField>
 
-              <label className="field" htmlFor="country">
+              {/* <label className="field" htmlFor="country">
                 <select id="country" name="country" required>
                   <optgroup label="Europe">
                     <option value="france">France</option>
@@ -254,7 +255,7 @@ export default function SignUpKine() {
                     <option value="japon">Japon</option>
                   </optgroup>
                 </select>
-              </label>
+              </label> */}
 
               <TextField
                 htmlFor="address"
