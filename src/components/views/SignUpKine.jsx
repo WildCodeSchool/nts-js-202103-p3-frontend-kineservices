@@ -1,9 +1,46 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
 import avatar from '../../media/avatar.png';
 import './SignUp.css';
 
+const currencies = [
+  {
+    value: ['France', 'Espagne', 'Italie'],
+    label: 'Europe',
+  },
+  {
+    value: ['Canada', 'Etat-unis'],
+    label: 'Amérique',
+  },
+  {
+    value: 'BTC',
+    label: '฿',
+  },
+  {
+    value: 'JPY',
+    label: '¥',
+  },
+];
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: '25rem',
+  },
+}));
+
 export default function SignUpKine() {
+  const classes = useStyles();
+  const [currency, setCurrency] = React.useState('EUR');
   const [formContent, setFormContent] = useState({});
   const [isKine, setIsKine] = useState(true);
   function handleCheck(event) {
@@ -25,196 +62,240 @@ export default function SignUpKine() {
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
         formContent,
-        setFormContent,
       })
       .then((response) => {
         console.log(response);
       });
   };
 
+  const handleChange = (event) => {
+    setCurrency(event.target.value);
+  };
+
   return (
     <div className="container-form">
       <div>
         <div className="signUpForm">
-          <div className="container-avatar">
-            <img className="avatar" src={avatar} alt="avatar" />
-          </div>
           <form onSubmit={handleSubmit}>
-            <label className="field" htmlFor="lastname">
-              <input
-                id="lastname"
-                type="text"
-                name="lastname"
-                placeholder="Nom :"
-                required
-              />
-            </label>
-            <label className="field" htmlFor="firstname">
-              <input
-                id="firstname"
-                type="text"
-                name="firstname"
-                placeholder="Prénom : "
-                required
-              />
-            </label>
-            <label className="field" htmlFor="birthdate">
-              <input
-                id="birthdate"
-                type="date"
-                name="birthdate"
-                placeholder="Date de naissance :"
-                required
-              />
-            </label>
-            <label className="field" htmlFor="email">
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="email :"
-              />
-            </label>
-            <label className="field" htmlFor="confirmEmail">
-              <input
-                id="confirmEmail"
-                type="email"
-                name="confirmEmail"
-                placeholder="confirm email :"
-                required
-              />
-            </label>
-          </form>
-        </div>
-        <div className="signUpForm">
-          <form onSubmit={handleSubmit}>
-            <label className="field" htmlFor="password">
-              <input
-                id="password"
-                type="password"
-                name="password"
-                placeholder="Mot de passe :"
-                required
-              />
-            </label>
-
-            <label className="field" htmlFor="confirmPassword">
-              <input
-                id="confirmPassword"
-                type="password"
-                name="confirmPassword"
-                placeholder="Confirmer le mot de passe :"
-                required
-              />
-            </label>
-            <label className="field" htmlFor="RPPS">
-              {isKine ? (
-                <input
-                  id="firstname"
-                  type="number"
-                  name="RPPS"
-                  placeholder="RPPS : "
-                  required
-                />
-              ) : (
-                <input
-                  id="firstname"
-                  type="number"
-                  name="RPPS"
-                  placeholder="RPPS : "
-                />
-              )}
-            </label>
-            <div>
-              <div>
-                <label className="check" htmlFor="kineCheck">
-                  <input
-                    type="radio"
-                    id="kineCheck"
-                    name="check"
-                    value="kineCheck"
-                    checked={isKine}
-                    onChange={handleCheck}
-                  />
-                  Je suis un.e kiné
-                </label>
-              </div>
-
-              <div>
-                <label className="check" htmlFor="companyCheck">
-                  <input
-                    type="radio"
-                    id="companyCheck"
-                    name="check"
-                    value="companyCheck"
-                    checked={!isKine}
-                    onChange={handleCheck}
-                  />
-                  Je suis une entreprise
-                </label>
-              </div>
+            <div className="container-avatar">
+              <img className="avatar" src={avatar} alt="avatar" />
             </div>
-            <label className="field" htmlFor="siret">
-              {!isKine ? (
-                <input
-                  className="siret"
-                  id="siret"
-                  type="text"
-                  name="siret"
-                  placeholder="Siret :"
-                  required
-                />
-              ) : (
-                ''
-              )}
-            </label>
+            <TextField
+              htmlFor="lastname"
+              label="Nom"
+              id="lastname"
+              defaultValue=""
+              className={classes.textField}
+              margin="dense"
+              variant="outlined"
+              name="lastname"
+              required
+            />
+            <TextField
+              htmlFor="firstname"
+              label="Prénom"
+              id="firstname"
+              defaultValue=""
+              className={classes.textField}
+              margin="dense"
+              variant="outlined"
+              name="firstname"
+              required
+            />
+            <TextField
+              htmlFor="birthday"
+              id="birthday"
+              defaultValue=""
+              className={classes.textField}
+              margin="dense"
+              variant="outlined"
+              name="birthday"
+              type="date"
+              required
+            />
+            <TextField
+              htmlFor="email"
+              label="Email"
+              id="email"
+              defaultValue=""
+              className={classes.textField}
+              margin="dense"
+              variant="outlined"
+              name="email"
+              type="email"
+              required
+            />
+            <TextField
+              htmlFor="confirmeEmail"
+              label="Confirmer l'email"
+              id="confirmeEmail"
+              defaultValue=""
+              className={classes.textField}
+              margin="dense"
+              variant="outlined"
+              name="confirmeEmail"
+              required
+            />
+            <div className="signUpForm">
+              <TextField
+                htmlFor="password"
+                label="Mot de passe"
+                id="password"
+                defaultValue=""
+                className={classes.textField}
+                margin="dense"
+                variant="outlined"
+                name="passeword"
+                type="passeword"
+                required
+              />
+              <TextField
+                htmlFor="confirmPassword"
+                label="Confirmer mot de passe"
+                id="confirmPassword"
+                defaultValue=""
+                className={classes.textField}
+                margin="dense"
+                variant="outlined"
+                name="confirmPassword"
+                type="password"
+                required
+              />
+              <label className="field" htmlFor="RPPS">
+                {isKine ? (
+                  <input
+                    id="firstname"
+                    type="number"
+                    name="RPPS"
+                    placeholder="RPPS : "
+                    required
+                  />
+                ) : (
+                  <input
+                    id="firstname"
+                    type="number"
+                    name="RPPS"
+                    placeholder="RPPS : "
+                  />
+                )}
+              </label>
+              <div>
+                <div>
+                  <label className="check" htmlFor="kineCheck">
+                    <input
+                      type="radio"
+                      id="kineCheck"
+                      name="role_id"
+                      value="1"
+                      checked={isKine}
+                      onChange={handleCheck}
+                    />
+                    Je suis un.e kiné
+                  </label>
+                </div>
 
-            <label className="field" htmlFor="country">
-              <select id="country" name="country" required>
-                <optgroup label="Europe">
-                  <option value="france">France</option>
-                  <option value="espagne">Espagne</option>
-                  <option value="italie">Italie</option>
-                  <option value="royaume-uni">Royaume-Uni</option>
-                </optgroup>
-                <optgroup label="Amérique">
-                  <option value="canada">Canada</option>
-                  <option value="etats-unis">Etats-Unis</option>
-                </optgroup>
-                <optgroup label="Asie">
-                  <option value="chine">Chine</option>
-                  <option value="japon">Japon</option>
-                </optgroup>
-              </select>
-            </label>
+                <div>
+                  <label className="check" htmlFor="companyCheck">
+                    <input
+                      type="radio"
+                      id="companyCheck"
+                      name="role_id"
+                      value="2"
+                      checked={!isKine}
+                      onChange={handleCheck}
+                    />
+                    Je suis une entreprise
+                  </label>
+                </div>
+              </div>
+              <label className="field" htmlFor="siret">
+                {!isKine ? (
+                  <input
+                    className="siret"
+                    id="siret"
+                    type="text"
+                    name="siret"
+                    placeholder="Siret :"
+                    required
+                  />
+                ) : (
+                  ''
+                )}
+              </label>
+              <TextField
+                id="standard-select-currency"
+                select
+                choix="sélectionner"
+                label="Select"
+                value={currency}
+                onChange={handleChange}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
 
-            <label className="field" htmlFor="address">
-              <input
+              <label className="field" htmlFor="country">
+                <select id="country" name="country" required>
+                  <optgroup label="Europe">
+                    <option value="france">France</option>
+                    <option value="espagne">Espagne</option>
+                    <option value="italie">Italie</option>
+                    <option value="royaume-uni">Royaume-Uni</option>
+                  </optgroup>
+                  <optgroup label="Amérique">
+                    <option value="canada">Canada</option>
+                    <option value="etats-unis">Etats-Unis</option>
+                  </optgroup>
+                  <optgroup label="Asie">
+                    <option value="chine">Chine</option>
+                    <option value="japon">Japon</option>
+                  </optgroup>
+                </select>
+              </label>
+
+              <TextField
+                htmlFor="address"
+                label="Adresse"
                 id="address"
-                type="text"
+                defaultValue=""
+                className={classes.textField}
+                margin="dense"
+                variant="outlined"
                 name="address"
-                placeholder="Adresse :"
+                type="address"
+                required
               />
-            </label>
-            <label className="field" htmlFor="phone">
-              <input
+              <TextField
+                htmlFor="phone"
+                label="Numéro de téléphone"
                 id="phone"
-                type="text"
+                defaultValue=""
+                className={classes.textField}
+                margin="dense"
+                variant="outlined"
                 name="phone"
-                placeholder="Téléphone :"
+                type="phone"
+                required
               />
-            </label>
-            <label className="field" htmlFor="website">
-              <input
-                id="website"
-                type="text"
-                name="website"
-                placeholder="Site web :"
+              <TextField
+                htmlFor="siteWeb"
+                label="Site web"
+                id="siteWeb"
+                defaultValue=""
+                className={classes.textField}
+                margin="dense"
+                variant="outlined"
+                name="siteWeb"
+                type="siteWeb"
+                required
               />
-            </label>
-            <button className="button-signup" type="submit">
-              Créer mon compte
-            </button>
+              <button className="button-signup" type="submit">
+                Créer mon compte
+              </button>
+            </div>
           </form>
         </div>
       </div>
