@@ -8,15 +8,16 @@ export default function SignUpKine() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isError, setIsError] = useState('');
+  const [validation, setValidation] = useState(false);
 
   const checkValidation = (e) => {
     const confPass = e.target.value;
     setConfirmPassword(confPass);
     if (password !== confPass) {
-      setIsError('Confirm Password should be match with password');
-      console.log(isError.length);
+      setIsError('Les mots de passe ne correspondent pas');
     } else {
       setIsError('');
+      setValidation(true);
     }
   };
 
@@ -28,14 +29,18 @@ export default function SignUpKine() {
     }
     console.log(formContent);
     setFormContent(content);
-    axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-        formContent,
-        setFormContent,
-      })
-      .then((response) => {
-        console.log(response);
-      });
+    if (!validation) {
+      alert('cant possible');
+    } else {
+      axios
+        .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
+          formContent,
+          setFormContent,
+        })
+        .then((response) => {
+          console.log(response);
+        });
+    }
   };
 
   return (
