@@ -1,13 +1,7 @@
 import React from 'react';
-import DocumentationItem from './DocumentationItem';
-import './DocumentationList.css';
 
-const Documentation = () => {
-  return (
-    <div>
-      <DocumentationItem />
-    </div>
-  );
-};
+function DocumentationList() {
+  return <div />;
+}
 
-export default Documentation;
+export default DocumentationList;

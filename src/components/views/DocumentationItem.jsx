@@ -1,30 +1,13 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-function DocumentationItem({ id, title }) {
-  const [newTitle, setNewTitle] = useState(title);
-
-  const handleCreate = (e) => {
-    e.preventDefault();
-    axios
-      .put(`http://localhost8000/documentation/${id}`, { content: newTitle })
-      .then((response) => alert(`Updated ${JSON.stringify(response)}`))
-      .catch((error) => console.error(error.message));
-  };
+function DocumentationItem({ title, description, category, price }) {
   return (
     <div>
-      <span>Identifiant: {id}</span>
-      <br />
-      <form onSubmit={handleCreate}>
-        <textarea
-          type="text"
-          value={title}
-          onChange={(event) => setNewTitle(event.target.value)}
-        />
-        <br />
-        <input type="submit" value="Create" />
-      </form>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <p>{category}</p>
+      <p>{price}</p>
     </div>
   );
 }

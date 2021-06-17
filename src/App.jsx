@@ -3,7 +3,6 @@ import Home from './components/views/Home';
 import SignUpSummary from './components/views/SignUpSummary';
 import SignUpKine from './components/views/SignUpKine';
 import DocumentationForm from './components/views/DocumentationForm';
-import DocumentationItem from './components/views/DocumentationItem';
 
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
       <SignUpSummary />
       <SignUpKine />
       <DocumentationForm />
-      <DocumentationItem />
     </div>
   );
 }

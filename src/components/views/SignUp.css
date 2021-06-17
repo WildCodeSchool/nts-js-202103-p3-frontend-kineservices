@@ -11,3 +11,7 @@ p {
   display: flex;
   flex-direction: column;
 }
+
+input:invalid{
+  border: 1.5px solid red;
+}

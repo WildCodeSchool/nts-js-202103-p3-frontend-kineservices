@@ -4,11 +4,14 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  margin-bottom: 10px;
+  background-size: 40px;
+  background-color: #ffe400;
 }
 
 .logo-navbar {
-  max-width: 70%;
+  max-width: 80vw;
+  margin: 5px;
 }
+
