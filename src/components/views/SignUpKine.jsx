@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-console */
 import axios from 'axios';
 import React, { useState } from 'react';
@@ -43,6 +44,36 @@ export default function SignUpKine() {
       setIsKine(false);
     }
   }
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [isError, setIsError] = useState('');
+  const [validation, setValidation] = useState(false);
+  const [confirmEmail, setConfirmEmail] = useState('');
+  const [isErrorMail, setIsErrorMail] = useState('');
+  const [validationMail, setValidationMail] = useState(false);
+
+  const checkValidation = (e) => {
+    const confPass = e.target.value;
+    setConfirmPassword(confPass);
+    if (password !== confPass) {
+      setIsError('Les mots de passe ne correspondent pas');
+    } else {
+      setIsError('');
+      setValidation(true);
+    }
+  };
+
+  const checkValidationMail = (e) => {
+    const confMail = e.target.value;
+    setConfirmEmail(confMail);
+    if (email !== confMail) {
+      setIsErrorMail('Les mails ne sont pas identiques');
+    } else {
+      setIsErrorMail('');
+      setValidationMail(true);
+    }
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     const content = {};
@@ -51,13 +82,20 @@ export default function SignUpKine() {
     }
     console.log(formContent);
     setFormContent(content);
-    axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-        formContent,
-      })
-      .then((response) => {
-        console.log(response);
-      });
+    if (!validation) {
+      alert('cant possible');
+    } else if (!validationMail) {
+      alert('cant possible');
+    } else {
+      axios
+        .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
+          formContent,
+          setFormContent,
+        })
+        .then((response) => {
+          console.log(response);
+        });
+    }
   };
 
   const handleChange = (event) => {
@@ -115,6 +153,8 @@ export default function SignUpKine() {
               variant="outlined"
               name="email"
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <TextField
@@ -126,8 +166,42 @@ export default function SignUpKine() {
               margin="dense"
               variant="outlined"
               name="confirmeEmail"
+              value={confirmEmail}
+              onChange={(e) => checkValidationMail(e)}
               required
             />
+            {/* <label className="field" htmlFor="email">
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              id="email"
+              type="email"
+              name="email"
+              placeholder="confirm email :"
+            />
+          </label>
+          <label className="field" htmlFor="confirmPassword">
+            <input
+              value={confirmEmail}
+              onChange={(e) => checkValidationMail(e)}
+              id="confirmEmail"
+              type="email"
+              name="confirmEmail"
+              placeholder="email :"
+              required
+            />
+          </label> */}
+            <span>{isErrorMail}</span>
+            {/* <label className="field" htmlFor="password">
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Mot de passe :"
+              required
+            /> */}
             <div className="signUpForm">
               <TextField
                 htmlFor="password"
@@ -139,6 +213,8 @@ export default function SignUpKine() {
                 variant="outlined"
                 name="passeword"
                 type="passeword"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
               <TextField
@@ -151,8 +227,11 @@ export default function SignUpKine() {
                 variant="outlined"
                 name="confirmPassword"
                 type="password"
+                value={confirmPassword}
+                onChange={(e) => checkValidation(e)}
                 required
               />
+              <span>{isError}</span>
               <label className="field" htmlFor="RPPS">
                 {isKine ? (
                   <TextField
@@ -230,6 +309,37 @@ export default function SignUpKine() {
                   </MenuItem>
                 ))}
               </TextField>
+              {/* <label className="field" htmlFor="confirmPassword">
+            <input
+              value={confirmPassword}
+              onChange={(e) => checkValidation(e)}
+              id="confirmPassword"
+              type="password"
+              name="confirmPassword"
+              placeholder="Mot de passe :"
+              required
+            />
+          </label> */}
+
+              {/* <label className="field" htmlFor="RPPS">
+                <input
+                  id="firstname"
+                  type="number"
+                  name="RPPS"
+                  placeholder="RPPS : "
+                  required
+                />
+              </label>
+              <p>Je suis une entreprise ?</p>
+              <label className="field" htmlFor="siret">
+                <input
+                  id="siret"
+                  type="text"
+                  name="siret"
+                  placeholder="Siret :"
+                  required
+                />
+              </label> */}
 
               <label className="field" htmlFor="country">
                 <select id="country" name="country" required>
@@ -284,7 +394,6 @@ export default function SignUpKine() {
                 variant="outlined"
                 name="siteWeb"
                 type="siteWeb"
-                required
               />
               <button className="button-signup" type="submit">
                 Créer mon compte
