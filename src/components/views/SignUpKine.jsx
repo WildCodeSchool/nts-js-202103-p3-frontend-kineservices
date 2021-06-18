@@ -16,14 +16,6 @@ const currencies = [
     value: ['Canada', 'Etat-unis'],
     label: 'Amérique',
   },
-  {
-    value: 'BTC',
-    label: '฿',
-  },
-  {
-    value: 'JPY',
-    label: '¥',
-  },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -34,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: '25rem',
+    width: '100%',
   },
 }));
 
@@ -163,7 +155,7 @@ export default function SignUpKine() {
               />
               <label className="field" htmlFor="RPPS">
                 {isKine ? (
-                  <input
+                  <TextField
                     id="firstname"
                     type="number"
                     name="RPPS"
@@ -171,7 +163,7 @@ export default function SignUpKine() {
                     required
                   />
                 ) : (
-                  <input
+                  <TextField
                     id="firstname"
                     type="number"
                     name="RPPS"
@@ -210,7 +202,7 @@ export default function SignUpKine() {
               </div>
               <label className="field" htmlFor="siret">
                 {!isKine ? (
-                  <input
+                  <TextField
                     className="siret"
                     id="siret"
                     type="text"
@@ -226,9 +218,10 @@ export default function SignUpKine() {
                 htmlFor="country"
                 id="country"
                 select
-                label="Select"
+                label="Select your country"
                 value={currency}
                 onChange={handleChange}
+                className={classes.textField}
                 name="country"
               >
                 {currencies.map((option) => (
