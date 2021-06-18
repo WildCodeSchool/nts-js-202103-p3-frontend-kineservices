@@ -1,10 +1,14 @@
 import React from 'react';
-import DocumentationForm from './components/views/DocumentationForm';
+import GeneralRouter from './components/commons/GeneralRouter';
+import DocumentationItem from './components/views/DocumentationItem';
+import Home from './components/views/Home';
 
 function App() {
   return (
     <div className="App">
-      <DocumentationForm />
+      <Home />
+      <GeneralRouter />
+      <DocumentationItem />
     </div>
   );
 }
