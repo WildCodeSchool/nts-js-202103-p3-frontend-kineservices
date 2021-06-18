@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import DocumentationItem from './DocumentationItem';
 
-function DocumentationList() {
+const DocumentationList = () => {
   const [documentations, setDocumentations] = useState([]);
-  useEffect(function () {
+  useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/documentation`)
       .then((response) => {
         setDocumentations(response.data);
-        console.log(documentations);
       });
   }, []);
   return (
@@ -27,6 +26,6 @@ function DocumentationList() {
       })}
     </div>
   );
-}
+};
 
 export default DocumentationList;
