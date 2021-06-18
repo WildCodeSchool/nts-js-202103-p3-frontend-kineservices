@@ -170,38 +170,7 @@ export default function SignUpKine() {
               onChange={(e) => checkValidationMail(e)}
               required
             />
-            {/* <label className="field" htmlFor="email">
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              id="email"
-              type="email"
-              name="email"
-              placeholder="confirm email :"
-            />
-          </label>
-          <label className="field" htmlFor="confirmPassword">
-            <input
-              value={confirmEmail}
-              onChange={(e) => checkValidationMail(e)}
-              id="confirmEmail"
-              type="email"
-              name="confirmEmail"
-              placeholder="email :"
-              required
-            />
-          </label> */}
             <span>{isErrorMail}</span>
-            {/* <label className="field" htmlFor="password">
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              id="password"
-              type="password"
-              name="password"
-              placeholder="Mot de passe :"
-              required
-            /> */}
             <div className="signUpForm">
               <TextField
                 htmlFor="password"
@@ -309,37 +278,6 @@ export default function SignUpKine() {
                   </MenuItem>
                 ))}
               </TextField>
-              {/* <label className="field" htmlFor="confirmPassword">
-            <input
-              value={confirmPassword}
-              onChange={(e) => checkValidation(e)}
-              id="confirmPassword"
-              type="password"
-              name="confirmPassword"
-              placeholder="Mot de passe :"
-              required
-            />
-          </label> */}
-
-              {/* <label className="field" htmlFor="RPPS">
-                <input
-                  id="firstname"
-                  type="number"
-                  name="RPPS"
-                  placeholder="RPPS : "
-                  required
-                />
-              </label>
-              <p>Je suis une entreprise ?</p>
-              <label className="field" htmlFor="siret">
-                <input
-                  id="siret"
-                  type="text"
-                  name="siret"
-                  placeholder="Siret :"
-                  required
-                />
-              </label> */}
 
               <label className="field" htmlFor="country">
                 <select id="country" name="country" required>
