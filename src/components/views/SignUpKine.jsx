@@ -9,6 +9,9 @@ export default function SignUpKine() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isError, setIsError] = useState('');
   const [validation, setValidation] = useState(false);
+  const [confirmEmail, setConfirmEmail] = useState('');
+  const [isErrorMail, setIsErrorMail] = useState('');
+  const [validationMail, setValidationMail] = useState(false);
 
   const checkValidation = (e) => {
     const confPass = e.target.value;
@@ -21,6 +24,16 @@ export default function SignUpKine() {
     }
   };
 
+  const checkValidationMail = (e) => {
+    const confMail = e.target.value;
+    setConfirmEmail(confMail);
+    if (email !== confMail) {
+      setIsErrorMail('Les mails ne sont pas identiques');
+    } else {
+      setIsErrorMail('');
+      setValidationMail(true);
+    }
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     const content = {};
@@ -30,6 +43,8 @@ export default function SignUpKine() {
     console.log(formContent);
     setFormContent(content);
     if (!validation) {
+      alert('cant possible');
+    } else if (!validationMail) {
       alert('cant possible');
     } else {
       axios
@@ -84,18 +99,21 @@ export default function SignUpKine() {
               id="email"
               type="email"
               name="email"
-              placeholder="email :"
+              placeholder="confirm email :"
             />
           </label>
-          <label className="field" htmlFor="confirmEmail">
+          <label className="field" htmlFor="confirmPassword">
             <input
+              value={confirmEmail}
+              onChange={(e) => checkValidationMail(e)}
               id="confirmEmail"
               type="email"
               name="confirmEmail"
-              placeholder="confirm email :"
+              placeholder="email :"
               required
             />
           </label>
+          <span>{isErrorMail}</span>
           <label className="field" htmlFor="password">
             <input
               value={password}
