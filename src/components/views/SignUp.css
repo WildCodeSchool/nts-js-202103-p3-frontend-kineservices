@@ -10,10 +10,6 @@ p {
   flex-direction: column;
 }
 
-/* input:invalid {
-  border: 1.5px solid red;
-} */
-
 .container-avatar {
   display: flex;
   justify-content: center;
@@ -48,4 +44,3 @@ input {
   border-radius: 8px;
 }
 
-/* test */
