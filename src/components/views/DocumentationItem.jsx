@@ -1,36 +1,15 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
-import axios from 'axios';
-import FormInput from '../commons/FormInput';
+import React from 'react';
 
-function DocumentationItem() {
-  const [documentation, setDocumentation] = useState({
-    title: '',
-    description: '',
-    categorie: '',
-    price: '',
-  });
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/documentation`, documentation)
-      .then((response) => {
-        alert(JSON.stringify(response));
-      })
-      .catch((error) => alert(JSON.stringify(error)));
-  };
+function DocumentationItem(props) {
+  const { title, description, category, price } = props;
   return (
-    <form onSubmit={handleSubmit}>
-      <FormInput
-        label="Titre"
-        name="title"
-        type="text"
-        value={documentation}
-        setValue={setDocumentation}
-      />
-      <input type="submit" value="Envoyer" />
-    </form>
+    <div>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <p>{category}</p>
+      <p>{price}</p>
+    </div>
   );
 }
 
