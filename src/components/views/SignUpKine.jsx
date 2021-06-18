@@ -45,7 +45,7 @@ export default function SignUpKine() {
   const [isKine, setIsKine] = useState(true);
   function handleCheck(event) {
     console.log(event.target.name, event.target.value);
-    if (event.target.value === 'kineCheck') {
+    if (event.target.value === '1') {
       setIsKine(true);
     } else {
       setIsKine(false);
@@ -238,7 +238,7 @@ export default function SignUpKine() {
                 ))}
               </TextField>
 
-              {/* <label className="field" htmlFor="country">
+              <label className="field" htmlFor="country">
                 <select id="country" name="country" required>
                   <optgroup label="Europe">
                     <option value="france">France</option>
@@ -255,7 +255,7 @@ export default function SignUpKine() {
                     <option value="japon">Japon</option>
                   </optgroup>
                 </select>
-              </label> */}
+              </label>
 
               <TextField
                 htmlFor="address"
