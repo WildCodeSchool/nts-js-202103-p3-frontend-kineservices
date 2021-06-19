@@ -1,71 +1,31 @@
-import React from 'react';
-import './DocumentationList.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import DocumentationItem from './DocumentationItem';
 
-const Documentation = () => {
-  const docInfo = {
-    image:
-      'https://cdn.pixabay.com/photo/2017/03/10/17/04/physiotherapy-2133286_960_720.jpg',
-    name: 'Le pieds dans tous ses états',
-    description:
-      'Découvrez le pied à travers les âges; comment le soignaient les kinésithérapeutes du XIXe siècle à nos jours',
-    author: 'Emile Latouche',
-    price: '10,40',
-  };
-
+const DocumentationList = () => {
+  const [documentations, setDocumentations] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/documentation`)
+      .then((response) => {
+        setDocumentations(response.data);
+      });
+  }, []);
   return (
     <div>
-      <h1 className="title-contenu">Supports pédagogiques :</h1>
-      <div className="doc-container">
-        <img src={docInfo.image} className="image" alt="doc pieds" />
-        <h2 className="titre">{docInfo.name}</h2>
-        <p className="author">{docInfo.author}</p>
-        <p className="description">{docInfo.description}</p>
-        <p className="price">{docInfo.price} €</p>
-      </div>
-      <div className="doc-container">
-        <img src={docInfo.image} className="image" alt="doc pieds" />
-        <h2 className="titre">{docInfo.name}</h2>
-        <p className="author">{docInfo.author}</p>
-        <p className="description">{docInfo.description}</p>
-        <p className="price">{docInfo.price} €</p>
-      </div>
-      <div className="doc-container">
-        <img src={docInfo.image} className="image" alt="doc pieds" />
-        <h2 className="titre">{docInfo.name}</h2>
-        <p className="author">{docInfo.author}</p>
-        <p className="description">{docInfo.description}</p>
-        <p className="price">{docInfo.price} €</p>
-      </div>
-      <div className="doc-container">
-        <img src={docInfo.image} className="image" alt="doc pieds" />
-        <h2 className="titre">{docInfo.name}</h2>
-        <p className="author">{docInfo.author}</p>
-        <p className="description">{docInfo.description}</p>
-        <p className="price">{docInfo.price} €</p>
-      </div>
-      <div className="doc-container">
-        <img src={docInfo.image} className="image" alt="doc pieds" />
-        <h2 className="titre">{docInfo.name}</h2>
-        <p className="author">{docInfo.author}</p>
-        <p className="description">{docInfo.description}</p>
-        <p className="price">{docInfo.price} €</p>
-      </div>
-      <div className="doc-container">
-        <img src={docInfo.image} className="image" alt="doc pieds" />
-        <h2 className="titre">{docInfo.name}</h2>
-        <p className="author">{docInfo.author}</p>
-        <p className="description">{docInfo.description}</p>
-        <p className="price">{docInfo.price} €</p>
-      </div>
-      <div className="doc-container">
-        <img src={docInfo.image} className="image" alt="doc pieds" />
-        <h2 className="titre">{docInfo.name}</h2>
-        <p className="author">{docInfo.author}</p>
-        <p className="description">{docInfo.description}</p>
-        <p className="price">{docInfo.price} €</p>
-      </div>
+      {documentations.map((documentation) => {
+        return (
+          <DocumentationItem
+            title={documentation.title}
+            description={documentation.description}
+            category={documentation.category_id}
+            price={documentation.price}
+            key={documentation.id}
+          />
+        );
+      })}
     </div>
   );
 };
 
-export default Documentation;
+export default DocumentationList;
