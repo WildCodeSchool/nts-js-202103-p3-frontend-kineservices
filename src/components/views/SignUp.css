@@ -1,17 +1,46 @@
-.signUpForm {
-  display: flex;
-  flex-direction: column;
-}
+
 .field {
   display: flex;
   margin: 0 0 0 5px;
   justify-content: space-between;
+  padding: 8px;
 }
 p {
   display: flex;
   flex-direction: column;
 }
 
-input:invalid{
-  border: 1.5px solid red;
+.container-avatar {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+
 }
+.avatar {
+  border-radius: 50%;
+  border: 1px solid black;
+  padding: 40px;
+  max-width: 50%;
+}
+
+input {
+  height: 30px;
+  border: 2px solid #7a77f2;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.button-signup {
+  height: 54px;
+  background: #7a77f2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+

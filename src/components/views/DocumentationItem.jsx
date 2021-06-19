@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-function DocumentationItem({ title, description, category, price }) {
+function DocumentationItem(props) {
+  const { title, description, category, price } = props;
   return (
     <div>
       <h1>{title}</h1>

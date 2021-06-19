@@ -1,14 +1,21 @@
-import React from 'react';
 
+import React from 'react';
 import SignIn from './components/views/SignIn';
-// import GeneralRouter from './components/commons/GeneralRouter';
 import SignUpKine from './components/views/SignUpKine';
+
+import React from 'react';
+import GeneralRouter from './components/commons/GeneralRouter';
+import DocumentationForm from './components/views/DocumentationForm';
+
+
 
 function App() {
   return (
     <div className="App">
       <SignIn />
       <SignUpKine />
+      <GeneralRouter />
+      <DocumentationForm />
     </div>
   );
 }
