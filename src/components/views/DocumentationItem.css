@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap');
+
+body {
+  width: 100%;
+}
+
+.box-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background-color: #f6f6f6;
+  box-shadow: 3px 3px 3px lightgrey;
+  font-family: 'Hind';
+}
+
+.description {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.buy-button {
+  border-color: transparent;
+  background-color: #FFE400;
+  box-shadow: 3px 3px 3px lightgrey;
+  color: black;
+  font-family: 'Hind';
+  font-weight:bolder;
+  font-size: 15px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  height: 40px;
+}
+
+/* faire une forme ovale pour le background - test -
+/*.ovale {
+  width : 70px;
+  height : 70px;
+  background : #F6F6F6;
+  -moz-border-radius : 20px;
+  -webkit-border-radius : 20px;
+  border-radius : 25px;
+  margin-left: 150px;
+}*/

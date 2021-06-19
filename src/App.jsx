@@ -1,6 +1,6 @@
 import React from 'react';
 import GeneralRouter from './components/commons/GeneralRouter';
-import DocumentationItem from './components/views/DocumentationItem';
+import DocumentationList from './components/views/DocumentationList';
 import Home from './components/views/Home';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Home />
       <GeneralRouter />
-      <DocumentationItem />
+      <DocumentationList />
     </div>
   );
 }
