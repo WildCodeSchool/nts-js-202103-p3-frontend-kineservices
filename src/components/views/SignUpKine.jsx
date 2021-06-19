@@ -80,8 +80,14 @@ export default function SignUpKine() {
     for (let i = 0; i < event.target.length; i += 1) {
       content[event.target[i].name] = event.target[i].value;
     }
-    console.log(formContent);
     setFormContent(content);
+    axios
+      .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
+        formContent,
+      })
+      .then((response) => {
+        console.log(response);
+      });
     if (!validation) {
       alert('cant possible');
     } else if (!validationMail) {
@@ -170,6 +176,31 @@ export default function SignUpKine() {
               onChange={(e) => checkValidationMail(e)}
               required
             />
+          </label>
+
+          <label className="field" htmlFor="confirmPassword">
+            <input
+              id="confirmPassword"
+              type="password"
+              name="confirmPassword"
+              placeholder="Mot de passe :"
+              required
+            />
+          </label>
+          <label className="field" htmlFor="RPPS">
+            <input
+              id="RPPS"
+              type="number"
+              name="RPPS"
+              placeholder="RPPS : "
+              required
+            />
+            {isKine ? (
+              <input
+                id="firstname"
+                type="number"
+                name="RPPS"
+                placeholder="RPPS : "
             <span>{isErrorMail}</span>
             <div className="signUpForm">
               <TextField
