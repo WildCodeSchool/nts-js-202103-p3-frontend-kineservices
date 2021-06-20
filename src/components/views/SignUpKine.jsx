@@ -176,7 +176,7 @@ export default function SignUpKine() {
               onChange={(e) => checkValidationMail(e)}
               required
             />
-          </label>
+            {/* </label>
 
           <label className="field" htmlFor="confirmPassword">
             <input
@@ -200,7 +200,7 @@ export default function SignUpKine() {
                 id="firstname"
                 type="number"
                 name="RPPS"
-                placeholder="RPPS : "
+                placeholder="RPPS : " */}
             <span>{isErrorMail}</span>
             <div className="signUpForm">
               <TextField
