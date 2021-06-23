@@ -33,6 +33,28 @@ function ServiceForm() {
         value={service}
         setValue={setService}
       />
+      <FormInput
+        label="Description"
+        name="description"
+        type="text"
+        value={service}
+        setValue={setService}
+      />
+      <FormInput
+        label="Website"
+        name="website"
+        type="text"
+        value={service}
+        setValue={setService}
+      />
+      <FormInput
+        label="Prix"
+        name="price"
+        type="number"
+        value={service}
+        setValue={setService}
+      />
+      <input type="submit" value="Envoyer" />
     </form>
   );
 }
