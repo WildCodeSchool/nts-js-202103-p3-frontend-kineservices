@@ -176,31 +176,7 @@ export default function SignUpKine() {
               onChange={(e) => checkValidationMail(e)}
               required
             />
-          </label>
 
-          <label className="field" htmlFor="confirmPassword">
-            <input
-              id="confirmPassword"
-              type="password"
-              name="confirmPassword"
-              placeholder="Mot de passe :"
-              required
-            />
-          </label>
-          <label className="field" htmlFor="RPPS">
-            <input
-              id="RPPS"
-              type="number"
-              name="RPPS"
-              placeholder="RPPS : "
-              required
-            />
-            {isKine ? (
-              <input
-                id="firstname"
-                type="number"
-                name="RPPS"
-                placeholder="RPPS : "
             <span>{isErrorMail}</span>
             <div className="signUpForm">
               <TextField
