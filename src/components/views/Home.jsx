@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import { Link } from 'react-router-dom';
 import landingPageImage from '../../media/image_home.jpg';
 
 export default function Home() {
@@ -54,12 +55,12 @@ export default function Home() {
             <span>10 €/mois</span>
           </h3>
         </div>
-        <button type="button" className="signUp">
-          Je m&lsquo;inscris !
-        </button>
+        <Link to="/inscription-kine">
+          <button type="button" className="signUp">
+            Je m&lsquo;inscris !
+          </button>
+        </Link>
       </div>
-
-      <div>FOOTER</div>
     </div>
   );
 }
