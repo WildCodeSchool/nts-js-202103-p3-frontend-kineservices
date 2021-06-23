@@ -1,6 +1,17 @@
+import { useEffect } from 'react';
+import axios from 'axios';
 import './Profile.css';
 
 function Profile() {
+  useEffect(() => {
+    const userId = localStorage.getItem('USERID');
+    console.log(userId);
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/user${userId}`)
+      .then((response) => {
+        console.log(response);
+      });
+  }, []);
   const info = {
     nom: 'nom',
     naissance: '08/07/1995',

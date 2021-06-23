@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.intro {
+  display: flex;
+  justify-content: center;
+}
+.prices {
+  max-width: 375px;
+}
+
+.signUp {
+  display: flex;
+  margin: 20px;
+}
