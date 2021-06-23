@@ -16,7 +16,6 @@ function DocumentationForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(`${process.env.REACT_APP_BACKEND_URL}/documentation`);
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/documentation`, documentation)
       .then((response) => {
@@ -30,7 +29,6 @@ function DocumentationForm() {
       .get(`${process.env.REACT_APP_BACKEND_URL}/category`)
       .then((response) => {
         setSelect(response.data);
-        console.log(select);
       });
   }, []);
 
