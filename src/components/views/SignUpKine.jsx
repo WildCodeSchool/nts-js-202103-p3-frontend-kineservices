@@ -139,13 +139,13 @@ export default function SignUpKine() {
               required
             />
             <TextField
-              htmlFor="birthday"
-              id="birthday"
+              htmlFor="birthdate"
+              id="birthdate"
               defaultValue=""
               className={classes.textField}
               margin="dense"
               variant="outlined"
-              name="birthday"
+              name="birthdate"
               type="date"
               required
             />
@@ -166,12 +166,12 @@ export default function SignUpKine() {
             <TextField
               htmlFor="confirmeEmail"
               label="Confirmer l'email"
-              id="confirmeEmail"
+              id="confirmemail"
               defaultValue=""
               className={classes.textField}
               margin="dense"
               variant="outlined"
-              name="confirmeEmail"
+              name="confirmEmail"
               value={confirmEmail}
               onChange={(e) => checkValidationMail(e)}
               required
@@ -186,8 +186,8 @@ export default function SignUpKine() {
                 className={classes.textField}
                 margin="dense"
                 variant="outlined"
-                name="passeword"
-                type="passeword"
+                name="password"
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -210,7 +210,7 @@ export default function SignUpKine() {
               <label className="field" htmlFor="RPPS">
                 {isKine ? (
                   <TextField
-                    id="firstname"
+                    id="RPPS"
                     type="number"
                     name="RPPS"
                     placeholder="RPPS : "
@@ -218,7 +218,7 @@ export default function SignUpKine() {
                   />
                 ) : (
                   <TextField
-                    id="firstname"
+                    id="RPPS"
                     type="number"
                     name="RPPS"
                     placeholder="RPPS : "
@@ -254,13 +254,13 @@ export default function SignUpKine() {
                   </label>
                 </div>
               </div>
-              <label className="field" htmlFor="siret">
+              <label className="field" htmlFor="SIRET">
                 {!isKine ? (
                   <TextField
                     className="siret"
-                    id="siret"
+                    id="SIRET"
                     type="text"
-                    name="siret"
+                    name="SIRET"
                     placeholder="Siret :"
                     required
                   />
