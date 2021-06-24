@@ -96,7 +96,6 @@ export default function SignUpKine() {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
           formContent,
-          setFormContent,
         })
         .then((response) => {
           console.log(response);
