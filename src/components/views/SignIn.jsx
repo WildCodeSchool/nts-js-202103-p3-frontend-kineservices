@@ -22,6 +22,8 @@ export default function SignIn() {
       })
       .then((response) => {
         console.log(response.data);
+        localStorage.setItem('TOKEN', response.data.auth);
+        localStorage.setItem('USERID', response.data.id);
       });
   };
 

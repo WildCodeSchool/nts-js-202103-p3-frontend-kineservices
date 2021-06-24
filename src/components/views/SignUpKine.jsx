@@ -176,7 +176,6 @@ export default function SignUpKine() {
               onChange={(e) => checkValidationMail(e)}
               required
             />
-
             <span>{isErrorMail}</span>
             <div className="signUpForm">
               <TextField
