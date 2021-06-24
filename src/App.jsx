@@ -1,12 +1,10 @@
 import React from 'react';
-import GeneralRouter from './components/commons/GeneralRouter';
-import SignIn from './components/views/SignIn';
+import SignUpKine from './components/views/SignUpKine';
 
 function App() {
   return (
     <div className="App">
-      <SignIn />
-      <GeneralRouter />
+      <SignUpKine />
     </div>
   );
 }
