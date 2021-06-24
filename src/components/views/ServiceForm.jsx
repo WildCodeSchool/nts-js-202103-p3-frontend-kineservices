@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import axios from 'axios';
 import React, { useState } from 'react';
 import FormInput from '../commons/FormInput';
@@ -18,9 +17,11 @@ function ServiceForm() {
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/service`, service)
       .then((response) => {
-        alert(JSON.stringify(response));
+        console.log(response);
       })
-      .catch((error) => alert(JSON.stringify(error)));
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -34,6 +35,7 @@ function ServiceForm() {
         setValue={setService}
       />
       <FormInput
+        className="serviceDescription"
         label="Description"
         name="description"
         type="text"
