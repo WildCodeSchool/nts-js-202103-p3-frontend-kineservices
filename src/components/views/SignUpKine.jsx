@@ -96,7 +96,6 @@ export default function SignUpKine() {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
           formContent,
-          setFormContent,
         })
         .then((response) => {
           console.log(response);
@@ -139,13 +138,13 @@ export default function SignUpKine() {
               required
             />
             <TextField
-              htmlFor="birthday"
-              id="birthday"
+              htmlFor="birthdate"
+              id="birthdate"
               defaultValue=""
               className={classes.textField}
               margin="dense"
               variant="outlined"
-              name="birthday"
+              name="birthdate"
               type="date"
               required
             />
@@ -164,14 +163,14 @@ export default function SignUpKine() {
               required
             />
             <TextField
-              htmlFor="confirmeEmail"
+              htmlFor="confirmEmail"
               label="Confirmer l'email"
-              id="confirmeEmail"
+              id="confirmEmail"
               defaultValue=""
               className={classes.textField}
               margin="dense"
               variant="outlined"
-              name="confirmeEmail"
+              name="confirmEmail"
               value={confirmEmail}
               onChange={(e) => checkValidationMail(e)}
               required
@@ -186,8 +185,8 @@ export default function SignUpKine() {
                 className={classes.textField}
                 margin="dense"
                 variant="outlined"
-                name="passeword"
-                type="passeword"
+                name="password"
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
