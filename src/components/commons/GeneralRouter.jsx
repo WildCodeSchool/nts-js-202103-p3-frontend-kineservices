@@ -11,6 +11,7 @@ import SignIn from '../views/SignIn';
 import SignUpKine from '../views/SignUpKine';
 import SignUpCompany from '../views/SignUpCompany';
 import NavBar from './NavBar';
+import DocumentationItem from '../views/DocumentationItem';
 
 function GeneralRouter() {
   return (
@@ -28,6 +29,9 @@ function GeneralRouter() {
           </Route>
           <Route exact path="/documentation">
             <DocumentationList />
+          </Route>
+          <Route exact path="/documentation-item">
+            <DocumentationItem />
           </Route>
           <Route exact path="/formation">
             <Training />
