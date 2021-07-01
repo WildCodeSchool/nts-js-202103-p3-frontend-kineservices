@@ -1,39 +1,70 @@
-
-.field {
-  display: flex;
-  margin: 0 0 0 5px;
-  justify-content: space-between;
-  padding: 8px;
-}
-p {
+.signUpForm {
   display: flex;
   flex-direction: column;
 }
 
-.container-avatar {
+.field {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  margin: 5%;
-
-}
-.avatar {
-  border-radius: 50%;
-  border: 1px solid black;
-  padding: 40px;
-  max-width: 50%;
+  align-items: center;
+  margin: 2%;
 }
 
-input {
-  height: 30px;
-  border: 2px solid #7a77f2;
+.login-btn {
+  background-color: #1ebe73;
+  color: white;
+  border-color: transparent;
+  border-radius: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: #1ebe73;
+}
+
+.card-body-signup {
+  border: solid 1 px;
+  box-shadow: 0 10px 10px rgb(134 134 134);
+  margin: 2%;
+}
+.card-signup {
+  margin-bottom: 70px;
+}
+
+input#lastname.form-control,
+input#firstname.form-control,
+input#birthday.form-control,
+input#email.form-control,
+input#confirmeEmail.form-control,
+input#password.form-control,
+input#confirmPassword.form-control,
+select.form-control,
+input#address.form-control,
+input#phone.form-control,
+input#siteWeb.form-control,
+input#siret.siret.form-control {
+  height: 40px;
+  border: 1px solid #7a77f2;
   box-sizing: border-box;
   border-radius: 8px;
+  width: 80%;
+  display: flex;
+  margin: 1%;
+  font-size: 16px;
 }
 
-.check {
+.container-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+}
+
+.container-card-form {
+  width: 100%;
 }
 
 .button-signup {
@@ -42,5 +73,19 @@ input {
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 8px;
+  width: 40%;
+  margin: 5%;
+  color: white;
+  font-size: 18px;
 }
 
+.container-button {
+  display: flex;
+  justify-content: center;
+}
+
+.container-avatar {
+  display: flex;
+  justify-content: center;
+  margin: 8%;
+}
