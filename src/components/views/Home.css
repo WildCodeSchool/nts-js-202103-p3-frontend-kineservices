@@ -18,12 +18,12 @@
 .landing-page {
   position: absolute;
 }
-/* Image d'intro */
+
 .landing-page img {
   max-width: 100%;
   height: 450px;
 }
-/* Texte d'intro */
+
 .intro {
   position: absolute;
   display: flex;
