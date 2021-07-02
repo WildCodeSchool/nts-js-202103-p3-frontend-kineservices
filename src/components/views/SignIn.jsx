@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 import React, { useState } from 'react';
-// import backgroundkine from '../../media/backgroundkine.png';
 import './SignIn.css';
 
 export default function SignIn() {
@@ -30,9 +29,6 @@ export default function SignIn() {
 
   return (
     <section className="connexion">
-      {/* <div className="bg-img">
-        <img src={backgroundkine} alt="bg" />
-      </div> */}
       <div className="signInForm-container">
         <form className="signInForm" onSubmit={handleSubmit}>
           <label className="field" htmlFor="email">
