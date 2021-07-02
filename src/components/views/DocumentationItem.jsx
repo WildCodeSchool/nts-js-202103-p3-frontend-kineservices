@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './DocumentationItem.css';
 
 function DocumentationItem(props) {
-  const { title, description, category, price, id } = props;
+  const { title, description, category, price } = props;
 
   return (
     <div className="box-item">
@@ -12,7 +11,6 @@ function DocumentationItem(props) {
       <p className="description">{description}</p>
       <p>{category}</p>
       <p>Prix : {price}€</p>
-      <Link to={`/documentation/${id}`}>Découvrir !</Link>
     </div>
   );
 }
