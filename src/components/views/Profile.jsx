@@ -11,15 +11,12 @@ function Profile() {
       .get(`${process.env.REACT_APP_BACKEND_URL}/user/${userId}`, { userId })
       .then((response) => {
         setUser(response.data);
-        console.log(user);
       });
   }
 
   useEffect(() => {
     getUser();
-    console.log(user);
   }, []);
-  console.log(user);
   return (
     <div className="Container_profil">
       <div>
