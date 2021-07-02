@@ -1,17 +1,10 @@
 import React from 'react';
-import GeneralRouter from './components/commons/GeneralRouter';
-import DocumentationList from './components/views/DocumentationList';
-import Home from './components/views/Home';
-import SignIn from './components/views/SignIn';
+import DocumentationForm from './components/views/DocumentationForm';
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <GeneralRouter />
-      <DocumentationList />
-      <SignIn />
-      <GeneralRouter />
+      <DocumentationForm />
     </div>
   );
 }
