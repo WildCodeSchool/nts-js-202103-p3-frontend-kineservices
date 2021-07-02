@@ -37,7 +37,7 @@
 
 input#lastname.form-control,
 input#firstname.form-control,
-input#birthday.form-control,
+input#birthdate.form-control,
 input#email.form-control,
 input#confirmeEmail.form-control,
 input#password.form-control,
@@ -55,11 +55,11 @@ input#siret.siret.form-control {
   display: flex;
   margin: 1%;
   font-size: 16px;
+  margin-left: 8%;
 }
 
 .container-form {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -73,7 +73,7 @@ input#siret.siret.form-control {
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 8px;
-  width: 40%;
+  width: 65%;
   margin: 5%;
   color: white;
   font-size: 18px;
@@ -88,4 +88,57 @@ input#siret.siret.form-control {
   display: flex;
   justify-content: center;
   margin: 8%;
+}
+
+.container-choose-radio {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+}
+.container-radio-kine {
+  margin: 2%;
+  font-size: 20px;
+}
+.container-radio-entreprise {
+  margin: 2%;
+  font-size: 20px;
+}
+#kineCheck,
+#companyCheck,
+input.form-check-input {
+  width: 45px;
+  height: 20px;
+}
+
+.alertError {
+  color: red;
+  margin: 2%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 18px;
+}
+.check-validation {
+  font-size: 15px;
+  margin: 4%;
+}
+.form-check {
+  display: flex;
+  align-items: center;
+}
+hr {
+  border: 1px solid #7a77f2;
+  width: 80%;
+}
+.connecter {
+  display: flex;
+  justify-content: center;
+  color: #7a77f2;
+  font-weight: 900;
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+.text-alreadyAccount {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
 }

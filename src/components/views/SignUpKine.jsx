@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Card, Form } from 'react-bootstrap';
+import { Card, Form, Col } from 'react-bootstrap';
 import avatar from '../../media/avatar.png';
 import './SignUp.css';
 
@@ -15,17 +15,8 @@ export default function SignUpKine() {
       setIsKine(false);
     }
   }
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastname] = useState('');
-  const [birthday, setBirthday] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [RPPS, setRPPS] = useState('');
-  const [SIRET, setSIRET] = useState('');
-  const [address, setAddress] = useState('');
-  const [phone, setPhone] = useState('');
-  const [country, setCountry] = useState('');
-  const [website, setWebSite] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isError, setIsError] = useState('');
   const [validation, setValidation] = useState(false);
@@ -84,10 +75,6 @@ export default function SignUpKine() {
     }
   };
 
-  // const handleChange = (event) => {
-  //   setCurrency(event.target.value);
-  // };
-
   return (
     <div className="container-form">
       <div className="container-card-form">
@@ -108,8 +95,6 @@ export default function SignUpKine() {
                     margin="dense"
                     variant="outlined"
                     name="lastname"
-                    value={lastname}
-                    onChange={(e) => setLastname(e.target.value)}
                     required
                   />
                 </Form.Group>
@@ -123,22 +108,18 @@ export default function SignUpKine() {
                     margin="dense"
                     variant="outlined"
                     name="firstname"
-                    value={firstname}
-                    onChange={(e) => setFirstname(e.target.value)}
                     required
                   />
                 </Form.Group>
                 <Form.Group className="container-form">
                   <Form.Control
-                    htmlFor="birthday"
-                    id="birthday"
+                    htmlFor="birthdate"
+                    id="birthdate"
                     defaultValue=""
                     margin="dense"
                     variant="outlined"
-                    name="birthday"
+                    name="birthdate"
                     type="date"
-                    value={birthday}
-                    onChange={(e) => setBirthday(e.target.value)}
                     required
                   />
                 </Form.Group>
@@ -173,7 +154,7 @@ export default function SignUpKine() {
                     required
                   />
                 </Form.Group>
-                <span>{isErrorMail}</span>
+                <span className="alertError">{isErrorMail}</span>
                 <div className="signUpForm">
                   <Form.Group className="container-form">
                     <Form.Control
@@ -184,8 +165,8 @@ export default function SignUpKine() {
                       placeholder=" Password"
                       margin="dense"
                       variant="outlined"
-                      name="passeword"
-                      type="passeword"
+                      name="password"
+                      type="password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
@@ -207,7 +188,7 @@ export default function SignUpKine() {
                       required
                     />
                   </Form.Group>
-                  <span>{isError}</span>
+                  <span className="alertError">{isError}</span>
                   <label className="field" htmlFor="RPPS">
                     {isKine ? (
                       <Form.Group className="container-form">
@@ -216,8 +197,6 @@ export default function SignUpKine() {
                           type="number"
                           name="RPPS"
                           placeholder=" RPPS : "
-                          value={RPPS}
-                          onChange={(e) => setRPPS(e.target.value)}
                           required
                         />
                       </Form.Group>
@@ -232,8 +211,8 @@ export default function SignUpKine() {
                       </Form.Group>
                     )}
                   </label>
-                  <div>
-                    <div>
+                  <div className="container-choose-radio">
+                    <div className="container-radio-kine">
                       <Form.Group className="container-form">
                         <Form.Control
                           type="radio"
@@ -247,7 +226,7 @@ export default function SignUpKine() {
                       </Form.Group>
                     </div>
 
-                    <div>
+                    <div className="container-radio-entreprise">
                       <Form.Group className="container-form">
                         <Form.Control
                           type="radio"
@@ -270,8 +249,6 @@ export default function SignUpKine() {
                           type="text"
                           name="siret"
                           placeholder=" Siret :"
-                          value={SIRET}
-                          onChange={(e) => setSIRET(e.target.value)}
                           required
                         />
                       </Form.Group>
@@ -283,8 +260,7 @@ export default function SignUpKine() {
                     <Form.Control
                       as="select"
                       defaultValue="Choose..."
-                      value={country}
-                      onChange={(e) => setCountry(e.target.value)}
+                      name="country"
                     >
                       <optgroup label="Europe">
                         <option value="france">France</option>
@@ -314,8 +290,6 @@ export default function SignUpKine() {
                       variant="outlined"
                       name="address"
                       type="address"
-                      value={address}
-                      onChange={(e) => setAddress(e.target.value)}
                       required
                     />
                   </Form.Group>
@@ -330,8 +304,6 @@ export default function SignUpKine() {
                       variant="outlined"
                       name="phone"
                       type="phone"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
                       required
                     />
                   </Form.Group>
@@ -346,14 +318,24 @@ export default function SignUpKine() {
                       variant="outlined"
                       name="siteWeb"
                       type="siteWeb"
-                      value={website}
-                      onChange={(e) => setWebSite(e.target.value)}
                     />
+                  </Form.Group>
+                  <Form.Group className="check-validation">
+                    <Col sm={{ span: 10, offset: 2 }}>
+                      <Form.Check label="J'accepte les conditions générales d'utilisation" />
+                    </Col>
                   </Form.Group>
                   <div className="container-button">
                     <button className="button-signup" type="submit">
                       Créer mon compte
                     </button>
+                  </div>
+                  <hr />
+                  <div className="text-alreadyAccount">
+                    <p>J&apos;ai déjà un compte</p>
+                  </div>
+                  <div className="connecter">
+                    <p>Me connecter</p>
                   </div>
                 </div>
               </form>
