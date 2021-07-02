@@ -1,39 +1,10 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-console */
 import axios from 'axios';
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import MenuItem from '@material-ui/core/MenuItem';
+import { Card, Form, Col } from 'react-bootstrap';
 import avatar from '../../media/avatar.png';
 import './SignUp.css';
 
-const currencies = [
-  {
-    value: ['France', 'Espagne', 'Italie'],
-    label: 'Europe',
-  },
-  {
-    value: ['Canada', 'Etat-unis'],
-    label: 'Amérique',
-  },
-];
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: '100%',
-  },
-}));
-
 export default function SignUpKine() {
-  const classes = useStyles();
-  const [currency, setCurrency] = React.useState('EUR');
   const [formContent, setFormContent] = useState({});
   const [isKine, setIsKine] = useState(true);
   function handleCheck(event) {
@@ -103,246 +74,272 @@ export default function SignUpKine() {
     }
   };
 
-  const handleChange = (event) => {
-    setCurrency(event.target.value);
-  };
-
   return (
     <div className="container-form">
-      <div>
+      <div className="container-card-form">
         <div className="signUpForm">
-          <form onSubmit={handleSubmit}>
-            <div className="container-avatar">
-              <img className="avatar" src={avatar} alt="avatar" />
-            </div>
-            <TextField
-              htmlFor="lastname"
-              label="Nom"
-              id="lastname"
-              defaultValue=""
-              className={classes.textField}
-              margin="dense"
-              variant="outlined"
-              name="lastname"
-              required
-            />
-            <TextField
-              htmlFor="firstname"
-              label="Prénom"
-              id="firstname"
-              defaultValue=""
-              className={classes.textField}
-              margin="dense"
-              variant="outlined"
-              name="firstname"
-              required
-            />
-            <TextField
-              htmlFor="birthdate"
-              id="birthdate"
-              defaultValue=""
-              className={classes.textField}
-              margin="dense"
-              variant="outlined"
-              name="birthdate"
-              type="date"
-              required
-            />
-            <TextField
-              htmlFor="email"
-              label="Email"
-              id="email"
-              defaultValue=""
-              className={classes.textField}
-              margin="dense"
-              variant="outlined"
-              name="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <TextField
-              htmlFor="confirmEmail"
-              label="Confirmer l'email"
-              id="confirmEmail"
-              defaultValue=""
-              className={classes.textField}
-              margin="dense"
-              variant="outlined"
-              name="confirmEmail"
-              value={confirmEmail}
-              onChange={(e) => checkValidationMail(e)}
-              required
-            />
-            <span>{isErrorMail}</span>
-            <div className="signUpForm">
-              <TextField
-                htmlFor="password"
-                label="Mot de passe"
-                id="password"
-                defaultValue=""
-                className={classes.textField}
-                margin="dense"
-                variant="outlined"
-                name="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <TextField
-                htmlFor="confirmPassword"
-                label="Confirmer mot de passe"
-                id="confirmPassword"
-                defaultValue=""
-                className={classes.textField}
-                margin="dense"
-                variant="outlined"
-                name="confirmPassword"
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => checkValidation(e)}
-                required
-              />
-              <span>{isError}</span>
-              <label className="field" htmlFor="RPPS">
-                {isKine ? (
-                  <TextField
-                    id="RPPS"
-                    type="number"
-                    name="RPPS"
-                    placeholder="RPPS : "
+          <Card className="card-signup">
+            <Card.Body className="card-body-signup">
+              <form onSubmit={handleSubmit}>
+                <div className="container-avatar">
+                  <img className="avatar" src={avatar} alt="avatar" />
+                </div>
+                <Form.Group className="container-form">
+                  <Form.Control
+                    htmlFor="lastname"
+                    label="Nom"
+                    id="lastname"
+                    defaultValue=""
+                    placeholder=" Nom"
+                    margin="dense"
+                    variant="outlined"
+                    name="lastname"
                     required
                   />
-                ) : (
-                  <TextField
-                    id="RPPS"
-                    type="number"
-                    name="RPPS"
-                    placeholder="RPPS : "
-                  />
-                )}
-              </label>
-              <div>
-                <div>
-                  <label className="check" htmlFor="kineCheck">
-                    <input
-                      type="radio"
-                      id="kineCheck"
-                      name="role_id"
-                      value="1"
-                      checked={isKine}
-                      onChange={handleCheck}
-                    />
-                    Je suis un.e kiné
-                  </label>
-                </div>
-
-                <div>
-                  <label className="check" htmlFor="companyCheck">
-                    <input
-                      type="radio"
-                      id="companyCheck"
-                      name="role_id"
-                      value="2"
-                      checked={!isKine}
-                      onChange={handleCheck}
-                    />
-                    Je suis une entreprise
-                  </label>
-                </div>
-              </div>
-              <label className="field" htmlFor="SIRET">
-                {!isKine ? (
-                  <TextField
-                    className="siret"
-                    id="SIRET"
-                    type="text"
-                    name="SIRET"
-                    placeholder="Siret :"
+                </Form.Group>
+                <Form.Group className="container-form">
+                  <Form.Control
+                    htmlFor="firstname"
+                    label="Prénom"
+                    id="firstname"
+                    defaultValue=""
+                    placeholder=" Prénom"
+                    margin="dense"
+                    variant="outlined"
+                    name="firstname"
                     required
                   />
-                ) : (
-                  ''
-                )}
-              </label>
-              <TextField
-                htmlFor="country"
-                id="country"
-                select
-                label="Select your country"
-                value={currency}
-                onChange={handleChange}
-                className={classes.textField}
-                name="country"
-              >
-                {currencies.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
+                </Form.Group>
+                <Form.Group className="container-form">
+                  <Form.Control
+                    htmlFor="birthdate"
+                    id="birthdate"
+                    defaultValue=""
+                    margin="dense"
+                    variant="outlined"
+                    name=" Date de naissance"
+                    type="date"
+                    required
+                  />
+                </Form.Group>
+                <Form.Group className="container-form">
+                  <Form.Control
+                    htmlFor="email"
+                    label="Email"
+                    id="email"
+                    defaultValue=""
+                    placeholder=" Email"
+                    margin="dense"
+                    variant="outlined"
+                    name="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group className="container-form">
+                  <Form.Control
+                    htmlFor="confirmeEmail"
+                    label="Confirmer l'email"
+                    id="confirmeEmail"
+                    defaultValue=""
+                    placeholder=" Confirme ton email"
+                    margin="dense"
+                    variant="outlined"
+                    name="confirmeEmail"
+                    value={confirmEmail}
+                    onChange={(e) => checkValidationMail(e)}
+                    required
+                  />
+                </Form.Group>
+                <span className="alertError">{isErrorMail}</span>
+                <div className="signUpForm">
+                  <Form.Group className="container-form">
+                    <Form.Control
+                      htmlFor="password"
+                      label="Mot de passe"
+                      id="password"
+                      defaultValue=""
+                      placeholder=" Mot de passe"
+                      margin="dense"
+                      variant="outlined"
+                      name="password"
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group className="container-form">
+                    <Form.Control
+                      htmlFor="confirmPassword"
+                      label="Confirmer mot de passe"
+                      id="confirmPassword"
+                      defaultValue=""
+                      placeholder=" Confirme ton mot de passe"
+                      margin="dense"
+                      variant="outlined"
+                      name="confirmPassword"
+                      type="password"
+                      value={confirmPassword}
+                      onChange={(e) => checkValidation(e)}
+                      required
+                    />
+                  </Form.Group>
+                  <span className="alertError">{isError}</span>
+                  <label className="field" htmlFor="RPPS">
+                    {isKine ? (
+                      <Form.Group className="container-form">
+                        <Form.Control
+                          id="firstname"
+                          type="number"
+                          name="RPPS"
+                          placeholder=" RPPS : "
+                          required
+                        />
+                      </Form.Group>
+                    ) : (
+                      <Form.Group className="container-form">
+                        <Form.Control
+                          id="firstname"
+                          type="number"
+                          name="RPPS"
+                          placeholder=" RPPS : "
+                        />
+                      </Form.Group>
+                    )}
+                  </label>
 
-              <label className="field" htmlFor="country">
-                <select id="country" name="country" required>
-                  <optgroup label="Europe">
-                    <option value="france">France</option>
-                    <option value="espagne">Espagne</option>
-                    <option value="italie">Italie</option>
-                    <option value="royaume-uni">Royaume-Uni</option>
-                  </optgroup>
-                  <optgroup label="Amérique">
-                    <option value="canada">Canada</option>
-                    <option value="etats-unis">Etats-Unis</option>
-                  </optgroup>
-                  <optgroup label="Asie">
-                    <option value="chine">Chine</option>
-                    <option value="japon">Japon</option>
-                  </optgroup>
-                </select>
-              </label>
+                  <div className="container-choose-radio">
+                    <div className="container-radio-kine">
+                      <Form.Group className="container-form">
+                        <Form.Control
+                          type="radio"
+                          id="kineCheck"
+                          name="role_id"
+                          value="1"
+                          checked={isKine}
+                          onChange={handleCheck}
+                        />
+                        Je suis un.e kiné
+                      </Form.Group>
+                    </div>
+                    <div className="container-radio-entreprise">
+                      <Form.Group className="container-form">
+                        <Form.Control
+                          type="radio"
+                          id="companyCheck"
+                          name="role_id"
+                          value="2"
+                          checked={!isKine}
+                          onChange={handleCheck}
+                        />
+                        Je suis une entreprise
+                      </Form.Group>
+                    </div>
+                  </div>
+                  <label className="field" htmlFor="siret">
+                    {!isKine ? (
+                      <Form.Group className="container-form">
+                        <Form.Control
+                          className="siret"
+                          id="siret"
+                          type="text"
+                          name="siret"
+                          placeholder=" Siret :"
+                          required
+                        />
+                      </Form.Group>
+                    ) : (
+                      ''
+                    )}
+                  </label>
+                  <Form.Group className="container-form">
+                    <Form.Control
+                      as="select"
+                      defaultValue="Choose..."
+                      name="country"
+                    >
+                      <optgroup label="Europe">
+                        <option value="france">France</option>
+                        <option value="espagne">Espagne</option>
+                        <option value="italie">Italie</option>
+                        <option value="royaume-uni">Royaume-Uni</option>
+                      </optgroup>
+                      <optgroup label="Amérique">
+                        <option value="canada">Canada</option>
+                        <option value="etats-unis">Etats-Unis</option>
+                      </optgroup>
+                      <optgroup label="Asie">
+                        <option value="chine">Chine</option>
+                        <option value="japon">Japon</option>
+                      </optgroup>
+                    </Form.Control>
+                  </Form.Group>
 
-              <TextField
-                htmlFor="address"
-                label="Adresse"
-                id="address"
-                defaultValue=""
-                className={classes.textField}
-                margin="dense"
-                variant="outlined"
-                name="address"
-                type="address"
-                required
-              />
-              <TextField
-                htmlFor="phone"
-                label="Numéro de téléphone"
-                id="phone"
-                defaultValue=""
-                className={classes.textField}
-                margin="dense"
-                variant="outlined"
-                name="phone"
-                type="phone"
-                required
-              />
-              <TextField
-                htmlFor="siteWeb"
-                label="Site web"
-                id="siteWeb"
-                defaultValue=""
-                className={classes.textField}
-                margin="dense"
-                variant="outlined"
-                name="siteWeb"
-                type="siteWeb"
-              />
-              <button className="button-signup" type="submit">
-                Créer mon compte
-              </button>
-            </div>
-          </form>
+                  <Form.Group className="container-form">
+                    <Form.Control
+                      htmlFor="address"
+                      label="Adresse"
+                      id="address"
+                      defaultValue=""
+                      placeholder=" Adresse"
+                      margin="dense"
+                      variant="outlined"
+                      name="address"
+                      type="address"
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group className="container-form">
+                    <Form.Control
+                      htmlFor="phone"
+                      label="Numéro de téléphone"
+                      id="phone"
+                      defaultValue=""
+                      placeholder=" Numéro de téléphone"
+                      margin="dense"
+                      variant="outlined"
+                      name="phone"
+                      type="phone"
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group className="container-form">
+                    <Form.Control
+                      htmlFor="siteWeb"
+                      label="Site web"
+                      id="siteWeb"
+                      defaultValue=""
+                      placeholder=" Site web"
+                      margin="dense"
+                      variant="outlined"
+                      name="siteWeb"
+                      type="siteWeb"
+                    />
+                  </Form.Group>
+                  <Form.Group className="check-validation">
+                    <Col sm={{ span: 10, offset: 2 }}>
+                      <Form.Check label="J'accepte les conditions générales d'utilisation" />
+                    </Col>
+                  </Form.Group>
+                  <div className="container-button">
+                    <button className="button-signup" type="submit">
+                      Créer mon compte
+                    </button>
+                  </div>
+                  <hr />
+                  <div className="text-alreadyAccount">
+                    <p>J&apos;ai déjà un compte</p>
+                  </div>
+                  <div className="connecter">
+                    <p>Me connecter</p>
+                  </div>
+                </div>
+              </form>
+            </Card.Body>
+          </Card>
         </div>
       </div>
     </div>

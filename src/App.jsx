@@ -1,10 +1,10 @@
 import React from 'react';
-import DocumentationForm from './components/views/DocumentationForm';
+import GeneralRouter from './components/commons/GeneralRouter';
 
 function App() {
   return (
     <div className="App">
-      <DocumentationForm />
+      <GeneralRouter />
     </div>
   );
 }
