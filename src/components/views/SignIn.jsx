@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 import React, { useState } from 'react';
 // import backgroundkine from '../../media/backgroundkine.png';
@@ -22,9 +23,8 @@ export default function SignIn() {
         password,
       })
       .then((response) => {
-        console.log(response.data);
-        localStorage.setItem('TOKEN', response.data.auth);
-        localStorage.setItem('USERID', response.data.id);
+        localStorage.setItem('USERID', response.data.user.id);
+        localStorage.setItem('TOKEN', response.data.token);
       });
   };
 

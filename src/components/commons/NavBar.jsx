@@ -35,7 +35,7 @@ function NavBar() {
             alt="logo formation navbar"
           />
         </Link>
-        <Link to="/utilisateur">
+        <Link to="/profil">
           <img className="logo-navbar" src={profil} alt="logo user navbar" />
         </Link>
       </div>

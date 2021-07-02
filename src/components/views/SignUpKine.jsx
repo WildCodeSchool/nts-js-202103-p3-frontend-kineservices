@@ -96,7 +96,6 @@ export default function SignUpKine() {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
           formContent,
-          setFormContent,
         })
         .then((response) => {
           console.log(response);
@@ -164,9 +163,9 @@ export default function SignUpKine() {
               required
             />
             <TextField
-              htmlFor="confirmeEmail"
+              htmlFor="confirmEmail"
               label="Confirmer l'email"
-              id="confirmemail"
+              id="confirmEmail"
               defaultValue=""
               className={classes.textField}
               margin="dense"
