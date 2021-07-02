@@ -67,7 +67,6 @@ export default function SignUpKine() {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
           formContent,
-          setFormContent,
         })
         .then((response) => {
           console.log(response);
@@ -211,6 +210,7 @@ export default function SignUpKine() {
                       </Form.Group>
                     )}
                   </label>
+
                   <div className="container-choose-radio">
                     <div className="container-radio-kine">
                       <Form.Group className="container-form">
@@ -225,7 +225,6 @@ export default function SignUpKine() {
                         Je suis un.e kiné
                       </Form.Group>
                     </div>
-
                     <div className="container-radio-entreprise">
                       <Form.Group className="container-form">
                         <Form.Control

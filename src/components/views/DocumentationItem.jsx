@@ -11,9 +11,6 @@ function DocumentationItem(props) {
       <p className="description">{description}</p>
       <p>{category}</p>
       <p>Prix : {price}€</p>
-      <button type="button" className="buy-button">
-        Découvrir !
-      </button>
     </div>
   );
 }
