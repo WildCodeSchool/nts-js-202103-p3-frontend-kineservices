@@ -1,17 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .home {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.intro {
-  display: flex;
-  justify-content: center;
-}
+
 .prices {
-  max-width: 375px;
+  max-width: 100%;
+}
+
+.landing-page-container {
+  height: 450px;
+  width: 100%;
+}
+
+.landing-page {
+  position: absolute;
+}
+
+.landing-page img {
+  max-width: 100%;
+  height: 450px;
+}
+
+.intro {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro p {
+  text-align: center;
+  margin: 1%;
+  text-shadow: white 3px 0 2px;
+  font-size: x-large;
+  margin-top: 7%;
+  font-family: 'Roboto', sans-serif;
+}
+.intro h1 {
+  text-shadow: white 3px 0 2px;
+  font-size: 40px;
+  margin-top: 8%;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+.intro h3 {
+  text-shadow: white 3px 0 2px;
+  font-size: xx-large;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.tarif-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 10%;
 }
 
 .signUp {
   display: flex;
   margin: 20px;
+  background: #7a77f2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 5%;
+  width: 170px;
+  justify-content: center;
+  color: white;
+  font-size: 23px;
+}
+
+hr {
+  border: none;
+  border: 2px double #333;
+  overflow: visible;
+  text-align: center;
+  width: 90%;
+  background-color: #0602fa;
+}
+
+span {
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.kine-container {
+  margin-bottom: 5%;
 }

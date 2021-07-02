@@ -24,7 +24,7 @@ function DocumentationForm() {
       .catch((error) => alert(JSON.stringify(error)));
   };
 
-  useEffect(function () {
+  useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/category`)
       .then((response) => {
