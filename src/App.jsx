@@ -13,7 +13,6 @@ function App() {
       <DocumentationList />
       <SignUpKine />
       <SignIn />
-      <GeneralRouter />
     </div>
   );
 }
