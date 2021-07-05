@@ -4,20 +4,39 @@ import './Profile.css';
 
 function Profile() {
   const [user, setUser] = useState(null);
+  const [updateUSer, setUpdateUser] = useState(null);
   const userId = localStorage.getItem('USERID');
 
-  async function getUser() {
+  const getUser = async () => {
+    try {
+      await axios
+        .post(`${process.env.REACT_APP_BACKEND_URL}/profil/${userId}`, {
+          userId,
+        })
+        .then((response) => {
+          setUser(response.data);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const putUser = async () => {
     await axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/profil/${userId}`, { userId })
+      .put(`${process.env.REACT_APP_BACKEND_URL}/profil/${userId}`, {
+        userId,
+      })
       .then((response) => {
-        setUser(response.data);
+        setUpdateUser(response);
       });
-  }
+    console.log(updateUSer);
+  };
 
   useEffect(() => {
     getUser();
+    putUser();
   }, []);
-
+  console.log(user);
   return (
     <div className="Container_profil">
       <div>
