@@ -22,6 +22,7 @@ export default function SignIn() {
         password,
       })
       .then((response) => {
+        console.log(response);
         localStorage.setItem('USERID', response.data.user.id);
         localStorage.setItem('TOKEN', response.data.token);
       });

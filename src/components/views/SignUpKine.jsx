@@ -73,7 +73,7 @@ export default function SignUpKine() {
         });
     }
   };
-
+  console.log(formContent);
   return (
     <div className="container-form">
       <div className="container-card-form">
@@ -117,7 +117,7 @@ export default function SignUpKine() {
                     defaultValue=""
                     margin="dense"
                     variant="outlined"
-                    name=" Date de naissance"
+                    name="birthdate"
                     type="date"
                     required
                   />
