@@ -7,7 +7,12 @@
   position: fixed;
   bottom: 0;
   background-size: 40px;
-  background-color: #ffe400;
+  background-color: white;
+  color: black;
+}
+
+.logo-navbar:hover {
+  color: #FFE400;
 }
 
 .logo-navbar {
