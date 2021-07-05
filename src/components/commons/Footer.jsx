@@ -21,11 +21,12 @@ const Footer = () => {
       </div>
       <ul className="conditions">
         <li className="conditionElement">
-          Conditions générales d&#039;utilisation{' '}
+          Conditions générales d&#039;utilisation
+          <span className="disc"> • </span>
         </li>
         <li className="conditionElement">
-          {' '}
-          Politique relative à la protection des données personnelles{' '}
+          Politique relative à la protection des données personnelles
+          <span className="disc"> • </span>
         </li>
         <li className="conditionElement"> Politique en matière de cookies</li>
       </ul>
