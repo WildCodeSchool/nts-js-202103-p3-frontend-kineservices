@@ -36,7 +36,7 @@ export default function SignIn() {
         <Card className="card-login">
           <Card.Body className="card-body-login">
             <div className="container-title">
-              <h1 className="title">J&apos;ai déjà un compte sur Kinés.fr</h1>
+              <h1 className="title">J&apos;ai déjà un compte sur Kinés.fr </h1>
             </div>
             <div className="signInForm-container">
               <form className="signInForm" onSubmit={handleSubmit}>
