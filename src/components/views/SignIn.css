@@ -12,7 +12,7 @@
   margin-top: 10%;
 }
 .title {
-  width: 55%;
+  width: 90%;
   text-align: center;
   font-family: 'Roboto';
   font-weight: normal;
@@ -61,8 +61,11 @@
   font-weight: bold;
   text-align: center;
 }
-.background {
-  display: none;
+
+@media screen and (max-width: 768px) {
+  .background {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -71,10 +74,14 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .container-title {
+    margin-top:5vw;
+    
+  }
   .card-body-login {
     border: solid 1 px;
     box-shadow: 0 10px 10px rgb(134, 134, 134);
-    border-radius: 50px;
+    border-radius: 30px;
     background-color: #fff;
   }
 
@@ -97,4 +104,25 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .text-check {
+    margin-top:1.5vw;
+  }
+  .container-forgotpassword {
+    height : 2vw;
+    margin-bottom:1vw;
+  }
+
+  .text-newMember {
+    margin-top: 0.1vw;
+    height:3vw;
+  }
+  .button-signIn {
+    margin-bottom: 1vw;
+  }
+  .textSignUp {
+    height:2vw;
+    margin-bottom:1vw;
+  }
+
 }

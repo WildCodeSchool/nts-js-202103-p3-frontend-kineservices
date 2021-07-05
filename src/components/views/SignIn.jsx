@@ -61,7 +61,7 @@ export default function SignIn() {
                   />
                 </Form.Group>
                 <div className="container-forgotpassword">
-                  <p>Mot de passe oublié ?</p>
+                  <p className="textSignUp">Mot de passe oublié ?</p>
                 </div>
                 <Form.Group className="check-validation">
                   <Col sm={{ span: 10, offset: 2 }}>
@@ -78,10 +78,10 @@ export default function SignIn() {
                 </div>
                 <hr />
                 <div className="text-newMember">
-                  <p>Je suis nouveau !</p>
+                  <p className="textSignUp">Je suis nouveau !</p>
                 </div>
                 <div className="inscription">
-                  <p>M&apos;inscrire</p>
+                  <p className="textSignUp">M&apos;inscrire</p>
                 </div>
               </form>
             </div>
