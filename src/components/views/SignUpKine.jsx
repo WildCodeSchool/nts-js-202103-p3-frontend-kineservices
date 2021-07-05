@@ -60,9 +60,9 @@ export default function SignUpKine() {
         console.log(response);
       });
     if (!validation) {
-      alert('cant possible');
+      console.log('cant possible');
     } else if (!validationMail) {
-      alert('cant possible');
+      console.log('cant possible');
     } else {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
