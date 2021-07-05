@@ -6,7 +6,7 @@ function FormationForm() {
   const [select, setSelect] = useState([]);
   const [formation, setFormation] = useState({
     title: '',
-    category_id: 1,
+    category_id: '1',
     date: '',
     price: '',
     website: '',
