@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { rename } from 'fs';
 import React, { useState } from 'react';
 import { Card, Form, Col } from 'react-bootstrap';
 import avatar from '../../media/avatar.png';
@@ -73,16 +74,38 @@ export default function SignUpKine() {
         });
     }
   };
-  console.log(formContent);
+  rename(
+    formContent.picture,
+    `public/images${formContent.picture}`,
+    (error) => {
+      if (error) {
+        throw error;
+      }
+      console.log('rename complete');
+    }
+  );
+  console.log(formContent.picture);
   return (
     <div className="container-form">
       <div className="container-card-form">
         <div className="signUpForm">
           <Card className="card-signup">
             <Card.Body className="card-body-signup">
-              <form onSubmit={handleSubmit}>
+              <form
+                method="POST"
+                encType="multipart/form-data"
+                action="uploadfile"
+                onSubmit={handleSubmit}
+              >
                 <div className="container-avatar">
                   <img className="avatar" src={avatar} alt="avatar" />
+                  <input
+                    className="avatar"
+                    src={avatar}
+                    alt="avatar"
+                    type="file"
+                    name="picture"
+                  />
                 </div>
                 <Form.Group className="container-form">
                   <Form.Control
