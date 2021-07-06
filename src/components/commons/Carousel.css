@@ -52,7 +52,13 @@ p {
   font-size: 1rem;
 }
 
-.carousel-inner h1, p {
+.carousel .carousel-inner h1 {
+  background-color: rgb(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 9px;
+}
+
+.subtitles {
   background-color: rgb(255, 255, 255, 0.8);
   padding: 10px;
   border-radius: 9px;

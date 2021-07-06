@@ -2,8 +2,8 @@ import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import Footer from '../commons/Footer';
-// import { Carousel } from 'bootstrap';
 import landingPageImage from '../../media/image_home.jpg';
+import Carousel from '../commons/Carousel';
 
 export default function Home() {
   return (
@@ -24,14 +24,14 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <h1>Les formations</h1>
-        {/* <div>
+        <h1 className="title-home">Les formations</h1>
+        <div>
           <Carousel />
-        </div> */}
+        </div>
       </div>
       <div className="tarif-container">
         <div>
-          <h1>Nos tarifs</h1>
+          <h1 className="title-home">Nos tarifs</h1>
         </div>
         <div className="kine-container">
           <h1>Je suis un kiné</h1>

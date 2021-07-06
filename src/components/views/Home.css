@@ -87,6 +87,10 @@
   color: white;
 }
 
+.title-home {
+  text-align: center;
+}
+
 hr {
   border: none;
   border: 2px double #333;
