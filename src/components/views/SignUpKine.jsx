@@ -60,8 +60,7 @@ export default function SignUpKine() {
         console.log(response);
       });
     if (!validation) {
-      alert('cant possible');
-    } else if (!validationMail) {
+      console.log(validationMail);
       alert('cant possible');
     } else {
       axios
