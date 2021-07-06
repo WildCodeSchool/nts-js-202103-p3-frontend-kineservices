@@ -22,9 +22,9 @@ export default function SignIn() {
         email,
         password,
       })
-      .then((response) => {
-        localStorage.setItem('USERID', response.data.user.id);
-        localStorage.setItem('TOKEN', response.data.token);
+      .then((results) => {
+        localStorage.setItem('USERID', results.data.user.id);
+        localStorage.setItem('TOKEN', results.data.token);
       });
   };
 

@@ -8,7 +8,6 @@ export default function SignUpKine() {
   const [formContent, setFormContent] = useState({});
   const [isKine, setIsKine] = useState(true);
   function handleCheck(event) {
-    console.log(event.target.name, event.target.value);
     if (event.target.value === '1') {
       setIsKine(true);
     } else {
@@ -52,24 +51,18 @@ export default function SignUpKine() {
       content[event.target[i].name] = event.target[i].value;
     }
     setFormContent(content);
-    axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-        formContent,
-      })
-      .then((response) => {
-        console.log(response);
-      });
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
+      formContent,
+    });
     if (!validation) {
+      console.log('passwords do not match');
+    } else if (!validationMail) {
+      console.log('emails do not match');
       console.log(validationMail);
-      alert('cant possible');
     } else {
-      axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-          formContent,
-        })
-        .then((response) => {
-          console.log(response);
-        });
+      axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
+        formContent,
+      });
     }
   };
 
@@ -79,9 +72,21 @@ export default function SignUpKine() {
         <div className="signUpForm">
           <Card className="card-signup">
             <Card.Body className="card-body-signup">
-              <form onSubmit={handleSubmit}>
+              <form
+                method="POST"
+                encType="multipart/form-data"
+                action="uploadfile"
+                onSubmit={handleSubmit}
+              >
                 <div className="container-avatar">
                   <img className="avatar" src={avatar} alt="avatar" />
+                  <input
+                    className="avatar"
+                    src={avatar}
+                    alt="avatar"
+                    type="file"
+                    name="picture"
+                  />
                 </div>
                 <Form.Group className="container-form">
                   <Form.Control
@@ -116,7 +121,7 @@ export default function SignUpKine() {
                     defaultValue=""
                     margin="dense"
                     variant="outlined"
-                    name=" Date de naissance"
+                    name="birthdate"
                     type="date"
                     required
                   />
