@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import Footer from '../commons/Footer';
 // import { Carousel } from 'bootstrap';
 import landingPageImage from '../../media/image_home.jpg';
 
@@ -67,6 +68,7 @@ export default function Home() {
           </button>
         </Link>
       </div>
+      <Footer />
     </div>
   );
 }
