@@ -11,6 +11,7 @@
   align-items: center;
   margin-top: 10%;
 }
+
 .title {
   width: 90%;
   text-align: center;
@@ -26,6 +27,7 @@
   font-family: 'Roboto';
   font-size: 14px;
 }
+
 .text-check {
   font-size: 18px;
   font-family: 'Roboto';
@@ -33,10 +35,12 @@
   font-weight: bold;
   margin-left: 2%;
 }
+
 .container-button-signIn {
   display: flex;
   justify-content: center;
 }
+
 .button-signIn {
   font-family: 'Roboto';
   width: 85%;
@@ -49,11 +53,13 @@
   font-size: 24px;
   margin-bottom: 10%;
 }
+
 .text-newMember {
   font-family: 'Roboto';
   text-align: center;
   font-size: 18px;
 }
+
 .inscription {
   font-size: 18px;
   font-family: 'Roboto';
@@ -74,9 +80,9 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
   .container-title {
-    margin-top:5vw;
-    
+    margin-top: 25%;
   }
   .card-body-login {
     border: solid 1 px;
@@ -94,11 +100,13 @@
     display: flex;
     justify-content: center;
   }
+
   .background {
     position: absolute;
     width: 100%;
     height: 100%;
   }
+
   .container-title {
     display: flex;
     flex-direction: column;
@@ -106,23 +114,24 @@
   }
 
   .text-check {
-    margin-top:1.5vw;
+    margin-top: 1.5vw;
   }
+
   .container-forgotpassword {
-    height : 2vw;
-    margin-bottom:1vw;
+    height: 1.5vw;
+    margin-bottom: 1vw;
   }
 
   .text-newMember {
-    margin-top: 0.1vw;
-    height:3vw;
-  }
-  .button-signIn {
-    margin-bottom: 1vw;
-  }
-  .textSignUp {
-    height:2vw;
-    margin-bottom:1vw;
+    height: 3vw;
   }
 
+  .button-signIn {
+    margin-bottom: 3vw;
+  }
+
+  .textSignUp {
+    height: 2.1vw;
+    margin-bottom: 2vw;
+  }
 }
