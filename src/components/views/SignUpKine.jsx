@@ -56,9 +56,9 @@ export default function SignUpKine() {
     });
 
     if (!validation) {
-      console.log('passwords not matches');
+      console.log('passwords do not match');
     } else if (!validationMail) {
-      console.log('emails not matches');
+      console.log('emails do not match');
     } else {
       axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
         formContent,
