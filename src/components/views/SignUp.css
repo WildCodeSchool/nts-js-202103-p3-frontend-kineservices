@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .signUpForm {
   display: flex;
   flex-direction: column;
@@ -51,7 +53,7 @@ input#siret.siret.form-control {
   border: 1px solid #7a77f2;
   box-sizing: border-box;
   border-radius: 8px;
-  width: 80%;
+  width: 85%;
   display: flex;
   margin: 1%;
   font-size: 16px;
@@ -127,7 +129,7 @@ input.form-check-input {
 }
 hr {
   border: 1px solid #7a77f2;
-  width: 80%;
+  width: 60%;
 }
 .connecter {
   display: flex;
