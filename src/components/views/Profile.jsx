@@ -4,7 +4,7 @@ import './Profile.css';
 
 function Profile() {
   const [user, setUser] = useState(null);
-  const [updateUSer, setUpdateUser] = useState({
+  const [updateUser, setUpdateUser] = useState({
     RPPS: '',
     SIRET: '',
     address: '',
@@ -43,14 +43,15 @@ function Profile() {
       .then((response) => {
         setUpdateUser(response);
       });
-    // clg : en attendant de creer le form pour update user
-    console.log(updateUSer);
   };
+  // updateUser : preaparation de la route de mise a jour du profile
+  console.log(updateUser);
 
   useEffect(() => {
     getUser();
     putUser();
   }, []);
+
   return (
     <div className="Container_profil">
       <div>
