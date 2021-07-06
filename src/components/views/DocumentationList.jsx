@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import DocumentationItem from './DocumentationItem';
+import './DocumentationList.css';
 
 const DocumentationList = () => {
   const [documentations, setDocumentations] = useState([]);
@@ -12,7 +13,8 @@ const DocumentationList = () => {
       }, []);
   });
   return (
-    <div>
+    <>
+      <h1 className="alldoc">Toutes les documentations</h1>
       {documentations.map((documentation) => {
         return (
           <DocumentationItem
@@ -24,7 +26,7 @@ const DocumentationList = () => {
           />
         );
       })}
-    </div>
+    </>
   );
 };
 

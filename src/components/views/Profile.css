@@ -1,0 +1,22 @@
+.container_image_avatar {
+  display: flex;
+  align-items: flex-end;
+  align-content: stretch;
+  justify-content: space-around;
+}
+
+.style_avatar {
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+.container_bouton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bouton {
+  width: 240px;
+  heigth: 94px;
+}
