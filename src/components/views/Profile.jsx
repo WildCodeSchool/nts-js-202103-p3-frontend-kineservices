@@ -43,14 +43,13 @@ function Profile() {
       .then((response) => {
         setUpdateUser(response);
       });
-    console.log(updateUSer);
   };
 
   useEffect(() => {
     getUser();
     putUser();
   }, []);
-  console.log(user);
+
   return (
     <div className="Container_profil">
       <div>
