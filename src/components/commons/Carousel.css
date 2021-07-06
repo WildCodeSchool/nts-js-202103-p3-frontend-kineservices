@@ -1,0 +1,65 @@
+.carousel {
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.carousel-inner {
+  height: 100%;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+.carousel-inner .left {
+  flex: 5%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.carousel-inner .center {
+  flex: 80%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  text-align: center;
+}
+
+.carousel-inner .right {
+  flex: 5%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.center h1 {
+  font-size: 3rem;
+  font-family: 'Payfair Display';
+}
+
+p {
+  font-size: 1rem;
+}
+
+.carousel .carousel-inner h1 {
+  background-color: rgb(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 9px;
+}
+
+.subtitles {
+  background-color: rgb(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 9px;
+}
