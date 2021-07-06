@@ -54,11 +54,11 @@ export default function SignUpKine() {
     axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
       formContent,
     });
-
     if (!validation) {
       console.log('passwords do not match');
     } else if (!validationMail) {
       console.log('emails do not match');
+      console.log(validationMail);
     } else {
       axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
         formContent,
