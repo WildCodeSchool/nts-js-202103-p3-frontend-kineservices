@@ -6,7 +6,7 @@ function FormationForm() {
   const [select, setSelect] = useState([]);
   const [formation, setFormation] = useState({
     title: '',
-    category_id: '1',
+    category_id: '',
     date: '',
     price: '',
     website: '',
@@ -63,17 +63,24 @@ function FormationForm() {
           value={formation}
           setValue={setFormation}
         />
-        <form>
-          <select name="category_id" id="category">
-            {select.map((category) => {
-              return (
-                <option key={category.id} value={category.name}>
-                  {category.name}
-                </option>
-              );
-            })}
-          </select>
-        </form>
+
+        <select
+          name="category_id"
+          id="category"
+          onChange={(event) => {
+            setFormation({ ...formation, category_id: event.target.value });
+          }}
+        >
+          <option value="0">---</option>
+          {select.map((category) => {
+            return (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            );
+          })}
+        </select>
+
         <FormInput
           label="prix"
           name="price"
