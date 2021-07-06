@@ -12,10 +12,12 @@ import SignUpKine from '../views/SignUpKine';
 import SignUpCompany from '../views/SignUpCompany';
 import NavBar from './NavBar';
 import DocumentationItem from '../views/DocumentationItem';
+import Header from './Header';
 
 function GeneralRouter() {
   return (
     <Router>
+      <Header />
       <div>
         <Switch>
           <Route exact path="/">
