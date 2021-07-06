@@ -74,6 +74,19 @@
   font-size: 23px;
 }
 
+.signIn {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  background: #7a77f2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 5%;
+  width: 170px;
+  color: white;
+}
+
 hr {
   border: none;
   border: 2px double #333;
@@ -84,8 +97,9 @@ hr {
 }
 
 span {
-  font-size: 40px;
+  font-size: 25px;
   font-family: 'Roboto', sans-serif;
+  font-weight: 600;
 }
 
 .kine-container {

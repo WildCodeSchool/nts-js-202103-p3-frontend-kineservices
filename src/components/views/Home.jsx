@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
+// import { Carousel } from 'bootstrap';
 import landingPageImage from '../../media/image_home.jpg';
 
 export default function Home() {
@@ -11,9 +12,7 @@ export default function Home() {
           <img src={landingPageImage} alt="landing page" />
         </div>
         <div className="intro">
-          <h1>
-            Bienvenue sur <h3>Kinés.fr</h3>
-          </h1>
+          <h1>Bienvenue sur Kinés.fr</h1>
           <h3>Qui sommes-nous ?</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
@@ -24,8 +23,10 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <h1>Nos formations</h1>
-        <p>Slider</p>
+        <h1>Les formations</h1>
+        {/* <div>
+          <Carousel />
+        </div> */}
       </div>
       <div className="tarif-container">
         <div>
@@ -39,7 +40,7 @@ export default function Home() {
             aliquam quia tenetur commodi iusto, soluta sunt quibusdam
             recusandae. Itaque incidunt maiores tempora?
           </p>
-          <span>C&apos;est gratuit !</span>
+          <span>Premier mois remboursé !</span>
         </div>
         <hr />
         <div>
@@ -58,6 +59,11 @@ export default function Home() {
         <Link to="/inscription-kine">
           <button type="button" className="signUp">
             Je m&lsquo;inscris !
+          </button>
+        </Link>
+        <Link to="/connexion">
+          <button type="button" className="signIn">
+            Je me connecte
           </button>
         </Link>
       </div>
