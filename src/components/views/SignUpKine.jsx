@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { rename } from 'fs';
 import React, { useState } from 'react';
 import { Card, Form, Col } from 'react-bootstrap';
 import avatar from '../../media/avatar.png';
@@ -9,7 +8,6 @@ export default function SignUpKine() {
   const [formContent, setFormContent] = useState({});
   const [isKine, setIsKine] = useState(true);
   function handleCheck(event) {
-    console.log(event.target.name, event.target.value);
     if (event.target.value === '1') {
       setIsKine(true);
     } else {
@@ -53,38 +51,21 @@ export default function SignUpKine() {
       content[event.target[i].name] = event.target[i].value;
     }
     setFormContent(content);
-    axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-        formContent,
-      })
-      .then((response) => {
-        console.log(response);
-      });
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
+      formContent,
+    });
+
     if (!validation) {
       console.log('cant possible');
     } else if (!validationMail) {
       console.log('cant possible');
     } else {
-      axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-          formContent,
-        })
-        .then((response) => {
-          console.log(response);
-        });
+      axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
+        formContent,
+      });
     }
   };
-  rename(
-    formContent.picture,
-    `public/images${formContent.picture}`,
-    (error) => {
-      if (error) {
-        throw error;
-      }
-      console.log('rename complete');
-    }
-  );
-  console.log(formContent.picture);
+
   return (
     <div className="container-form">
       <div className="container-card-form">

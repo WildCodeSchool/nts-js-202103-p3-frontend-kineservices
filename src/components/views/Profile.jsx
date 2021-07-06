@@ -43,6 +43,7 @@ function Profile() {
       .then((response) => {
         setUpdateUser(response);
       });
+    // clg : en attendant de creer le form pour update user
     console.log(updateUSer);
   };
 
@@ -50,7 +51,6 @@ function Profile() {
     getUser();
     putUser();
   }, []);
-  console.log(user);
   return (
     <div className="Container_profil">
       <div>
