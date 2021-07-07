@@ -50,7 +50,18 @@ function DocumentationForm() {
         setValue={setDocumentation}
       />
       <form>
-        <select name="category_id" id="category">
+        <select
+          name="category_id"
+          id="category"
+          onChange={(event) => {
+            setDocumentation({
+              ...documentation,
+              category_id: event.target.value,
+            });
+          }}
+        >
+          <option value="0">---</option>
+
           {select.map((category) => {
             return (
               <option key={category.id} value={category.name}>
