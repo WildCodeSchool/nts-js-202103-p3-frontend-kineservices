@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Card, Form, Col } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import background from '../../media/backgroundkine.png';
 import './SignIn.css';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   const handlePassword = (event) => {
     setPassword(event.target.value);
@@ -25,7 +27,8 @@ export default function SignIn() {
       .then((results) => {
         localStorage.setItem('USERID', results.data.user.id);
         localStorage.setItem('TOKEN', results.data.token);
-      });
+      })
+      .then(() => history.push('/profil'));
   };
 
   return (
