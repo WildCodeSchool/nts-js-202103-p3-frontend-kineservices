@@ -30,6 +30,7 @@ export default function Home() {
           <h1 className="title-home">Nos tarifs</h1>
         </div>
         <div className="kine-container">
+          <div className="bubbles" />
           <h1>Je suis un kiné</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
