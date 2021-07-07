@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Form, Col } from 'react-bootstrap';
 import background from '../../media/backgroundkine.png';
 import './SignIn.css';
@@ -79,9 +80,11 @@ export default function SignIn() {
                 <div className="text-newMember">
                   <p className="textSignUp">Je suis nouveau !</p>
                 </div>
-                <div className="inscription">
-                  <p className="textSignUp">M&apos;inscrire</p>
-                </div>
+                <Link to="/inscription-kine">
+                  <div className="inscription">
+                    <p className="textSignUp">M&apos;inscrire</p>
+                  </div>
+                </Link>
               </form>
             </div>
           </Card.Body>

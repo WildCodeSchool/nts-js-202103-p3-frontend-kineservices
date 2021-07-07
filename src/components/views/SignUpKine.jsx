@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Form, Col } from 'react-bootstrap';
 import avatar from '../../media/avatar.png';
 import './SignUp.css';
@@ -337,9 +338,11 @@ export default function SignUpKine() {
                   <div className="text-alreadyAccount">
                     <p>J&apos;ai déjà un compte</p>
                   </div>
-                  <div className="connecter">
-                    <p>Me connecter</p>
-                  </div>
+                  <Link to="/connexion">
+                    <div className="connecter">
+                      <p>Me connecter</p>
+                    </div>
+                  </Link>
                 </div>
               </form>
             </Card.Body>
