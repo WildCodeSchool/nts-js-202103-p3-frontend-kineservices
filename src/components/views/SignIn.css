@@ -78,7 +78,7 @@
   .background {
     background-image: url('../../media/backgroundkine.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
   }
 
   .container-title {
@@ -93,7 +93,7 @@
 
   .card-login {
     position: absolute;
-    width: 50%;
+    width: 55vw;
   }
 
   .container-card {
@@ -104,10 +104,11 @@
   .background {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 90%;
   }
 
   .container-title {
+    margin-top:3vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,20 +119,25 @@
   }
 
   .container-forgotpassword {
-    height: 1.5vw;
-    margin-bottom: 1vw;
+    height: 1px;
+    margin-bottom: .1vw;
   }
 
   .text-newMember {
-    height: 3vw;
+    height: 1.5vw;
+    margin-bottom:.5vw;
+
   }
 
   .button-signIn {
     margin-bottom: 3vw;
   }
-
-  .textSignUp {
-    height: 2.1vw;
-    margin-bottom: 2vw;
+  .container-button-signIn {
+    height:5vw;
   }
+  .textSignUp {
+    height: 1.5vw;
+    margin-bottom: 1vw;
+  }
+
 }
