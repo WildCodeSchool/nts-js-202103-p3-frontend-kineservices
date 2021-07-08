@@ -24,7 +24,7 @@ function Profile() {
   const getUser = async () => {
     try {
       await axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/profil/${userId}`, {
+        .post(`${process.env.REACT_APP_BACKEND_URL}/utilisateur/${userId}`, {
           userId,
         })
         .then((response) => {
@@ -51,7 +51,6 @@ function Profile() {
     getUser();
     putUser();
   }, []);
-
   return (
     <div className="Container_profil">
       <div>
@@ -87,7 +86,7 @@ function Profile() {
           Partager mes connaissances
         </button>
         <button type="button" className="bouton">
-          Partager mes fomrations
+          Partager mes formations
         </button>
         <button type="button" className="bouton">
           Partager mes services

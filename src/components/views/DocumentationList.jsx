@@ -27,24 +27,20 @@ const DocumentationList = () => {
           .filter(
             (documentation) =>
               documentation.title.includes(searchValue) ||
-              documentation.description.includes(searchValue) ||
-              documentation.category_id.includes(searchValue)
+              documentation.description.includes(searchValue)
           )
           .map((documentation) => (
-            <p>{documentation.title}</p>
+            <p>
+              <DocumentationItem
+                title={documentation.title}
+                description={documentation.description}
+                category={documentation.name}
+                price={documentation.price}
+                key={documentation.id}
+              />
+            </p>
           ))}
       </div>
-      {documentations.map((documentation) => {
-        return (
-          <DocumentationItem
-            title={documentation.title}
-            description={documentation.description}
-            category={documentation.name}
-            price={documentation.price}
-            key={documentation.id}
-          />
-        );
-      })}
     </>
   );
 };
