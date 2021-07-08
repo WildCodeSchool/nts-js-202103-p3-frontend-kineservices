@@ -6,6 +6,7 @@ function SearchContent(props) {
   return (
     <div>
       <input
+        style={{ height: '35px', width: '20%' }}
         value={searchValue}
         type="text"
         placeholder="Entrez un mot clef..."
