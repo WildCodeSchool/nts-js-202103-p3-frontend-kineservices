@@ -36,14 +36,6 @@ body:after {
   z-index: -4;
 }
 
-/* .bubbles {
-		height: 100px; 
-		width: 100px; 
-		background-color: #FFF400;
-		border-radius: 40% 40% / 20% 40%;
-    z-index: -4;
-} */
-
 .home {
   display: flex;
   align-items: center;
