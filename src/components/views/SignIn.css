@@ -78,7 +78,7 @@
   .background {
     background-image: url('../../media/backgroundkine.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
   }
 
   .container-title {
