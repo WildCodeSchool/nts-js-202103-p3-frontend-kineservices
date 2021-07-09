@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Profile.css';
+import { useHistory } from 'react-router-dom';
 
 function Profile() {
+  const history = useHistory(null);
   const [user, setUser] = useState(null);
   const [updateUser, setUpdateUser] = useState({
     RPPS: '',
@@ -47,6 +49,11 @@ function Profile() {
   // updateUser : preaparation de la route de mise a jour du profile
   console.log(updateUser);
 
+  const handleLogout = () => {
+    localStorage.removeItem('TOKEN');
+    history.push('/');
+  };
+
   useEffect(() => {
     getUser();
     putUser();
@@ -90,6 +97,9 @@ function Profile() {
         </button>
         <button type="button" className="bouton">
           Partager mes services
+        </button>
+        <button type="button" className="bouton" onClick={handleLogout}>
+          Déconnexion
         </button>
       </div>
     </div>
