@@ -12,12 +12,27 @@ function DocumentationForm() {
     user_id: 2,
     price: '',
   });
-
+  const [file, setFile] = useState(null);
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('title', documentation.title);
+    formData.append('description', documentation.description);
+    formData.append('category_id', documentation.category_id);
+    formData.append('user_id', documentation.user_id);
+    formData.append('price', documentation.price);
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    };
     axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/documentation`, documentation)
+      .post(
+        `${process.env.REACT_APP_BACKEND_URL}/documentation`,
+        formData,
+        config
+      )
       .then((response) => {
         alert(JSON.stringify(response));
       })
@@ -33,8 +48,13 @@ function DocumentationForm() {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} encType="multipart/form-data">
       <p>Ajouter une documentation :</p>
+      <input
+        type="file"
+        name="file"
+        onChange={(e) => setFile(e.target.files[0])}
+      />
       <FormInput
         label="Titre"
         name="title"
@@ -49,17 +69,15 @@ function DocumentationForm() {
         value={documentation}
         setValue={setDocumentation}
       />
-      <form>
-        <select name="category_id" id="category">
-          {select.map((category) => {
-            return (
-              <option key={category.id} value={category.name}>
-                {category.name}
-              </option>
-            );
-          })}
-        </select>
-      </form>
+      <select name="category_id" id="category">
+        {select.map((category) => {
+          return (
+            <option key={category.id} value={category.name}>
+              {category.name}
+            </option>
+          );
+        })}
+      </select>
       <FormInput
         label="Prix"
         name="price"

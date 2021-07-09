@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Card, Form, Col } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 import background from '../../media/backgroundkine.png';
 import './SignIn.css';
 
