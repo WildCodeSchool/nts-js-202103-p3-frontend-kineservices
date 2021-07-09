@@ -4,7 +4,7 @@ import Home from '../views/Home';
 import GlobalSearch from '../views/GlobalSearch';
 import Service from '../views/Service';
 import DocumentationList from '../views/DocumentationList';
-import Training from '../views/Training';
+import FormationList from '../views/FormationList';
 import Profile from '../views/Profile';
 import SignUpSummary from '../views/SignUpSummary';
 import SignIn from '../views/SignIn';
@@ -13,6 +13,7 @@ import SignUpCompany from '../views/SignUpCompany';
 import NavBar from './NavBar';
 import DocumentationItem from '../views/DocumentationItem';
 import Header from './Header';
+import FormationItem from '../views/FormationItem';
 
 function GeneralRouter() {
   return (
@@ -36,7 +37,10 @@ function GeneralRouter() {
             <DocumentationItem />
           </Route>
           <Route exact path="/formation">
-            <Training />
+            <FormationList />
+          </Route>
+          <Route exact path="/formation-item">
+            <FormationItem />
           </Route>
           <Route exact path="/profil">
             <Profile />
