@@ -7,6 +7,7 @@ import './DocumentationList.css';
 const DocumentationList = () => {
   const [documentations, setDocumentations] = useState([]);
   const [searchValue, setSearchValue] = React.useState('');
+
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/documentation`)
