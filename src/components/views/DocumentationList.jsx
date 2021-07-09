@@ -27,8 +27,8 @@ const DocumentationList = () => {
         {documentations
           .filter(
             (documentation) =>
-              documentation.title.includes(searchValue) ||
-              documentation.description.includes(searchValue)
+              documentation.title.toLowerCase().includes(searchValue) ||
+              documentation.description.toLowerCase().includes(searchValue)
           )
           .map((documentation) => (
             <p>
