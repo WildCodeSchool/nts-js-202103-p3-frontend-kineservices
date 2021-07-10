@@ -37,30 +37,26 @@ function DocumentationForm() {
         config
       )
       .then((response) => {
-        alert(
-          JSON.stringify(
-            response,
-            Swal.fire({
-              position: 'center',
-              icon: 'success',
-              title: 'Documentation ajoutée avec succès!',
-              showConfirmButton: false,
-              timer: 400000,
-            })
-          )
-        );
-      })
-      .catch((error) =>
-        alert(
-          JSON.stringify(error),
+        JSON.stringify(
+          response,
           Swal.fire({
             position: 'center',
-            icon: 'error',
-            title: 'Veuillez vérifier les informations saisies',
+            icon: 'success',
+            title: 'Documentation ajoutée avec succès!',
             showConfirmButton: false,
-            timer: 4000,
+            timer: 400000,
           })
-        )
+        );
+      })
+      .catch(
+        (error) => JSON.stringify(error),
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Veuillez vérifier les informations saisies',
+          showConfirmButton: false,
+          timer: 4000,
+        })
       );
   };
 
