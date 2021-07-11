@@ -44,7 +44,7 @@ function DocumentationForm() {
             icon: 'success',
             title: 'Documentation ajoutée avec succès!',
             showConfirmButton: false,
-            timer: 400000,
+            timer: 3000,
           })
         );
       })
@@ -55,7 +55,7 @@ function DocumentationForm() {
           icon: 'error',
           title: 'Veuillez vérifier les informations saisies',
           showConfirmButton: false,
-          timer: 4000,
+          timer: 3000,
         })
       );
   };
