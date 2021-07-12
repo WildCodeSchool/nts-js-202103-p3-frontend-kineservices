@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -14,7 +15,6 @@ export default function SignUpKine() {
   const [isErrorMail, setIsErrorMail] = useState('');
   const [servicesTerms, setServicesTerms] = useState(false);
   const [validationMail, setValidationMail] = useState(false);
-
   const [user, setUser] = useState({
     RPPS: 0,
     role_id: 0,
@@ -30,6 +30,7 @@ export default function SignUpKine() {
     website: '',
   });
 
+  const [picture, setPicture] = useState(null);
   const checkValidation = (e) => {
     const confPass = e.target.value;
     setConfirmPassword(confPass);
@@ -53,7 +54,27 @@ export default function SignUpKine() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (user.role_id === '') {
+    const formUser = new FormData();
+    formUser.append('picture', picture);
+    formUser.append('RPPS', user.RPPS);
+    formUser.append('role_id', user.role_id);
+    formUser.append('SIRET', user.SIRET);
+    formUser.append('address', user.address);
+    formUser.append('birthdate', user.birthdate);
+    formUser.append('country', user.country);
+    formUser.append('email', user.email);
+    formUser.append('firstname', user.firstname);
+    formUser.append('lastname', user.lastname);
+    formUser.append('password', user.password);
+    formUser.append('phone', user.phone);
+    formUser.append('website', user.website);
+
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    };
+    if (user.role_id === 0) {
       Swal.fire({
         position: 'center',
         icon: 'error',
@@ -66,14 +87,30 @@ export default function SignUpKine() {
         title: `Veuillez accepter les conditions general d'utilisation`,
       });
     } else {
-      axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-        user,
-      });
+      axios
+        .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, formUser, config)
+        .then((response) => {
+          JSON.stringify(
+            response,
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Votre compte a été créé',
+            })
+          );
+        })
+        .catch(
+          (error) => JSON.stringify(error),
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Veuillez vérifier les informations saisies',
+          })
+        );
       if (!validation) {
         console.log('passwords do not match');
       } else if (!validationMail) {
         console.log('emails do not match');
-        console.log(validationMail);
       } else {
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
           user,
@@ -81,22 +118,28 @@ export default function SignUpKine() {
       }
     }
   };
-  console.log(user);
+
   return (
     <div className="container-form">
       <div className="container-card-form">
         <div className="signUpForm">
           <Card className="card-signup">
             <Card.Body className="card-body-signup">
-              <form onSubmit={handleSubmit} encType="multipart/form-data">
+              <form
+                onSubmit={handleSubmit}
+                encType="multipart/form-data"
+                method="post"
+              >
                 <div className="container-avatar">
-                  <img className="avatar" src={avatar} alt="avatar" />
                   <input
-                    className="avatar"
+                    // type="image"
                     src={avatar}
                     alt="avatar"
+                    className="avatar"
                     type="file"
-                    name="picture"
+                    name="file"
+                    action="/inscription-kine"
+                    onChange={(e) => setPicture(e.target.files[0])}
                   />
                 </div>
                 <Form.Group className="container-form">

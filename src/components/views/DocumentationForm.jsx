@@ -25,6 +25,7 @@ function DocumentationForm() {
     formData.append('category_id', documentation.category_id);
     formData.append('user_id', documentation.user_id);
     formData.append('price', documentation.price);
+    console.log(formData);
     const config = {
       headers: {
         'content-type': 'multipart/form-data',
@@ -100,8 +101,7 @@ function DocumentationForm() {
           });
         }}
       >
-        <option value="0">---</option>
-
+        {/* <option value="0">---</option> */}
         {select.map((category) => {
           return (
             <option key={category.id} value={category.name}>

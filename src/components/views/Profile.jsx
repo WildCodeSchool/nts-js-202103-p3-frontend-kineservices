@@ -32,6 +32,7 @@ function Profile() {
         })
         .then((response) => {
           setUser(response.data);
+          console.log(response.data);
         });
     } catch (error) {
       console.error(error);
@@ -86,12 +87,11 @@ function Profile() {
             <div>(role) :{user[0].role_id}</div>
             <div>Siret : {user[0].SIRET}</div>
           </div>
-          {/* en attente de pouvoir recuperer envoyer la photo > bdd */}
-          {/* <img
-          src={user[0].picture}
-          alt={user[0].firstname}
-          className="style_avatar"
-        /> */}
+          <img
+            src={`${process.env.REACT_APP_BACKEND_URL}/${user[0].picture}`}
+            alt={user[0].firstname + user[0].lastname}
+            className="style_avatar"
+          />
         </div>
       )}
       <div className="container_bouton">
