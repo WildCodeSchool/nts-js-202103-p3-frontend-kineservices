@@ -75,7 +75,9 @@ function DocumentationForm() {
         name="file"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <p className="acceptedFiles">.pdf .doc .docx .odt .ppt .pptx</p>
+      <p className="acceptedFiles">
+        .pdf .doc .docx .odt .ppt .pptx .amz .epub
+      </p>
       <FormInput
         label="Titre"
         name="title"
@@ -100,7 +102,9 @@ function DocumentationForm() {
           });
         }}
       >
-        <option value="0">---</option>
+        <option className="option-value" value="0">
+          ---
+        </option>
 
         {select.map((category) => {
           return (
