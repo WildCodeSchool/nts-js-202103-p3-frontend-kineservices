@@ -1,8 +1,11 @@
+/* eslint-disable no-nested-ternary */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import './Profile.css';
 
 function Profile() {
+  const history = useHistory(null);
   const [user, setUser] = useState(null);
   const [updateUser, setUpdateUser] = useState({
     RPPS: '',
@@ -52,12 +55,21 @@ function Profile() {
     putUser();
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem('USERID');
+    localStorage.removeItem('TOKEN');
+    history.push('/');
+    console.log('ok');
+  };
+
   return (
     <div className="Container_profil">
       <div>
         <h1>Mon Profil</h1>
       </div>
-      {!user ? (
+      {!userId ? (
+        history.push('/connexion')
+      ) : !user ? (
         <p>loading ...</p>
       ) : (
         <div className="container_image_avatar">
@@ -91,6 +103,9 @@ function Profile() {
         </button>
         <button type="button" className="bouton">
           Partager mes services
+        </button>
+        <button type="button" className="bouton" onClick={handleLogout}>
+          Deconnexion
         </button>
       </div>
     </div>
