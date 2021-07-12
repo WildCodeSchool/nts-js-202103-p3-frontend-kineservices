@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from '../views/Home';
 import GlobalSearch from '../views/GlobalSearch';
-import Service from '../views/Service';
+import ServiceList from '../views/ServiceList';
 import DocumentationList from '../views/DocumentationList';
 import FormationList from '../views/FormationList';
 import Profile from '../views/Profile';
@@ -27,7 +27,7 @@ function GeneralRouter() {
             <GlobalSearch />
           </Route>
           <Route exact path="/service">
-            <Service />
+            <ServiceList />
           </Route>
           <Route exact path="/documentation">
             <DocumentationList />

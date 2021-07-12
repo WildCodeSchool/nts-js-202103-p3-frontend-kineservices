@@ -1,11 +1,13 @@
-import React from 'react';
+// import React from 'react';
+// import SearchContent from '../commons/SearchContent';
 
-function GlobalSearch() {
-  return (
-    <div>
-      <h1>Global Search</h1>
-    </div>
-  );
-}
+// const GlobalSearch = () => {
+//   const {documentations, services, formations } = props;
+//   return (
+//     <div>
+//       <SearchContent />
+//     </div>
+//   );
+// }
 
-export default GlobalSearch;
+// export default GlobalSearch;
