@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from '../views/Home';
 import GlobalSearch from '../views/GlobalSearch';
-import Service from '../views/Service';
+import ServiceList from '../views/ServiceList';
 import DocumentationForm from '../views/DocumentationForm';
 import DocumentationList from '../views/DocumentationList';
-import Training from '../views/Training';
+import FormationList from '../views/FormationList';
 import Profile from '../views/Profile';
 import SignUpSummary from '../views/SignUpSummary';
 import SignIn from '../views/SignIn';
@@ -28,7 +28,7 @@ function GeneralRouter() {
             <GlobalSearch />
           </Route>
           <Route exact path="/service">
-            <Service />
+            <ServiceList />
           </Route>
           <Route exact path="/documentation-form">
             <DocumentationForm />
@@ -40,7 +40,7 @@ function GeneralRouter() {
             <DocumentationItem />
           </Route>
           <Route exact path="/formation">
-            <Training />
+            <FormationList />
           </Route>
           <Route exact path="/profil">
             <Profile />

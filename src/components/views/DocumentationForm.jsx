@@ -75,7 +75,9 @@ function DocumentationForm() {
         name="file"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <p className="acceptedFiles">.pdf .doc .docx .odt .ppt .pptx</p>
+      <p className="acceptedFiles">
+        .pdf .doc .docx .odt .ppt .pptx .amz .epub
+      </p>
       <FormInput
         label="Titre"
         name="title"
@@ -90,27 +92,29 @@ function DocumentationForm() {
         value={documentation}
         setValue={setDocumentation}
       />
-        <select
-          name="category_id"
-          id="category"
-          onChange={(event) => {
-            setDocumentation({
-              ...documentation,
-              category_id: event.target.value,
-            });
-          }}
-        >
-          <option value="0">---</option>
+      <select
+        name="category_id"
+        id="category"
+        onChange={(event) => {
+          setDocumentation({
+            ...documentation,
+            category_id: event.target.value,
+          });
+        }}
+      >
+        <option className="option-value" value="0">
+          ---
+        </option>
 
-          {select.map((category) => {
-            return (
-              <option key={category.id} value={category.name}>
-                {category.name}
-              </option>
-            );
-          })}
-        </select>
-     
+        {select.map((category) => {
+          return (
+            <option key={category.id} value={category.name}>
+              {category.name}
+            </option>
+          );
+        })}
+      </select>
+
       <FormInput
         label="Prix"
         name="price"
