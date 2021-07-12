@@ -1,33 +1,39 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { Card, Form, Col } from 'react-bootstrap';
 import avatar from '../../media/avatar.png';
 import './SignUp.css';
 
 export default function SignUpKine() {
-  const [formContent, setFormContent] = useState({});
-  const [isKine, setIsKine] = useState(true);
-  function handleCheck(event) {
-    if (event.target.value === '1') {
-      setIsKine(true);
-    } else {
-      setIsKine(false);
-    }
-  }
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isError, setIsError] = useState('');
   const [validation, setValidation] = useState(false);
   const [confirmEmail, setConfirmEmail] = useState('');
   const [isErrorMail, setIsErrorMail] = useState('');
+  const [servicesTerms, setServicesTerms] = useState(false);
   const [validationMail, setValidationMail] = useState(false);
+
+  const [user, setUser] = useState({
+    RPPS: 0,
+    role_id: 0,
+    SIRET: 0,
+    address: '',
+    birthdate: '',
+    country: 'france',
+    email: '',
+    firstname: '',
+    lastname: '',
+    password: '',
+    phone: '',
+    website: '',
+  });
 
   const checkValidation = (e) => {
     const confPass = e.target.value;
     setConfirmPassword(confPass);
-    if (password !== confPass) {
+    if (user.password !== confPass) {
       setIsError('Les mots de passe ne correspondent pas');
     } else {
       setIsError('');
@@ -38,7 +44,7 @@ export default function SignUpKine() {
   const checkValidationMail = (e) => {
     const confMail = e.target.value;
     setConfirmEmail(confMail);
-    if (email !== confMail) {
+    if (user.email !== confMail) {
       setIsErrorMail('Les mails ne sont pas identiques');
     } else {
       setIsErrorMail('');
@@ -47,38 +53,42 @@ export default function SignUpKine() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    const content = {};
-    for (let i = 0; i < event.target.length; i += 1) {
-      content[event.target[i].name] = event.target[i].value;
-    }
-    setFormContent(content);
-    axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-      formContent,
-    });
-    if (!validation) {
-      console.log('passwords do not match');
-    } else if (!validationMail) {
-      console.log('emails do not match');
-      console.log(validationMail);
+    if (user.role_id === '') {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Êtes vous Kinésiterapeuthe ?',
+      });
+    } else if (!servicesTerms) {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: `Veuillez accepter les conditions general d'utilisation`,
+      });
     } else {
       axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-        formContent,
+        user,
       });
+      if (!validation) {
+        console.log('passwords do not match');
+      } else if (!validationMail) {
+        console.log('emails do not match');
+        console.log(validationMail);
+      } else {
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
+          user,
+        });
+      }
     }
   };
-
+  console.log(user);
   return (
     <div className="container-form">
       <div className="container-card-form">
         <div className="signUpForm">
           <Card className="card-signup">
             <Card.Body className="card-body-signup">
-              <form
-                method="POST"
-                encType="multipart/form-data"
-                action="uploadfile"
-                onSubmit={handleSubmit}
-              >
+              <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className="container-avatar">
                   <img className="avatar" src={avatar} alt="avatar" />
                   <input
@@ -99,6 +109,12 @@ export default function SignUpKine() {
                     margin="dense"
                     variant="outlined"
                     name="lastname"
+                    onChange={(event) => {
+                      setUser({
+                        ...user,
+                        lastname: event.target.value,
+                      });
+                    }}
                     required
                   />
                 </Form.Group>
@@ -112,6 +128,12 @@ export default function SignUpKine() {
                     margin="dense"
                     variant="outlined"
                     name="firstname"
+                    onChange={(event) => {
+                      setUser({
+                        ...user,
+                        firstname: event.target.value,
+                      });
+                    }}
                     required
                   />
                 </Form.Group>
@@ -124,6 +146,12 @@ export default function SignUpKine() {
                     variant="outlined"
                     name="birthdate"
                     type="date"
+                    onChange={(event) => {
+                      setUser({
+                        ...user,
+                        birthdate: event.target.value,
+                      });
+                    }}
                     required
                   />
                 </Form.Group>
@@ -138,8 +166,13 @@ export default function SignUpKine() {
                     variant="outlined"
                     name="email"
                     type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={user.email}
+                    onChange={(event) =>
+                      setUser({
+                        ...user,
+                        email: event.target.value,
+                      })
+                    }
                     required
                   />
                 </Form.Group>
@@ -171,8 +204,13 @@ export default function SignUpKine() {
                       variant="outlined"
                       name="password"
                       type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      value={user.password}
+                      onChange={(event) =>
+                        setUser({
+                          ...user,
+                          password: event.target.value,
+                        })
+                      }
                       required
                     />
                   </Form.Group>
@@ -194,25 +232,24 @@ export default function SignUpKine() {
                   </Form.Group>
                   <span className="alertError">{isError}</span>
                   <label className="field" htmlFor="RPPS">
-                    {isKine ? (
+                    {user.role_id === 1 ? (
                       <Form.Group className="container-form">
                         <Form.Control
-                          id="firstname"
+                          id="RPPS"
                           type="number"
                           name="RPPS"
                           placeholder=" RPPS : "
+                          onChange={(event) => {
+                            setUser({
+                              ...user,
+                              RPPS: event.target.value,
+                            });
+                          }}
                           required
                         />
                       </Form.Group>
                     ) : (
-                      <Form.Group className="container-form">
-                        <Form.Control
-                          id="firstname"
-                          type="number"
-                          name="RPPS"
-                          placeholder=" RPPS : "
-                        />
-                      </Form.Group>
+                      ''
                     )}
                   </label>
 
@@ -223,9 +260,13 @@ export default function SignUpKine() {
                           type="radio"
                           id="kineCheck"
                           name="role_id"
-                          value="1"
-                          checked={isKine}
-                          onChange={handleCheck}
+                          value={1}
+                          onChange={() =>
+                            setUser({
+                              ...user,
+                              role_id: 1,
+                            })
+                          }
                         />
                         Je suis un.e kiné
                       </Form.Group>
@@ -236,23 +277,33 @@ export default function SignUpKine() {
                           type="radio"
                           id="companyCheck"
                           name="role_id"
-                          value="2"
-                          checked={!isKine}
-                          onChange={handleCheck}
+                          value={2}
+                          onChange={() =>
+                            setUser({
+                              ...user,
+                              role_id: 2,
+                            })
+                          }
                         />
                         Je suis une entreprise
                       </Form.Group>
                     </div>
                   </div>
                   <label className="field" htmlFor="siret">
-                    {!isKine ? (
+                    {user.role_id === 2 ? (
                       <Form.Group className="container-form">
                         <Form.Control
                           className="siret"
-                          id="siret"
+                          id="SIRET"
                           type="text"
-                          name="siret"
+                          name="SIRET"
                           placeholder=" Siret :"
+                          onChange={(event) => {
+                            setUser({
+                              ...user,
+                              SIRET: event.target.value,
+                            });
+                          }}
                           required
                         />
                       </Form.Group>
@@ -265,6 +316,12 @@ export default function SignUpKine() {
                       as="select"
                       defaultValue="Choose..."
                       name="country"
+                      onChange={(event) => {
+                        setUser({
+                          ...user,
+                          country: event.target.value,
+                        });
+                      }}
                     >
                       <optgroup label="Europe">
                         <option value="france">France</option>
@@ -294,6 +351,12 @@ export default function SignUpKine() {
                       variant="outlined"
                       name="address"
                       type="address"
+                      onChange={(event) => {
+                        setUser({
+                          ...user,
+                          address: event.target.value,
+                        });
+                      }}
                       required
                     />
                   </Form.Group>
@@ -308,6 +371,12 @@ export default function SignUpKine() {
                       variant="outlined"
                       name="phone"
                       type="phone"
+                      onChange={(event) => {
+                        setUser({
+                          ...user,
+                          phone: event.target.value,
+                        });
+                      }}
                       required
                     />
                   </Form.Group>
@@ -321,12 +390,21 @@ export default function SignUpKine() {
                       margin="dense"
                       variant="outlined"
                       name="siteWeb"
+                      onChange={(event) => {
+                        setUser({
+                          ...user,
+                          website: event.target.value,
+                        });
+                      }}
                       type="siteWeb"
                     />
                   </Form.Group>
                   <Form.Group className="check-validation">
                     <Col sm={{ span: 10, offset: 2 }}>
-                      <Form.Check label="J'accepte les conditions générales d'utilisation" />
+                      <Form.Check
+                        onClick={() => setServicesTerms(true)}
+                        label="J'accepte les conditions générales d'utilisation"
+                      />
                     </Col>
                   </Form.Group>
                   <div className="container-button">
