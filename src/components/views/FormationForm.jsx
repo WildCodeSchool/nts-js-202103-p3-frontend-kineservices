@@ -77,7 +77,7 @@ function FormationForm() {
           <option value="0">---</option>
           {select.map((category) => {
             return (
-              <option key={category.id} value={category.id}>
+              <option key={category.id} value={category.name}>
                 {category.name}
               </option>
             );
