@@ -1,7 +1,10 @@
 /* eslint-disable no-alert */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import FormInput from '../commons/FormInput';
+
+import './DocumentationForm.css';
 
 function DocumentationForm() {
   const [select, setSelect] = useState([]);
@@ -34,9 +37,27 @@ function DocumentationForm() {
         config
       )
       .then((response) => {
-        alert(JSON.stringify(response));
+        JSON.stringify(
+          response,
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Documentation ajoutée avec succès!',
+            showConfirmButton: false,
+            timer: 3000,
+          })
+        );
       })
-      .catch((error) => alert(JSON.stringify(error)));
+      .catch(
+        (error) => JSON.stringify(error),
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Veuillez vérifier les informations saisies',
+          showConfirmButton: false,
+          timer: 3000,
+        })
+      );
   };
 
   useEffect(() => {
@@ -46,7 +67,6 @@ function DocumentationForm() {
         setSelect(response.data);
       });
   }, []);
-
   return (
     <form onSubmit={handleSubmit} encType="multipart/form-data">
       <p>Ajouter une documentation :</p>
@@ -55,6 +75,7 @@ function DocumentationForm() {
         name="file"
         onChange={(e) => setFile(e.target.files[0])}
       />
+      <p className="acceptedFiles">.pdf .doc .docx .odt .ppt .pptx</p>
       <FormInput
         label="Titre"
         name="title"

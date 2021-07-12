@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap%27');
-
 .footer {
-  font-family: 'Hind';
   line-height: 25px;
   font-weight: bold;
   display: grid;
@@ -45,8 +42,8 @@
   line-height: 20px;
 }
 
-.disc{
-  visibility:hidden;
+.disc {
+  visibility: hidden;
 }
 @media screen and (min-width: 768px) {
   .networkLink {
@@ -83,8 +80,8 @@
     text-align: center;
     display: inline;
   }
-  
-  .disc{
-    visibility:visible;
+
+  .disc {
+    visibility: visible;
   }
 }

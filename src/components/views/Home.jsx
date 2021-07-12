@@ -38,7 +38,7 @@ export default function Home() {
             aliquam quia tenetur commodi iusto, soluta sunt quibusdam
             recusandae. Itaque incidunt maiores tempora?
           </p>
-          <span>Premier mois remboursé !</span>
+          <span className="priceText">Premier mois remboursé !</span>
         </div>
         <hr />
         <div>
@@ -51,7 +51,7 @@ export default function Home() {
           </p>
           <h3>
             à partir de <br />
-            <span>10 €/mois</span>
+            <span className="priceText">10 €/mois</span>
           </h3>
         </div>
         <Link to="/inscription-kine">
