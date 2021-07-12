@@ -10,10 +10,13 @@ function DocumentationItem(props) {
       <div className="box-item">
         <h1 className="title">{title}</h1>
         <p className="description">{description}</p>
+        <hr />
         <p>{category}</p>
-        <p>Prix : {price}€</p>
+        <p className="price">Prix : {price}€</p>
         <div className="discover">
-          <Link to={`/documentation/${id}`}>Découvrir !</Link>
+          <Link to={`/documentation/${id}`} className="telecharger">
+            Télécharger !
+          </Link>
         </div>
       </div>
     </div>
