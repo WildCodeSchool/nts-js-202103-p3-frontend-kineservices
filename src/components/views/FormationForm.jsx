@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import FormInput from '../commons/FormInput';
+import './FormationForm.css';
 
 function FormationForm() {
   const [select, setSelect] = useState([]);
@@ -32,10 +33,11 @@ function FormationForm() {
   });
 
   return (
-    <div>
+    <div className="formationGlobal">
       <form onSubmit={handleSubmit}>
-        <p>Ajouter une formation : </p>
+        <h1 className="addFormation">Ajouter une formation </h1>
         <FormInput
+          className="titre"
           label="Titre"
           name="title"
           type="text"
@@ -43,9 +45,10 @@ function FormationForm() {
           setValue={setFormation}
         />
         <FormInput
+          className="designForm"
           label="description"
           name="description"
-          type="text"
+          type="textarea"
           value={formation}
           setValue={setFormation}
         />

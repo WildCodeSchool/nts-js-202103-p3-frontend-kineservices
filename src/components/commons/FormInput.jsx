@@ -1,4 +1,5 @@
 import React from 'react';
+import './FormInput.css';
 
 // eslint-disable-next-line react/prop-types
 function FormInput({ label, name, type, value = {}, setValue }) {
@@ -12,11 +13,12 @@ function FormInput({ label, name, type, value = {}, setValue }) {
   return (
     <div className="form">
       <label htmlFor={name}>
-        <span>{label}:</span>
+        <span className="label">{label}:</span>
         <input
           type={type}
           name={name}
           id={name}
+          placeholder={name}
           value={value[name]} // value.title, value.description...
           onChange={handleChange}
         />
