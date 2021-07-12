@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Profile.css';
+import { useHistory } from 'react-router-dom';
 
 function Profile() {
+  const history = useHistory(null);
   const [user, setUser] = useState(null);
   const [updateUser, setUpdateUser] = useState({
     RPPS: '',
@@ -24,7 +26,7 @@ function Profile() {
   const getUser = async () => {
     try {
       await axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/profil/${userId}`, {
+        .post(`${process.env.REACT_APP_BACKEND_URL}/utilisateur/${userId}`, {
           userId,
         })
         .then((response) => {
@@ -47,11 +49,15 @@ function Profile() {
   // updateUser : preaparation de la route de mise a jour du profile
   console.log(updateUser);
 
+  const handleLogout = () => {
+    localStorage.removeItem('TOKEN');
+    history.push('/');
+  };
+
   useEffect(() => {
     getUser();
     putUser();
   }, []);
-
   return (
     <div className="Container_profil">
       <div>
@@ -87,10 +93,13 @@ function Profile() {
           Partager mes connaissances
         </button>
         <button type="button" className="bouton">
-          Partager mes fomrations
+          Partager mes formations
         </button>
         <button type="button" className="bouton">
           Partager mes services
+        </button>
+        <button type="button" className="bouton" onClick={handleLogout}>
+          Déconnexion
         </button>
       </div>
     </div>
