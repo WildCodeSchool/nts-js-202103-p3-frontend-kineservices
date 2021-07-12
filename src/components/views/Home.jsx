@@ -2,16 +2,12 @@ import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import Footer from '../commons/Footer';
-import landingPageImage from '../../media/image_home.jpg';
 import Carousel from '../commons/Carousel';
 
 export default function Home() {
   return (
     <div className="home">
       <div className="landing-page-container">
-        <div className="landing-page">
-          <img src={landingPageImage} alt="landing page" />
-        </div>
         <div className="intro">
           <h1>Bienvenue sur Kinés.fr</h1>
           <h3>Qui sommes-nous ?</h3>
@@ -34,6 +30,7 @@ export default function Home() {
           <h1 className="title-home">Nos tarifs</h1>
         </div>
         <div className="kine-container">
+          <div className="bubbles" />
           <h1>Je suis un kiné</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
