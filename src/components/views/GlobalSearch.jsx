@@ -11,12 +11,18 @@ const DocumentationList = () => {
   const [services, setServices] = useState([]);
   const [formations, setFormations] = useState([]);
   const [searchValue, setSearchValue] = React.useState('');
-  const one = `${process.env.REACT_APP_BACKEND_URL}/documentation`;
-  const two = `${process.env.REACT_APP_BACKEND_URL}/formation`;
-  const three = `${process.env.REACT_APP_BACKEND_URL}/service`;
-  const requestOne = axios.get(one);
-  const requestTwo = axios.get(two);
-  const requestThree = axios.get(three);
+  const requestDocumentation = axios.get(
+    `${process.env.REACT_APP_BACKEND_URL}/documentation`
+  );
+  const requestFormation = axios.get(
+    `${process.env.REACT_APP_BACKEND_URL}/formation`
+  );
+  const requestService = axios.get(
+    `${process.env.REACT_APP_BACKEND_URL}/service`
+  );
+  const requestOne = axios.get(requestDocumentation);
+  const requestTwo = axios.get(requestFormation);
+  const requestThree = axios.get(requestService);
 
   useEffect(async () => {
     try {
