@@ -1,8 +1,8 @@
 /* eslint-disable no-nested-ternary */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import './Profile.css';
+import { useHistory } from 'react-router-dom';
 
 function Profile() {
   const history = useHistory(null);
@@ -27,7 +27,7 @@ function Profile() {
   const getUser = async () => {
     try {
       await axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/profil/${userId}`, {
+        .post(`${process.env.REACT_APP_BACKEND_URL}/utilisateur/${userId}`, {
           userId,
         })
         .then((response) => {
@@ -97,13 +97,13 @@ function Profile() {
           Partager mes connaissances
         </button>
         <button type="button" className="bouton">
-          Partager mes fomrations
+          Partager mes formations
         </button>
         <button type="button" className="bouton">
           Partager mes services
         </button>
         <button type="button" className="bouton" onClick={handleLogout}>
-          Deconnexion
+          Déconnexion
         </button>
       </div>
     </div>
