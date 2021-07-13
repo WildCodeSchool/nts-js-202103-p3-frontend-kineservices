@@ -9,6 +9,7 @@ import formation from '../../media/formation.svg';
 import avatar from '../../media/user.png';
 
 import './Profile.css';
+import { useHistory } from 'react-router-dom';
 
 function Profile() {
   const history = useHistory(null);
@@ -33,7 +34,7 @@ function Profile() {
   const getUser = async () => {
     try {
       await axios
-        .post(`${process.env.REACT_APP_BACKEND_URL}/profil/${userId}`, {
+        .post(`${process.env.REACT_APP_BACKEND_URL}/utilisateur/${userId}`, {
           userId,
         })
         .then((response) => {
@@ -143,8 +144,13 @@ function Profile() {
       <div className="container_bouton_logout">
         <button type="button" className="bouton_save" onClick={putUser}>
           Enregistrer
+      <div className="container_bouton">
+        <button type="button" className="bouton">
+          Partager mes connaissances
         </button>
-
+        <button type="button" className="bouton">
+          Partager mes formations
+        </button>
         <button type="button" className="bouton-loyout" onClick={handleLogout}>
           Se déconnecter
         </button>
