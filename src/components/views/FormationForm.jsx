@@ -74,6 +74,7 @@ function FormationForm() {
         <label htmlFor="category">
           <span className="select">Catégorie: </span>
           <select
+            className="selectField"
             required
             name="category_id"
             id="category"

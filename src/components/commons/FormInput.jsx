@@ -15,6 +15,7 @@ function FormInput({ label, name, type, value = {}, setValue }) {
       <label htmlFor={name}>
         <span className="label">{label}:</span>
         <input
+          className="input"
           type={type}
           name={name}
           id={name}

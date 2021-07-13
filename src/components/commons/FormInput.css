@@ -4,7 +4,7 @@
   background-color: white;
   color: #7a77f2;
 }
-input {
+.input {
   border: 1px solid #7a77f2;
   height: 40px;
   box-sizing: border-box;
