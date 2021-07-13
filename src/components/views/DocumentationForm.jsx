@@ -25,6 +25,7 @@ function DocumentationForm() {
     formData.append('category_id', documentation.category_id);
     formData.append('user_id', documentation.user_id);
     formData.append('price', documentation.price);
+
     const config = {
       headers: {
         'content-type': 'multipart/form-data',
