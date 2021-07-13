@@ -14,6 +14,7 @@ import SignUpCompany from '../views/SignUpCompany';
 import NavBar from './NavBar';
 import DocumentationItem from '../views/DocumentationItem';
 import Header from './Header';
+import DocumentationForm from '../views/DocumentationForm';
 
 function GeneralRouter() {
   return (
@@ -41,6 +42,9 @@ function GeneralRouter() {
           </Route>
           <Route exact path="/formation">
             <FormationList />
+          </Route>
+          <Route exact path="/formation-form">
+            <DocumentationForm />
           </Route>
           <Route exact path="/profil">
             <Profile />
