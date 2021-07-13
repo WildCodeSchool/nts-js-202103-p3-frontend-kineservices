@@ -40,18 +40,17 @@ body {
 }
 
 .description {
-  padding:2vw;
+  padding: 2vw;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1px;
-  text-align : justify
-  
+  text-align: justify;
 }
 
 .price {
   margin-bottom: 20px;
 }
-.telecharger {
+.download-file {
   margin-left: auto;
   margin-right: auto;
   background: #7a77f2;
@@ -69,7 +68,7 @@ body {
 .discover {
   margin-bottom: 5px;
 }
-.telecharger:visited {
+.download-file:visited {
   color: white;
 }
 
@@ -83,7 +82,7 @@ body {
   .discover {
     height: 5vw;
   }
-  .telecharger {
+  .download-file {
     border-radius: 10px;
     justify-content: center;
     color: white;

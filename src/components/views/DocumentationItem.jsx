@@ -15,7 +15,7 @@ function DocumentationItem(props) {
         <div className="discover">
           <a
             href={`${process.env.REACT_APP_BACKEND_URL}/${file}`}
-            className="telecharger"
+            className="download-file"
             download
           >
             Télécharger !
