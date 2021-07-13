@@ -102,10 +102,6 @@ function DocumentationForm() {
           });
         }}
       >
-        <option className="option-value" value="0">
-          ---
-        </option>
-
         {select.map((category) => {
           return (
             <option key={category.id} value={category.name}>
