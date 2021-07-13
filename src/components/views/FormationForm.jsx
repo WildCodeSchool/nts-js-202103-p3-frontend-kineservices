@@ -44,14 +44,13 @@ function FormationForm() {
           value={formation}
           setValue={setFormation}
         />
-        <label className="textAreaLabel" htmlFor="description">
-          {' '}
-          Description:
+        <label htmlFor="Description">
+          <span className="textAreaLabel">Description:</span>
           <textarea
             className="textArea"
             maxLength="1200"
             rows="10"
-            name="description"
+            id="Description"
             onChange={(e) =>
               setFormation({ ...formation, description: e.target.value })
             }
@@ -72,8 +71,8 @@ function FormationForm() {
           value={formation}
           setValue={setFormation}
         />
-        <label className="select" htmlFor="category">
-          Catégorie:
+        <label htmlFor="category">
+          <span className="select">Catégorie: </span>
           <select
             required
             name="category_id"
