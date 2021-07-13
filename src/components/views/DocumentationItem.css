@@ -23,6 +23,8 @@ body {
 .title {
   text-decoration: none;
   margin-bottom: 2px;
+  margin-left: auto;
+  margin-right: auto;
   background: linear-gradient(
       to top,
       rgba(255, 230, 0, 0.952) 0%,
@@ -38,9 +40,12 @@ body {
 }
 
 .description {
-  margin-left: 10px;
-  margin-right: 10px;
+  padding:2vw;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1px;
+  text-align : justify
+  
 }
 
 .price {
