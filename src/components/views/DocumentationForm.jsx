@@ -11,8 +11,8 @@ function DocumentationForm() {
   const [documentation, setDocumentation] = useState({
     title: '',
     description: '',
-    category_id: 3,
-    user_id: 2,
+    category_id: '',
+    user_id: '2', // TODO récupérer l'identifiant de l'utilisateur connecté
     price: '',
   });
   const [file, setFile] = useState(null);
@@ -94,6 +94,7 @@ function DocumentationForm() {
         setValue={setDocumentation}
       />
       <select
+        required
         name="category_id"
         id="category"
         onChange={(event) => {
@@ -103,10 +104,13 @@ function DocumentationForm() {
           });
         }}
       >
-        {/* <option value="0">---</option> */}
+        <option className="option-value" value="">
+          ---
+        </option>
+
         {select.map((category) => {
           return (
-            <option key={category.id} value={category.name}>
+            <option key={category.id} value={category.id}>
               {category.name}
             </option>
           );

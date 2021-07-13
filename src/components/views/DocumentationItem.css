@@ -22,6 +22,9 @@ body {
 
 .title {
   text-decoration: none;
+  margin-bottom: 2px;
+  margin-left: auto;
+  margin-right: auto;
   background: linear-gradient(
       to top,
       rgba(255, 230, 0, 0.952) 0%,
@@ -37,29 +40,55 @@ body {
 }
 
 .description {
-  margin-left: 10px;
-  margin-right: 10px;
+  padding: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1px;
+  text-align: justify;
 }
 
-.discover:visited {
-  color: black;
+.price {
+  margin-bottom: 20px;
+}
+.download-file {
+  margin-left: auto;
+  margin-right: auto;
+  background: #7a77f2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: 6vw;
+  justify-content: center;
+  color: white;
+  font-size: 23px;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
-/* faire une forme ovale pour le background - test -
-/*.ovale {
-  width : 70px;
-  height : 70px;
-  background : #F6F6F6;
-  -moz-border-radius : 20px;
-  -webkit-border-radius : 20px;
-  border-radius : 25px;
-  margin-left: 150px;
-}*/
+.discover {
+  margin-bottom: 5px;
+}
+.download-file:visited {
+  color: white;
+}
 
-@media (min-width: 1281px) {
+@media screen and (min-width: 768px) {
   .box-item {
     max-width: 50%;
     flex-wrap: no-wrap;
     margin: 0, auto;
+  }
+
+  .discover {
+    height: 5vw;
+  }
+  .download-file {
+    border-radius: 10px;
+    justify-content: center;
+    color: white;
+    width: 50%;
+    height: 4vw;
+    padding-top: 0.4vw;
+    padding-bottom: 0%;
   }
 }
