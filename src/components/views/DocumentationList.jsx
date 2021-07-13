@@ -7,7 +7,6 @@ import './DocumentationList.css';
 const DocumentationList = () => {
   const [documentations, setDocumentations] = useState([]);
   const [searchValue, setSearchValue] = React.useState('');
-
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/documentation`)
@@ -24,23 +23,26 @@ const DocumentationList = () => {
           searchValue={searchValue}
           setSearchValue={setSearchValue}
         />
-        {documentations
-          .filter(
-            (documentation) =>
-              documentation.title.toLowerCase().includes(searchValue) ||
-              documentation.description.toLowerCase().includes(searchValue)
-          )
-          .map((documentation) => (
-            <p>
-              <DocumentationItem
-                title={documentation.title}
-                description={documentation.description}
-                category={documentation.name}
-                price={documentation.price}
-                key={documentation.id}
-              />
-            </p>
-          ))}
+        <div className="documentation-results">
+          {documentations
+            .filter(
+              (documentation) =>
+                documentation.title.toLowerCase().includes(searchValue) ||
+                documentation.description.toLowerCase().includes(searchValue)
+            )
+            .map((documentation) => (
+              <p className="doc-card">
+                <DocumentationItem
+                  file={documentation.file}
+                  title={documentation.title}
+                  description={documentation.description}
+                  category={documentation.name}
+                  price={documentation.price}
+                  key={documentation.id}
+                />
+              </p>
+            ))}
+        </div>
       </div>
     </>
   );
