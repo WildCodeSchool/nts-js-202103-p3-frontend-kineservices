@@ -32,7 +32,6 @@ const DocumentationList = () => {
       console.log(error);
     }
   }, []);
-  console.log(requestOne);
   return (
     <>
       <h1 className="title-general">Recherche globale</h1>
