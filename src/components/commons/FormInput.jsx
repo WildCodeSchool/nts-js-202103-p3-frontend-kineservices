@@ -18,9 +18,9 @@ function FormInput({ label, name, type, value = {}, setValue }) {
           type={type}
           name={name}
           id={name}
-          placeholder={name}
           value={value[name]} // value.title, value.description...
           onChange={handleChange}
+          required
         />
       </label>
     </div>

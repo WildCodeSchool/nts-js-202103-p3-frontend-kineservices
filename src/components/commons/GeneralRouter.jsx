@@ -15,6 +15,7 @@ import NavBar from './NavBar';
 import DocumentationItem from '../views/DocumentationItem';
 import Header from './Header';
 import FormationItem from '../views/FormationItem';
+import FormationForm from '../views/FormationForm';
 
 function GeneralRouter() {
   return (
@@ -42,6 +43,9 @@ function GeneralRouter() {
           </Route>
           <Route exact path="/formation">
             <FormationList />
+          </Route>
+          <Route exact path="/formation-form">
+            <FormationForm />
           </Route>
           <Route exact path="/formation-item">
             <FormationItem />

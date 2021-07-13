@@ -13,6 +13,7 @@ function FormationForm() {
     website: '',
     description: '',
   });
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -37,61 +38,71 @@ function FormationForm() {
       <form onSubmit={handleSubmit}>
         <h1 className="addFormation">Ajouter une formation </h1>
         <FormInput
-          className="titre"
+          classInput
           label="Titre"
           name="title"
-          type="text"
           value={formation}
           setValue={setFormation}
         />
+        <label className="textAreaLabel" htmlFor="description">
+          {' '}
+          Description:
+          <textarea
+            className="textArea"
+            maxLength="1200"
+            rows="15"
+            name="description"
+            onChange={(e) =>
+              setFormation({ ...formation, description: e.target.value })
+            }
+            required
+          />
+        </label>
         <FormInput
-          className="designForm"
-          label="description"
-          name="description"
-          type="textarea"
-          value={formation}
-          setValue={setFormation}
-        />
-        <FormInput
-          label="date"
+          label="Date"
           name="date"
           type="date"
           value={formation}
           setValue={setFormation}
         />
         <FormInput
-          label="website"
+          label="Site web"
           name="website"
           type="text"
           value={formation}
           setValue={setFormation}
         />
-
-        <select
-          name="category_id"
-          id="category"
-          onChange={(event) => {
-            setFormation({ ...formation, category_id: event.target.value });
-          }}
-        >
-          <option value="0">---</option>
-          {select.map((category) => {
-            return (
-              <option key={category.id} value={category.name}>
-                {category.name}
-              </option>
-            );
-          })}
-        </select>
+        <label className="select" htmlFor="category">
+          Catégorie:
+          <select
+            required
+            name="category_id"
+            id="category"
+            onChange={(event) => {
+              setFormation({ ...formation, category_id: event.target.value });
+            }}
+          >
+            <option value="">--- Choisissez une catégorie</option>
+            {select.map((category) => {
+              return (
+                <option key={category.id} value={category.name}>
+                  {category.name}
+                </option>
+              );
+            })}
+          </select>
+        </label>
 
         <FormInput
-          label="prix"
+          label="Prix"
           name="price"
           type="number"
           value={formation}
           setValue={setFormation}
         />
-        <input type="submit" value="Envoyer" />
+        <div className="container">
+          <input className="bouton" type="submit" value="Envoyer" />
+        </div>
       </form>
     </div>
   );
