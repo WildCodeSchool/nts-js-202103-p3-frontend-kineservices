@@ -29,8 +29,8 @@ export default function SignUpKine() {
     phone: '',
     website: '',
   });
-
   const [picture, setPicture] = useState(null);
+
   const checkValidation = (e) => {
     const confPass = e.target.value;
     setConfirmPassword(confPass);
@@ -54,26 +54,6 @@ export default function SignUpKine() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    const formUser = new FormData();
-    formUser.append('picture', picture);
-    formUser.append('RPPS', user.RPPS);
-    formUser.append('role_id', user.role_id);
-    formUser.append('SIRET', user.SIRET);
-    formUser.append('address', user.address);
-    formUser.append('birthdate', user.birthdate);
-    formUser.append('country', user.country);
-    formUser.append('email', user.email);
-    formUser.append('firstname', user.firstname);
-    formUser.append('lastname', user.lastname);
-    formUser.append('password', user.password);
-    formUser.append('phone', user.phone);
-    formUser.append('website', user.website);
-
-    const config = {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    };
     if (user.role_id === 0) {
       Swal.fire({
         position: 'center',
@@ -87,6 +67,27 @@ export default function SignUpKine() {
         title: `Veuillez accepter les conditions general d'utilisation`,
       });
     } else {
+      const formUser = new FormData();
+      formUser.append('picture', picture);
+      formUser.append('RPPS', user.RPPS);
+      formUser.append('role_id', user.role_id);
+      formUser.append('SIRET', user.SIRET);
+      formUser.append('address', user.address);
+      formUser.append('birthdate', user.birthdate);
+      formUser.append('country', user.country);
+      formUser.append('email', user.email);
+      formUser.append('firstname', user.firstname);
+      formUser.append('lastname', user.lastname);
+      formUser.append('password', user.password);
+      formUser.append('phone', user.phone);
+      formUser.append('website', user.website);
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      };
+      console.log(picture);
+
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, formUser, config)
         .then((response) => {
@@ -128,7 +129,7 @@ export default function SignUpKine() {
               <form
                 onSubmit={handleSubmit}
                 encType="multipart/form-data"
-                method="post"
+                // method="post"
               >
                 <div className="container-avatar">
                   <input

@@ -32,7 +32,6 @@ function Profile() {
         })
         .then((response) => {
           setUser(response.data);
-          console.log(response.data);
         });
     } catch (error) {
       console.error(error);
@@ -60,7 +59,6 @@ function Profile() {
     localStorage.removeItem('USERID');
     localStorage.removeItem('TOKEN');
     history.push('/');
-    console.log('ok');
   };
 
   return (
