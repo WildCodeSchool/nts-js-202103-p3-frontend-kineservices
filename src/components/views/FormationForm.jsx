@@ -50,7 +50,7 @@ function FormationForm() {
           <textarea
             className="textArea"
             maxLength="1200"
-            rows="15"
+            rows="10"
             name="description"
             onChange={(e) =>
               setFormation({ ...formation, description: e.target.value })
@@ -85,7 +85,7 @@ function FormationForm() {
             <option value="">--- Choisissez une catégorie</option>
             {select.map((category) => {
               return (
-                <option key={category.id} value={category.name}>
+                <option key={category.id} value={category.id}>
                   {category.name}
                 </option>
               );
