@@ -1,13 +1,17 @@
+/* eslint-disable no-nested-ternary */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Form, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Form } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
 import document from '../../media/documentation.svg';
 import service from '../../media/service.svg';
 import formation from '../../media/formation.svg';
+import avatar from '../../media/user.png';
+
 import './Profile.css';
 
 function Profile() {
+  const history = useHistory(null);
   const [user, setUser] = useState(null);
   const [updateUser, setUpdateUser] = useState({
     RPPS: '',
@@ -45,6 +49,7 @@ function Profile() {
       .put(`${process.env.REACT_APP_BACKEND_URL}/profil/${userId}`, {
         userId,
       })
+
       .then((response) => {
         setUpdateUser(response);
       });
@@ -57,67 +62,96 @@ function Profile() {
     putUser();
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem('USERID');
+    localStorage.removeItem('TOKEN');
+    history.push('/');
+    console.log('ok');
+  };
+
   return (
-    <div className="Container_profil">
-      {!user ? (
+    <div className="container_profil">
+      {!userId ? (
+        history.push('/connexion')
+      ) : !user ? (
         <p>loading ...</p>
       ) : (
-        <Card className="card-profil">
-          <Card.Body className="card-body-profil">
-            <div className="container_image_avatar">
-              <div className="texte">
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].firstname} />
-                </Form.Group>
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].lastname} />
-                </Form.Group>
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].email} />
-                </Form.Group>
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].phone} />
-                </Form.Group>
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].address} />
-                </Form.Group>
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].birthdate} />
-                </Form.Group>
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].country} />
-                </Form.Group>
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].website} />
-                </Form.Group>
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].RPPS} />
-                </Form.Group>
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].role_id} />
-                </Form.Group>
-                <Form.Group className="container-form">
-                  <Form.Control value={user[0].SIRET} />
-                </Form.Group>
-              </div>
-              {/* en attente de pouvoir recuperer envoyer la photo > bdd */}
-              {/* <img
+        <div className="container-form-profil">
+          <div className="container-avatar-text">
+            <div className="container-avatar-profil">
+              <img className="avatar" src={avatar} alt="avatar" />
+            </div>
+            <div className="text-top">
+              <Form.Group className="container-form-top">
+                <Form.Label className="label-form-profil">Prénom</Form.Label>
+                <Form.Control defaultValue={user[0].firstname} />
+              </Form.Group>
+              <Form.Group className="container-form-top">
+                <Form.Label className="label-form-profil">Nom</Form.Label>
+                <Form.Control value={user[0].lastname} />
+              </Form.Group>
+              <Form.Group className="container-form-top">
+                <Form.Label className="label-form-profil">Email</Form.Label>
+                <Form.Control value={user[0].email} />
+              </Form.Group>
+              <Form.Group className="container-form-top">
+                <Form.Label className="label-form-profil">
+                  Numéro de téléphone
+                </Form.Label>
+                <Form.Control value={user[0].phone} />
+              </Form.Group>
+            </div>
+          </div>
+
+          <Form.Group className="container-form-text">
+            <Form.Label className="label-form-profil">Adresse</Form.Label>
+            <Form.Control value={user[0].address} />
+          </Form.Group>
+          <Form.Group className="container-form-text">
+            <Form.Label className="label-form-profil">
+              Date de naissance
+            </Form.Label>
+            <Form.Control value={user[0].birthdate} />
+          </Form.Group>
+          <Form.Group className="container-form-text">
+            <Form.Label className="label-form-profil">Pays</Form.Label>
+            <Form.Control value={user[0].country} />
+          </Form.Group>
+          <Form.Group className="container-form-text">
+            <Form.Label className="label-form-profil">Site web</Form.Label>
+            <Form.Control value={user[0].website} />
+          </Form.Group>
+          <Form.Group className="container-form-text">
+            <Form.Label className="label-form-profil">Numéro RPPS</Form.Label>
+            <Form.Control value={user[0].RPPS} />
+          </Form.Group>
+          <Form.Group className="container-form-text">
+            <Form.Label className="label-form-profil">Role</Form.Label>
+            <Form.Control value={user[0].role_id} />
+          </Form.Group>
+          <Form.Group className="container-form-text">
+            <Form.Label className="label-form-profil">Numéro SIRET</Form.Label>
+            <Form.Control value={user[0].SIRET} />
+          </Form.Group>
+          {/* en attente de pouvoir recuperer envoyer la photo > bdd */}
+          {/* <img
           src={user[0].picture}
           alt={user[0].firstname}
           className="style_avatar"
         /> */}
-            </div>
-          </Card.Body>
-        </Card>
+        </div>
       )}
       <div className="container_bouton_logout">
-        <button type="button" className="bouton_save">
+        <button type="button" className="bouton_save" onClick={putUser}>
           Enregistrer
         </button>
-        <p>Me déconnecter</p>
+
+        <button type="button" className="bouton-loyout" onClick={handleLogout}>
+          Se déconnecter
+        </button>
       </div>
       <div className="container_bouton">
-        <Link to="/documentation">
+        <Link to="/documentation-form">
           <button type="button" className="bouton">
             <img
               className="logo-documentation"
@@ -127,7 +161,7 @@ function Profile() {
             Créer une documentation
           </button>
         </Link>
-        <Link to="/formation">
+        <Link to="/formation-form">
           <button type="button" className="bouton">
             <img
               className="logo-formation"
@@ -137,7 +171,7 @@ function Profile() {
             Créer une formation
           </button>
         </Link>
-        <Link to="/service">
+        <Link to="/service-form">
           <button type="button" className="bouton">
             <img
               className="logo-service"
