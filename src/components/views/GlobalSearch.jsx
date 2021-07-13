@@ -5,6 +5,7 @@ import ServiceItem from './ServiceItem';
 import FormationItem from './FormationItem';
 import SearchContent from '../commons/SearchContent';
 import './DocumentationList.css';
+import './GlobalSearch.css';
 
 const DocumentationList = () => {
   const [documentations, setDocumentations] = useState([]);
@@ -39,9 +40,11 @@ const DocumentationList = () => {
   }, []);
   return (
     <>
-      <h1 className="alldoc">Recherche globale</h1>
-      <div className="search-engine">
-        <h2>Rechercher une documentation, une formation ou un service</h2>
+      <h1 className="title-general">Recherche globale</h1>
+      <div className="search-engine-general">
+        <h2 className="general-search">
+          Rechercher une documentation, une formation ou un service
+        </h2>
         <SearchContent
           searchValue={searchValue}
           setSearchValue={setSearchValue}
