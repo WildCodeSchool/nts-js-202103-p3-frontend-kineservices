@@ -6,3 +6,12 @@
   font-family: 'Hind';
   padding-left: 2%;
 }
+.documentation-results {
+  margin-bottom: 10vw;
+}
+
+@media screen and (min-width: 768px) {
+  .documentation-results {
+    margin-bottom: 5vw;
+  }
+}
