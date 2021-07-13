@@ -1,0 +1,87 @@
+.footer {
+  line-height: 25px;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr, 1fr;
+  background-color: #ffe400;
+}
+
+.networkLink {
+  grid-column: 1;
+  grid-row: 1;
+  margin-left: 2.5vw;
+}
+
+.titleKine {
+  font-size: 1.8em;
+  height: 1vw;
+  margin-left: 0.5vw;
+}
+
+.networkLogo {
+  padding-left: 0.4vw;
+}
+
+.credits {
+  grid-column: 2;
+  grid-row: 1;
+  margin-top: 4vw;
+}
+
+.adress {
+  margin-left: 2.5vw;
+  margin-top: 1vw;
+}
+
+.conditions {
+  list-style: none;
+  grid-column: 1/3;
+  grid-row: 2;
+  text-align: center;
+  line-height: 20px;
+}
+
+.disc {
+  visibility: hidden;
+}
+@media screen and (min-width: 768px) {
+  .networkLink {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 3fr;
+    grid-template-rows: 1;
+    margin-left: 4vw;
+  }
+
+  .titleKine {
+    margin-right: 10vw;
+  }
+
+  .networkLogo {
+    margin-top: 1.3vw;
+    margin-left: 1.5vw;
+  }
+
+  .credits {
+    margin-top: 0.5vw;
+    text-align: right;
+    margin-right: 2vw;
+  }
+
+  .adress br {
+    display: none;
+  }
+
+  .conditions {
+    list-style-type: disc;
+  }
+
+  .conditionElement {
+    text-align: center;
+    display: inline;
+  }
+
+  .disc {
+    visibility: visible;
+  }
+}

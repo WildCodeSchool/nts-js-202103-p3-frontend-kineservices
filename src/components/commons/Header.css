@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ffe400;
+  box-shadow: 0 5px 5px rgb(134 134 134);
+}
+
+.container-header-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-header-signin {
+  width: 120px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.button-header-signup {
+  border-radius: 8px;
+  background-color: #7a77f2;
+  color: white;
+  cursor: pointer;
+}
+
+.title-header {
+  margin: 0;
+  font-size: 40px;
+  font-family: 'Roboto';
+}

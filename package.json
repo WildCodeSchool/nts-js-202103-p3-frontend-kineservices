@@ -16,9 +16,11 @@
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
-    "react-responsive-carousel": "^3.2.18",
+    "react-items-carousel": "^2.8.0",
+    "react-responsive-carousel": "^3.2.19",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "sweetalert2": "^11.0.18",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

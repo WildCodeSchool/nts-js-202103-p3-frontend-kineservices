@@ -1,5 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+body:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff400;
+  clip-path: circle(30% at right 70%);
+  z-index: -4;
+}
+
+body:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff400;
+  clip-path: circle(20% at 10% 10%);
+  z-index: -4;
+}
+
+body:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff400;
+  clip-path: circle(20% at 10% 10%);
+  z-index: -4;
+}
+
 .home {
   display: flex;
   align-items: center;
@@ -19,16 +55,16 @@
   position: absolute;
 }
 
-.landing-page img {
-  max-width: 100%;
-  height: 450px;
-}
-
 .intro {
-  position: absolute;
+  background-image: url('../../media/backgroundkine.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 450px;
 }
 .intro p {
   text-align: center;
@@ -74,6 +110,23 @@
   font-size: 23px;
 }
 
+.signIn {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  background: #7a77f2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 5%;
+  width: 170px;
+  color: white;
+}
+
+.title-home {
+  text-align: center;
+}
+
 hr {
   border: none;
   border: 2px double #333;
@@ -83,11 +136,15 @@ hr {
   background-color: #0602fa;
 }
 
-span {
-  font-size: 40px;
+.priceText {
+  font-size: 25px;
   font-family: 'Roboto', sans-serif;
+  font-weight: 600;
 }
 
 .kine-container {
   margin-bottom: 5%;
+}
+
+@media screen and (max-width: 768px) {
 }
