@@ -66,7 +66,6 @@ function Profile() {
     localStorage.removeItem('USERID');
     localStorage.removeItem('TOKEN');
     history.push('/');
-    console.log('ok');
   };
 
   return (
