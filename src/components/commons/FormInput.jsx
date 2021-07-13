@@ -19,7 +19,7 @@ function FormInput({ label, name, type, value = {}, setValue }) {
           type={type}
           name={name}
           id={name}
-          value={value[name]} // value.title, value.description...
+          value={value[name]}
           onChange={handleChange}
           required
         />
