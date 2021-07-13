@@ -33,7 +33,7 @@ function GeneralRouter() {
           <Route exact path="/documentation-form">
             <DocumentationForm />
           </Route>
-          <Route exact path="/documentation-list">
+          <Route exact path="/documentation">
             <DocumentationList />
           </Route>
           <Route exact path="/documentation-item">
