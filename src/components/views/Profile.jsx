@@ -6,10 +6,7 @@ import { Link, useHistory } from 'react-router-dom';
 import document from '../../media/documentation.svg';
 import service from '../../media/service.svg';
 import formation from '../../media/formation.svg';
-import avatar from '../../media/user.png';
-
 import './Profile.css';
-import { useHistory } from 'react-router-dom';
 
 function Profile() {
   const history = useHistory(null);
@@ -79,7 +76,11 @@ function Profile() {
         <div className="container-form-profil">
           <div className="container-avatar-text">
             <div className="container-avatar-profil">
-              <img className="avatar" src={avatar} alt="avatar" />
+              <img
+                className="avatar"
+                src={`${process.env.REACT_APP_BACKEND_URL}/${user[0].picture}`}
+                alt={user[0].firstname + user[0].lastname}
+              />
             </div>
             <div className="text-top">
               <Form.Group className="container-form-top">
@@ -133,17 +134,13 @@ function Profile() {
             <Form.Label className="label-form-profil">Numéro SIRET</Form.Label>
             <Form.Control value={user[0].SIRET} />
           </Form.Group>
-          {/* en attente de pouvoir recuperer envoyer la photo > bdd */}
-          {/* <img
-          src={user[0].picture}
-          alt={user[0].firstname}
-          className="style_avatar"
-        /> */}
         </div>
       )}
       <div className="container_bouton_logout">
         <button type="button" className="bouton_save" onClick={putUser}>
           Enregistrer
+        </button>
+      </div>
       <div className="container_bouton">
         <button type="button" className="bouton">
           Partager mes connaissances
