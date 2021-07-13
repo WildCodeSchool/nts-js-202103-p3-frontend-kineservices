@@ -21,7 +21,7 @@ export default function SignUpKine() {
     SIRET: 0,
     address: '',
     birthdate: '',
-    country: 'france',
+    country: 'France',
     email: '',
     firstname: '',
     lastname: '',
@@ -58,13 +58,13 @@ export default function SignUpKine() {
       Swal.fire({
         position: 'center',
         icon: 'error',
-        title: 'Êtes vous Kinésiterapeuthe ?',
+        title: 'Êtes-vous kinésiterapeuthe ?',
       });
     } else if (!servicesTerms) {
       Swal.fire({
         position: 'center',
         icon: 'error',
-        title: `Veuillez accepter les conditions general d'utilisation`,
+        title: `Veuillez accepter les conditions générales d'utilisation`,
       });
     } else {
       const formUser = new FormData();
