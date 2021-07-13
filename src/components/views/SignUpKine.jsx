@@ -86,7 +86,6 @@ export default function SignUpKine() {
           'Content-Type': 'multipart/form-data',
         },
       };
-      console.log(picture);
 
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, formUser, config)
