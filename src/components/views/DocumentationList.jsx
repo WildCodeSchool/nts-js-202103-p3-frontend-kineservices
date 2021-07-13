@@ -33,6 +33,7 @@ const DocumentationList = () => {
             .map((documentation) => (
               <p className="doc-card">
                 <DocumentationItem
+                  file={documentation.file}
                   title={documentation.title}
                   description={documentation.description}
                   category={documentation.name}

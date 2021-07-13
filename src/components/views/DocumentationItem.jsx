@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './DocumentationItem.css';
-import { Link } from 'react-router-dom';
 
 function DocumentationItem(props) {
-  const { title, description, category, price, id } = props;
+  const { title, description, category, price, file } = props;
   return (
     <div className="container-docitem">
       <div className="box-item">
@@ -14,9 +13,13 @@ function DocumentationItem(props) {
         <p className="category">Catégorie : {category}</p>
         <p className="price">Prix : {price}€</p>
         <div className="discover">
-          <Link to={`/documentation/${id}`} className="telecharger">
+          <a
+            href={`${process.env.REACT_APP_BACKEND_URL}/${file}`}
+            className="telecharger"
+            download
+          >
             Télécharger !
-          </Link>
+          </a>
         </div>
       </div>
     </div>
