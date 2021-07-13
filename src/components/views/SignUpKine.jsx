@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-no-duplicate-props */
+/* eslint-disable no-unused-vars */
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -60,13 +60,26 @@ export default function SignUpKine() {
         icon: 'error',
         title: 'Êtes-vous kinésiterapeuthe ?',
       });
-    } else if (!servicesTerms) {
+    }
+    if (!servicesTerms) {
       Swal.fire({
         position: 'center',
         icon: 'error',
         title: `Veuillez accepter les conditions générales d'utilisation`,
       });
-    } else {
+    }
+    if (!validation || !validationMail) {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: `Votre mot de passe ou votre mail ne sont pas identique`,
+      });
+    } else if (
+      validation &&
+      validationMail &&
+      servicesTerms &&
+      user.role_id !== 0
+    ) {
       const formUser = new FormData();
       formUser.append('picture', picture);
       formUser.append('RPPS', user.RPPS);
@@ -86,7 +99,6 @@ export default function SignUpKine() {
           'Content-Type': 'multipart/form-data',
         },
       };
-
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, formUser, config)
         .then((response) => {
@@ -107,15 +119,6 @@ export default function SignUpKine() {
             title: 'Veuillez vérifier les informations saisies',
           })
         );
-      if (!validation) {
-        console.log('passwords do not match');
-      } else if (!validationMail) {
-        console.log('emails do not match');
-      } else {
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
-          user,
-        });
-      }
     }
   };
 
@@ -125,14 +128,9 @@ export default function SignUpKine() {
         <div className="signUpForm">
           <Card className="card-signup">
             <Card.Body className="card-body-signup">
-              <form
-                onSubmit={handleSubmit}
-                encType="multipart/form-data"
-                // method="post"
-              >
+              <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className="container-avatar">
                   <input
-                    // type="image"
                     src={avatar}
                     alt="avatar"
                     className="avatar"
