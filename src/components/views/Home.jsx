@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <h1 className="title-home">Les formations</h1>
+        <h4 className="title-home">Ce que nous proposons</h4>
         <div>
           <Carousel />
         </div>
@@ -33,10 +33,12 @@ export default function Home() {
           <div className="bubbles" />
           <h1>Je suis un kiné</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-            sapiente? Est, blanditiis dignissimos, dolor incidunt eaque quo
-            aliquam quia tenetur commodi iusto, soluta sunt quibusdam
-            recusandae. Itaque incidunt maiores tempora?
+            Je fais partie de cette catégorie si je suis kinésithérapeute et que
+            je possède donc mon numéro RPPS ou que je possède une entreprise,
+            quelle qu’elle soit (au niveau du statut juridique et du chiffre
+            d’affaire). Par exemple : kinésithérapeute en libéral,
+            kinésithérapeute hospitalier, kinésithérapeute ayant créé une
+            micro-entreprise, kinésithérapeute ayant créé une SARL.
           </p>
           <span className="priceText">Premier mois remboursé !</span>
         </div>
@@ -44,10 +46,15 @@ export default function Home() {
         <div>
           <h1>Je ne suis pas un kiné</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-            sapiente? Est, blanditiis dignissimos, dolor incidunt eaque quo
-            aliquam quia tenetur commodi iusto, soluta sunt quibusdam
-            recusandae. Itaque incidunt maiores tempora?
+            Je fais partie de cette catégorie et bénéficie du tarif de{' '}
+            <strong>10€ par mois</strong> si je ne suis pas kinésithérapeute.
+            Mon statut juridique est : libéral, auto-entrepreneur ou entreprise
+            individuelle. Par exemple : rédacteur web, graphiste, comptable,
+            avocat, photographe, conseillé financier, informaticien… Si je
+            possède une entreprise de plus de 2 salariés (entreprise vendant du
+            matériel médical, entreprise de logiciel de comptabilité, de prise
+            de rendez-vous…) mon abonnement est de <strong>50€ par mois</strong>
+            .
           </p>
           <h3>
             à partir de <br />
