@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import FormInput from '../commons/FormInput';
@@ -71,7 +72,6 @@ function FormationForm() {
             setFormation({ ...formation, category_id: event.target.value });
           }}
         >
-          <option value="0">---</option>
           {select.map((category) => {
             return (
               <option key={category.id} value={category.name}>

@@ -11,8 +11,8 @@ function DocumentationForm() {
   const [documentation, setDocumentation] = useState({
     title: '',
     description: '',
-    category_id: 3,
-    user_id: 2,
+    category_id: '',
+    user_id: '2', // TODO récupérer l'identifiant de l'utilisateur connecté
     price: '',
   });
   const [file, setFile] = useState(null);
@@ -25,6 +25,7 @@ function DocumentationForm() {
     formData.append('category_id', documentation.category_id);
     formData.append('user_id', documentation.user_id);
     formData.append('price', documentation.price);
+
     const config = {
       headers: {
         'content-type': 'multipart/form-data',
@@ -75,7 +76,9 @@ function DocumentationForm() {
         name="file"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <p className="acceptedFiles">.pdf .doc .docx .odt .ppt .pptx</p>
+      <p className="acceptedFiles">
+        .pdf .doc .docx .odt .ppt .pptx .amz .epub
+      </p>
       <FormInput
         label="Titre"
         name="title"
@@ -100,11 +103,13 @@ function DocumentationForm() {
           });
         }}
       >
-        <option value="0">---</option>
+        <option className="option-value" value="">
+          ---
+        </option>
 
         {select.map((category) => {
           return (
-            <option key={category.id} value={category.name}>
+            <option key={category.id} value={category.id}>
               {category.name}
             </option>
           );
