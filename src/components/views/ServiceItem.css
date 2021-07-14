@@ -1,0 +1,96 @@
+body {
+  width: 100%;
+  margin: 0;
+}
+
+.box-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  width: 60%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background-color: #f6f6f6;
+  box-shadow: 3px 3px 3px lightgrey;
+}
+
+.title {
+  text-decoration: none;
+  margin-bottom: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(
+      to top,
+      rgba(255, 230, 0, 0.952) 0%,
+      rgba(255, 230, 0, 0.952) 10%,
+      transparent 10.01%
+    )
+    no-repeat left bottom / 0 100%;
+  transition: background-size 0.5s;
+}
+
+.title:hover {
+  background-size: 100% 100%;
+}
+
+.description {
+  padding: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1px;
+  text-align: justify;
+}
+
+.price {
+  margin-bottom: 20px;
+}
+
+.discover {
+  margin-bottom: 5px;
+}
+
+.link-website {
+  margin-left: auto;
+  margin-right: auto;
+  background: #7a77f2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: 6vw;
+  justify-content: center;
+  color: white;
+  font-size: 23px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.link-website:visited {
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .box-item {
+    max-width: 50%;
+    flex-wrap: no-wrap;
+    margin: 0, auto;
+  }
+
+  .discover {
+    height: 5vw;
+  }
+  .link-website {
+    border-radius: 10px;
+    justify-content: center;
+    color: white;
+    width: 50%;
+    height: 4vw;
+    padding-top: 0.4vw;
+    padding-bottom: 0%;
+  }
+}

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './DocumentationItem.css';
+import './ServiceItem.css';
 
 function ServiceList(props) {
   const { title, description, website, price } = props;
@@ -11,7 +11,7 @@ function ServiceList(props) {
         <p className="description">{description}</p>
         <p>Prix ! {price}€</p>
         <div className="discover">
-          <a href={website} className="download-file">
+          <a href={website} className="link-website">
             Accéder au site !
           </a>
         </div>

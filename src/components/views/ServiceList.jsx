@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ServiceItem from './ServiceItem';
 import SearchContent from '../commons/SearchContent';
-import './DocumentationList.css';
+import './ServiceList.css';
 
 const ServiceList = () => {
   const [services, setServices] = useState([]);
@@ -16,14 +16,14 @@ const ServiceList = () => {
   });
   return (
     <>
-      <h1 className="alldoc">Tous les services</h1>
+      <h1 className="allservices">Tous les services</h1>
       <div className="search-engine">
         <h2>Rechercher un service</h2>
         <SearchContent
           searchValue={searchValue}
           setSearchValue={setSearchValue}
         />
-        <div className="documentation-results">
+        <div className="service-results">
           {services
             .filter(
               (service) =>
