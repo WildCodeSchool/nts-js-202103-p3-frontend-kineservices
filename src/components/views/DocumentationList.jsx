@@ -31,16 +31,14 @@ const DocumentationList = () => {
                 documentation.description.toLowerCase().includes(searchValue)
             )
             .map((documentation) => (
-              <p className="doc-card">
-                <DocumentationItem
-                  file={documentation.file}
-                  title={documentation.title}
-                  description={documentation.description}
-                  category={documentation.name}
-                  price={documentation.price}
-                  key={documentation.id}
-                />
-              </p>
+              <DocumentationItem
+                file={documentation.file}
+                title={documentation.title}
+                description={documentation.description}
+                category={documentation.name}
+                price={documentation.price}
+                key={documentation.id}
+              />
             ))}
         </div>
       </div>
