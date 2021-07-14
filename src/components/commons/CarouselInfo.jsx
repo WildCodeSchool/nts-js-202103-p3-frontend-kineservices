@@ -5,7 +5,7 @@ import cou from '../../media/cou.jpg';
 // eslint-disable-next-line import/prefer-default-export
 export const images = [
   {
-    title: 'Rééducation du pied',
+    title: 'La rééducation du pied',
     subtitles:
       'Le schéma de marche est la façon dont un patient marche. Lorsque ce schéma est perturbé, on observe une boiterie. Il existe différents types de boiterie avec un déhanchement ou une rotation externe du pied. La boiterie peut avoir plusieurs origines.',
     img: feet,
@@ -17,7 +17,7 @@ export const images = [
     img: dos,
   },
   {
-    title: 'Cervicalgie',
+    title: 'La cervicalgie',
     subtitles:
       "Près de 70 % de la population adulte est amenée à souffrir de cervicalgies au cours de la vie. Dans l'immense majorité des cas, la cervicalgie est dite commune, c'est-à-dire que les examens complémentaires pratiqués (imagerie) ne montrent rien de significatif en termes d'atteinte anatomique.",
 
