@@ -1,6 +1,8 @@
+/* eslint-disable no-alert */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import FormInput from '../commons/FormInput';
+import './FormationForm.css';
 
 function FormationForm() {
   const [select, setSelect] = useState([]);
@@ -11,7 +13,9 @@ function FormationForm() {
     price: '',
     website: '',
     description: '',
+    user_id: 2,
   });
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -32,63 +36,75 @@ function FormationForm() {
   });
 
   return (
-    <div>
+    <div className="formationGlobal">
       <form onSubmit={handleSubmit}>
-        <p>Ajouter une formation : </p>
+        <h1 className="addFormation">Ajouter une formation </h1>
         <FormInput
+          classInput
           label="Titre"
           name="title"
-          type="text"
           value={formation}
           setValue={setFormation}
         />
+        <label htmlFor="Description">
+          <span className="textAreaLabel">Description:</span>
+          <textarea
+            className="textArea"
+            maxLength="1200"
+            rows="10"
+            id="Description"
+            onChange={(e) =>
+              setFormation({ ...formation, description: e.target.value })
+            }
+            required
+          />
+        </label>
         <FormInput
-          label="description"
-          name="description"
-          type="text"
-          value={formation}
-          setValue={setFormation}
-        />
-        <FormInput
-          label="date"
+          label="Date"
           name="date"
           type="date"
           value={formation}
           setValue={setFormation}
         />
         <FormInput
-          label="website"
+          label="Site web"
           name="website"
           type="text"
           value={formation}
           setValue={setFormation}
         />
-
-        <select
-          name="category_id"
-          id="category"
-          onChange={(event) => {
-            setFormation({ ...formation, category_id: event.target.value });
-          }}
-        >
-          <option value="0">---</option>
-          {select.map((category) => {
-            return (
-              <option key={category.id} value={category.name}>
-                {category.name}
-              </option>
-            );
-          })}
-        </select>
-
+        <label htmlFor="category">
+          <span className="select">Catégorie: </span>
+          <select
+            className="selectField"
+            required
+            name="category_id"
+            id="category"
+            onChange={(event) => {
+              setFormation({ ...formation, category_id: event.target.value });
+            }}
+          >
+            <option value="">--- Choisissez une catégorie</option>
+            {select.map((category) => {
+              return (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              );
+            })}
+          </select>
+        </label>
+        *
         <FormInput
-          label="prix"
+          label="Prix"
           name="price"
           type="number"
           value={formation}
           setValue={setFormation}
         />
-        <input type="submit" value="Envoyer" />
+        <div className="container">
+          <input className="bouton" type="submit" value="Envoyer" />
+        </div>
       </form>
     </div>
   );
