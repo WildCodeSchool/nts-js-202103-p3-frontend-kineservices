@@ -8,16 +8,15 @@ function FormationItem(props) {
     <div className="box-item">
       <h1 className="title">{title}</h1>
       <p className="description">{description}</p>
-      <p>
-        <span className="categorie">Catégorie :</span> {category}
-      </p>
+      <p className="categorie">Catégorie : {category}</p>
+      <hr />
       <p>{date}</p>
       <p className="price">Prix : {price}€</p>
-
-      <a href={website} className="download-file">
-        Voir et s&lsquo;inscrire!
-      </a>
-      <p className="price">Prix : {price}€</p>
+      <div className="discover">
+        <a href={website} className="link-website">
+          Voir et s&lsquo;inscrire !
+        </a>
+      </div>
     </div>
   );
 }

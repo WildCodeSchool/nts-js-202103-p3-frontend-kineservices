@@ -28,7 +28,8 @@ const DocumentationList = () => {
             .filter(
               (documentation) =>
                 documentation.title.toLowerCase().includes(searchValue) ||
-                documentation.description.toLowerCase().includes(searchValue)
+                documentation.description.toLowerCase().includes(searchValue) ||
+                documentation.name.toLowerCase().includes(searchValue)
             )
             .map((documentation) => (
               <DocumentationItem
