@@ -12,10 +12,12 @@ export default function Home() {
           <h1>Bienvenue sur Kinés.fr</h1>
           <h3>Qui sommes-nous ?</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-            ducimus earum beatae perferendis deserunt harum atque iure ratione
-            pariatur quis. Aliquam, quasi quo est consequatur vel eos veritatis
-            quia possimus?
+            Kinés.fr est une plateforme collaborative et de partage pour les
+            kinésithérapeutes. Elle permet à ces praticiens, et aux
+            professionnels en lien avec ce domaine, de proposer de la
+            documentation, des formations et des services de façon centralisée.
+            Kinés.fr est une plateforme alimentée par et pour les
+            kinésithérapeutes.
           </p>
         </div>
       </div>
@@ -46,7 +48,7 @@ export default function Home() {
         <div>
           <h1>Je ne suis pas un kiné</h1>
           <p>
-            Je fais partie de cette catégorie et bénéficie du tarif de{' '}
+            Je fais partie de cette catégorie et bénéficie du tarif de
             <strong>10€ par mois</strong> si je ne suis pas kinésithérapeute.
             Mon statut juridique est : libéral, auto-entrepreneur ou entreprise
             individuelle. Par exemple : rédacteur web, graphiste, comptable,
