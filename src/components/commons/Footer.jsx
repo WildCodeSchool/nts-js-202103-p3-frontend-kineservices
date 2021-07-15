@@ -16,7 +16,7 @@ const Footer = () => {
         <p className="adress">
           Alexandra Jacob • 01 rue adresse 37200 Tours
           <br />
-          +33648585995 • alexandra.jacob@email.fr
+          +33XXXXXXXXX • alexandra.jacob@email.fr
         </p>
       </div>
       <ul className="conditions">
