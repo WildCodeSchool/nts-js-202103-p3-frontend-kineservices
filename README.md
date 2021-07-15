@@ -13,7 +13,7 @@ Kinés.fr est une plateforme alimentée par et pour les kinésithérapeutes.
 En formation à la Wild Code School de Nantes, notre groupe composé de Guillaume Lefort, Damien Guiganton, Aurélien Bouchet, Ninon Maraval et Jonathan Rousseau s'est vu confier la mission de réaliser une application destinée aux kinésithérapeutes qui leur permettra de partager des connaissances, des formations et/ou des services client. 
 Ce projet a été créé en 8 semaines pour un client extérieur et est le dernier projet de notre formation.
 
-## Logo Kine.fr
+## Logo Kinés.fr
 
 ![Logo](https://cdn.discordapp.com/attachments/816033799979794482/865169749759623178/logo_kineservice-removebg-preview.png)
 
@@ -37,6 +37,7 @@ Ce projet a été créé en 8 semaines pour un client extérieur et est le derni
 - [**Boostrap**](https://www.npmjs.com/package/bootstrap)
 - [**Carousel**](https://www.npmjs.com/package/react-responsive-carousel)
 - [**Sweetalert2**](https://www.npmjs.com/package/sweetalert2)
+- [**React-Router-Dom**](https://www.npmjs.com/package/react-router-dom)
   
 ## Les différents GitHub de l'équipe
 
