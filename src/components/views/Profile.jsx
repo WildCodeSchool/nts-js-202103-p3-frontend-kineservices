@@ -6,7 +6,6 @@ import { Link, useHistory } from 'react-router-dom';
 import document from '../../media/documentation.svg';
 import service from '../../media/service.svg';
 import formation from '../../media/formation.svg';
-import avatar from '../../media/user.png';
 
 import './Profile.css';
 
