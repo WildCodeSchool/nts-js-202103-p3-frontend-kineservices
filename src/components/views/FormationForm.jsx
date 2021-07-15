@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import FormInput from '../commons/FormInput';
@@ -12,6 +13,7 @@ function FormationForm() {
     price: '',
     website: '',
     description: '',
+    user_id: 2,
   });
 
   const handleSubmit = (event) => {
@@ -92,6 +94,7 @@ function FormationForm() {
             })}
           </select>
         </label>
+*
         <FormInput
           label="Prix"
           name="price"

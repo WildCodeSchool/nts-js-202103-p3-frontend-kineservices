@@ -1,0 +1,33 @@
+.addService {
+  padding: 10px;
+  text-shadow: 1px 1px 1px #7a77f2;
+}
+
+.serviceGlobal {
+  text-align: center;
+  padding: 10px;
+  border: solid 1 px;
+  box-shadow: 0 10px 10px rgb(134 134 134);
+  margin: 2%;
+  margin-bottom: 50px;
+}
+
+.bouton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #7a77f2;
+  height: 40px;
+  border-radius: 8px;
+  width: 30%;
+  font-size: 16px;
+}
+.bouton:hover {
+  transform: scale(1.1);
+}
+.container {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}

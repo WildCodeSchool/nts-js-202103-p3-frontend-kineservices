@@ -15,6 +15,8 @@ import DocumentationItem from '../views/DocumentationItem';
 import Header from './Header';
 import FormationItem from '../views/FormationItem';
 import FormationForm from '../views/FormationForm';
+import ServiceForm from '../views/ServiceForm';
+
 
 function GeneralRouter() {
   return (
@@ -30,6 +32,9 @@ function GeneralRouter() {
           </Route>
           <Route exact path="/service">
             <ServiceList />
+          </Route>
+          <Route exact path="/service-form">
+            <ServiceForm />
           </Route>
           <Route exact path="/documentation-form">
             <DocumentationForm />
