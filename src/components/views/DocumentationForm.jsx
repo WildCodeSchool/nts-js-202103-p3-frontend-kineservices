@@ -15,7 +15,7 @@ function DocumentationForm() {
     title: '',
     description: '',
     category_id: '',
-    user_id: userId, // TODO récupérer l'identifiant de l'utilisateur connecté
+    user_id: userId,
     price: '',
   });
   const [file, setFile] = useState(null);
