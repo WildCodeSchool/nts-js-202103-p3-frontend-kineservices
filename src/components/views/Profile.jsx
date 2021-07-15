@@ -54,12 +54,11 @@ function Profile() {
       });
   };
   // updateUser : preaparation de la route de mise a jour du profile
-  console.log(updateUser);
 
   useEffect(() => {
     getUser();
     putUser();
-  }, []);
+  }, [updateUser]);
 
   const handleLogout = () => {
     localStorage.removeItem('USERID');
@@ -141,15 +140,7 @@ function Profile() {
         <button type="button" className="bouton_save" onClick={putUser}>
           Enregistrer
         </button>
-      </div>
-      <div className="container_bouton">
-        <button type="button" className="bouton">
-          Partager mes connaissances
-        </button>
-        <button type="button" className="bouton">
-          Partager mes formations
-        </button>
-        <button type="button" className="bouton-loyout" onClick={handleLogout}>
+        <button type="button" className="bouton-logout" onClick={handleLogout}>
           Se déconnecter
         </button>
       </div>
