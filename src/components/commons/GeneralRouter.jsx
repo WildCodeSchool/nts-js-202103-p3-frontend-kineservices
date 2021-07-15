@@ -16,6 +16,7 @@ import DocumentationItem from '../views/DocumentationItem';
 import Header from './Header';
 
 function GeneralRouter() {
+  // const id = localStorage.getItem('USERID');
   return (
     <Router>
       <Header />
@@ -45,9 +46,8 @@ function GeneralRouter() {
           <Route exact path="/formation-form">
             <DocumentationForm />
           </Route>
-          <Route exact path="/profil">
-            <Profile />
-          </Route>
+          <Route exact path="/profil/:id" component={Profile} />
+          <Profile />
           <Route exact path="/connexion">
             <SignIn />
           </Route>
