@@ -32,7 +32,7 @@ function FormationForm() {
           Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Documentation ajoutée avec succès!',
+            title: 'Formation ajoutée avec succès!',
             showConfirmButton: false,
             timer: 3000,
           })
