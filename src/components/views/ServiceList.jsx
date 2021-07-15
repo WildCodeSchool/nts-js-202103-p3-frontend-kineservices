@@ -13,6 +13,8 @@ const ServiceList = () => {
   }, []);
   return (
     <div>
+      <h1 className="titreFormation">Tous les services</h1>
+
       {services.map((service) => {
         return (
           <ServiceItem
