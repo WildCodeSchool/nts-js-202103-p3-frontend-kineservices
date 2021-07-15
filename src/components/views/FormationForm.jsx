@@ -92,7 +92,6 @@ function FormationForm() {
             })}
           </select>
         </label>
-
         <FormInput
           label="Prix"
           name="price"
