@@ -94,6 +94,7 @@ function DocumentationForm() {
         setValue={setDocumentation}
       />
       <select
+        required
         name="category_id"
         id="category"
         onChange={(event) => {
