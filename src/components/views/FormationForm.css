@@ -1,22 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-.acceptedFiles {
-  font-size: 0.7em;
-  margin-top: 0.1vw;
-}
-.addDocumentation {
+.addFormation {
   padding: 10px;
   text-align: center;
-  text-shadow: 1px 1px 1px #7a77f2;
+  text-shadow: 2px 2px 2px white;
 }
-
-.documentationGlobal {
+.formationGlobal {
   text-align: center;
   padding: 10px;
   border: solid 1 px;
   box-shadow: 0 10px 10px rgb(134 134 134);
   margin: 2%;
   margin-bottom: 50px;
+}
+
+.bouton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #7a77f2;
+  height: 40px;
+  border-radius: 8px;
+  width: 30%;
+  font-size: 16px;
+}
+.bouton:hover {
+  transform: scale(1.1);
+}
+.container {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 .select {
@@ -50,24 +65,4 @@
   margin: 1%;
   font-size: 16px;
   margin-left: 8%;
-}
-
-.bouton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #7a77f2;
-  height: 40px;
-  border-radius: 8px;
-  width: 30%;
-  font-size: 16px;
-}
-.bouton:hover {
-  transform: scale(1.1);
-}
-.container {
-  display: flex;
-  margin-top: 40px;
-  justify-content: center;
-  align-items: center;
 }

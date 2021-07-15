@@ -51,7 +51,7 @@ function Profile() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`${process.env.REACT_APP_BACKEND_URL}/profil/`, {
+      .put(`${process.env.REACT_APP_BACKEND_URL}/profil`, {
         updateUser,
       })
 
@@ -68,7 +68,6 @@ function Profile() {
         );
       });
   };
-  console.log(user);
 
   const handleLogout = () => {
     localStorage.removeItem('TOKEN');
@@ -80,6 +79,7 @@ function Profile() {
     getUser();
     setUpdateUser(user);
   }, []);
+
   return (
     <div className="container_profil">
       {!id ? (
@@ -241,12 +241,6 @@ function Profile() {
               </Form.Label>
               <Form.Control value={user.SIRET} name="SIRET" htmlFor="SIRET" />
             </Form.Group>
-            {/* en attente de pouvoir recuperer envoyer la photo > bdd */}
-            {/* <img
-          src={user[0].picture}
-          alt={user[0].firstname}
-          className="style_avatar"
-        /> */}
           </form>
         </div>
       )}
@@ -254,7 +248,6 @@ function Profile() {
         <button type="button" className="bouton_save" onClick={handleSubmit}>
           Enregistrer
         </button>
-
         <button type="button" className="bouton-loyout" onClick={handleLogout}>
           Se déconnecter
         </button>

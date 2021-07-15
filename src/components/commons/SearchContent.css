@@ -1,11 +1,17 @@
 .search-input {
   height: 35px;
-  width: 20%;
+  width: 100%;
   border-radius: 15px;
+  padding: 8px;
+  border: 1px solid #7a77f2;
+  box-sizing: border-box;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .search-input {
-    width: 40%;
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    align-items: center;
   }
 }

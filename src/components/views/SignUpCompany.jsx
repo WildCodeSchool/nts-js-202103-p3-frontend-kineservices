@@ -7,7 +7,6 @@ export default function SignUpKine() {
   const [formContent, setFormContent] = useState({});
   const [isKine, setIsKine] = useState(true);
   function handleCheck(event) {
-    console.log(event.target.name, event.target.value);
     if (event.target.value === 'kineCheck') {
       setIsKine(true);
     } else {

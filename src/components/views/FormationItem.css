@@ -46,11 +46,19 @@ body {
   margin-bottom: 1px;
   text-align: justify;
 }
-
+.date {
+  margin-bottom: 0;
+}
 .price {
+  margin-top: 0;
   margin-bottom: 20px;
 }
-.download-file {
+
+.discover {
+  margin-bottom: 5px;
+}
+
+.link-website {
   margin-left: auto;
   margin-right: auto;
   background: #7a77f2;
@@ -61,14 +69,11 @@ body {
   justify-content: center;
   color: white;
   font-size: 23px;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
-.discover {
-  margin-bottom: 5px;
-}
-.download-file:visited {
+.link-website:visited {
   color: white;
 }
 
@@ -82,7 +87,7 @@ body {
   .discover {
     height: 5vw;
   }
-  .download-file {
+  .link-website {
     border-radius: 10px;
     justify-content: center;
     color: white;
