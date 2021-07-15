@@ -10,7 +10,6 @@ import Profile from '../views/Profile';
 import SignUpSummary from '../views/SignUpSummary';
 import SignIn from '../views/SignIn';
 import SignUpKine from '../views/SignUpKine';
-import SignUpCompany from '../views/SignUpCompany';
 import NavBar from './NavBar';
 import DocumentationItem from '../views/DocumentationItem';
 import Header from './Header';
@@ -61,9 +60,6 @@ function GeneralRouter() {
           </Route>
           <Route exact path="/inscription-kine">
             <SignUpKine />
-          </Route>
-          <Route exact path="/inscription-entreprise">
-            <SignUpCompany />
           </Route>
         </Switch>
       </div>
