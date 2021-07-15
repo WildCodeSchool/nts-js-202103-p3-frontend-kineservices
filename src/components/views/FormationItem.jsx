@@ -12,10 +12,11 @@ function FormationItem(props) {
         <span className="categorie">Catégorie :</span> {category}
       </p>
       <p>{date}</p>
-      <p>
-        lien du site pour s &apos;inscrire à la formation : <br />
-        <a href={website}>{website}</a>
-      </p>
+      <p className="price">Prix : {price}€</p>
+
+      <a href={website} className="download-file">
+        Voir et s&lsquo;inscrire!
+      </a>
       <p className="price">Prix : {price}€</p>
     </div>
   );

@@ -104,7 +104,7 @@ function DocumentationForm() {
         }}
       >
         <option className="option-value" value="">
-          ---
+          --- Choisissez une catégorie
         </option>
 
         {select.map((category) => {
