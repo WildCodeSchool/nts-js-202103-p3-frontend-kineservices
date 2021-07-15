@@ -1,0 +1,17 @@
+.allservices {
+  text-align: center;
+  font-size: 40px;
+}
+.search-engine {
+  font-family: 'Hind';
+  padding-left: 2%;
+}
+.service-results {
+  margin-bottom: 10vw;
+}
+
+@media screen and (min-width: 768px) {
+  .service-results {
+    margin-bottom: 5vw;
+  }
+}

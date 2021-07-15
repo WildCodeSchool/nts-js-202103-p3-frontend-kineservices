@@ -1,0 +1,17 @@
+.allformations {
+  text-align: center;
+  font-size: 40px;
+}
+.search-engine {
+  font-family: 'Hind';
+  padding-left: 2%;
+}
+.formation-results {
+  margin-bottom: 10vw;
+}
+
+@media screen and (min-width: 768px) {
+  .formation-results {
+    margin-bottom: 5vw;
+  }
+}

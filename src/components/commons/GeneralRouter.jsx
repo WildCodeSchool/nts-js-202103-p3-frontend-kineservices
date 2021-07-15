@@ -17,7 +17,6 @@ import FormationItem from '../views/FormationItem';
 import FormationForm from '../views/FormationForm';
 import ServiceForm from '../views/ServiceForm';
 
-
 function GeneralRouter() {
   return (
     <Router>
