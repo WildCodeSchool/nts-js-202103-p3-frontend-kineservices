@@ -14,6 +14,7 @@ function FormationList() {
   });
   return (
     <div>
+      <h1 className="titreFormation">Toutes les Formations</h1>
       {formations.map((formation) => {
         return (
           <FormationItem
