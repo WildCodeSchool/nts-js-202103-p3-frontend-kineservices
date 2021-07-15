@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import document from '../../media/documentation.svg';
 import service from '../../media/service.svg';
 import formation from '../../media/formation.svg';
+
 import './Profile.css';
 
 function Profile() {
@@ -248,6 +249,11 @@ function Profile() {
         <button type="button" className="bouton_save" onClick={handleSubmit}>
           Enregistrer
         </button>
+        <button type="button" className="bouton-loyout" onClick={handleLogout}>
+          Se déconnecter
+        </button>
+      </div>
+      <div className="container_bouton">
         <button type="button" className="bouton-loyout" onClick={handleLogout}>
           Se déconnecter
         </button>
