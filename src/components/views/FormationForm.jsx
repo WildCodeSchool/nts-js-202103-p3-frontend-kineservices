@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import FormInput from '../commons/FormInput';
-
 import './FormationForm.css';
 
 function FormationForm() {
@@ -120,7 +119,7 @@ function FormationForm() {
               })}
             </select>
           </label>
-
+          *
           <FormInput
             label="Prix"
             name="price"
