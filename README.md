@@ -33,10 +33,10 @@ Ce projet a été créé en 8 semaines pour un client extérieur et est le derni
 
 ## Modules
 
-- **axios**: "^0.21.1",
-- **bootstrap**: "^4.6.0",
-- **carousel**: "^0.0.3",
-- **sweetalert2**: "^11.0.18"
+- [**Axios**](https://www.npmjs.com/package//axios)
+- [**Boostrap**](https://www.npmjs.com/package/bootstrap)
+- [**Carousel**](https://www.npmjs.com/package/react-responsive-carousel)
+- [**Sweetalert2**](https://www.npmjs.com/package/sweetalert2)
   
 ## Les différents GitHub de l'équipe
 
