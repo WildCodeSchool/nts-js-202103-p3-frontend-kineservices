@@ -14,7 +14,7 @@ function FormationList() {
   });
   return (
     <div>
-      <h1 className="titreFormation">Toutes les Formations</h1>
+      <h1 className="titreFormation">Toutes les formations</h1>
       {formations.map((formation) => {
         return (
           <FormationItem
