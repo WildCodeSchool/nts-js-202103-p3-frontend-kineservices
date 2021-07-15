@@ -8,10 +8,15 @@ function FormationItem(props) {
     <div className="box-item">
       <h1 className="title">{title}</h1>
       <p className="description">{description}</p>
-      <p>{category}</p>
+      <p>
+        <span className="categorie">Catégorie :</span> {category}
+      </p>
       <p>{date}</p>
-      <p>{website}</p>
-      <p>Prix : {price}</p>
+      <p>
+        lien du site pour s &apos;inscrire à la formation : <br />
+        <a href={website}>{website}</a>
+      </p>
+      <p className="price">Prix : {price}€</p>
     </div>
   );
 }
