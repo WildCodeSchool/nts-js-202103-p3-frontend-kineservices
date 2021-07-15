@@ -1,0 +1,17 @@
+.label {
+  position: relative;
+  top: 12px;
+  background-color: white;
+  color: #7a77f2;
+}
+.input {
+  border: 1px solid #7a77f2;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 85%;
+  display: flex;
+  margin: 1%;
+  font-size: 16px;
+  margin-left: 8%;
+}

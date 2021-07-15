@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  background-size: 40px;
+  background-color: white;
+  color: black;
+}
+
+.logo-navbar:hover {
+  color: #FFE400;
+}
+
+.logo-navbar {
+  max-width: 80vw;
+  margin: 5px;
+}
+
