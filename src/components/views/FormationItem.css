@@ -46,8 +46,11 @@ body {
   margin-bottom: 1px;
   text-align: justify;
 }
-
+.date {
+  margin-bottom: 0;
+}
 .price {
+  margin-top: 0;
   margin-bottom: 20px;
 }
 
