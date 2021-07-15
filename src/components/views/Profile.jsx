@@ -6,6 +6,8 @@ import { Link, useHistory } from 'react-router-dom';
 import document from '../../media/documentation.svg';
 import service from '../../media/service.svg';
 import formation from '../../media/formation.svg';
+import avatar from '../../media/user.png';
+
 import './Profile.css';
 
 function Profile() {
@@ -148,41 +150,47 @@ function Profile() {
         <button type="button" className="bouton">
           Partager mes formations
         </button>
-        <button type="button" className="bouton-loyout" onClick={handleLogout}>
-          Se déconnecter
-        </button>
-      </div>
-      <div className="container_bouton">
-        <Link to="/documentation-form">
-          <button type="button" className="bouton">
-            <img
-              className="logo-documentation"
-              src={document}
-              alt="logo doc navbar"
-            />
-            Créer une documentation
+        <div className="container_bouton">
+          <button
+            type="button"
+            className="bouton-loyout"
+            onClick={handleLogout}
+          >
+            Se déconnecter
           </button>
-        </Link>
-        <Link to="/formation-form">
-          <button type="button" className="bouton">
-            <img
-              className="logo-formation"
-              src={formation}
-              alt="logo formation navbar"
-            />
-            Créer une formation
-          </button>
-        </Link>
-        <Link to="/service-form">
-          <button type="button" className="bouton">
-            <img
-              className="logo-service"
-              src={service}
-              alt="logo service navbar"
-            />
-            Créer un service
-          </button>
-        </Link>
+        </div>
+        <div className="container_bouton">
+          <Link to="/documentation-form">
+            <button type="button" className="bouton">
+              <img
+                className="logo-documentation"
+                src={document}
+                alt="logo doc navbar"
+              />
+              Créer une documentation
+            </button>
+          </Link>
+          <Link to="/formation-form">
+            <button type="button" className="bouton">
+              <img
+                className="logo-formation"
+                src={formation}
+                alt="logo formation navbar"
+              />
+              Créer une formation
+            </button>
+          </Link>
+          <Link to="/service-form">
+            <button type="button" className="bouton">
+              <img
+                className="logo-service"
+                src={service}
+                alt="logo service navbar"
+              />
+              Créer un service
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
