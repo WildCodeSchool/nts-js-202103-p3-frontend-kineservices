@@ -69,8 +69,12 @@ function DocumentationForm() {
       });
   }, []);
   return (
-    <form onSubmit={handleSubmit} encType="multipart/form-data">
-      <p>Ajouter une documentation :</p>
+    <form
+      className="documentationGlobal"
+      onSubmit={handleSubmit}
+      encType="multipart/form-data"
+    >
+      <h1 className="addDocumentation">Ajouter une documentation </h1>
       <input
         type="file"
         name="file"
@@ -86,36 +90,43 @@ function DocumentationForm() {
         value={documentation}
         setValue={setDocumentation}
       />
-      <FormInput
-        label="Description"
-        name="description"
-        type="text"
-        value={documentation}
-        setValue={setDocumentation}
-      />
-      <select
-        required
-        name="category_id"
-        id="category"
-        onChange={(event) => {
-          setDocumentation({
-            ...documentation,
-            category_id: event.target.value,
-          });
-        }}
-      >
-        <option className="option-value" value="">
-          ---
-        </option>
-
-        {select.map((category) => {
-          return (
-            <option key={category.id} value={category.id}>
-              {category.name}
-            </option>
-          );
-        })}
-      </select>
+      <label htmlFor="Description">
+        <span className="textAreaLabel">Description:</span>
+        <textarea
+          className="textArea"
+          maxLength="1200"
+          rows="10"
+          id="Description"
+          onChange={(e) =>
+            setDocumentation({ ...documentation, description: e.target.value })
+          }
+          required
+        />
+      </label>
+      <label htmlFor="category">
+        <span className="select">Catégorie: </span>
+        <select
+          className="selectField"
+          name="category_id"
+          required
+          id="category"
+          onChange={(event) => {
+            setDocumentation({
+              ...documentation,
+              category_id: event.target.value,
+            });
+          }}
+        >
+          <option value="">--- Choisissez une catégorie</option>
+          {select.map((category) => {
+            return (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            );
+          })}
+        </select>
+      </label>
 
       <FormInput
         label="Prix"
@@ -124,7 +135,9 @@ function DocumentationForm() {
         value={documentation}
         setValue={setDocumentation}
       />
-      <input type="submit" value="Envoyer" />
+      <div className="container">
+        <input className="bouton" type="submit" value="Envoyer" />
+      </div>
     </form>
   );
 }

@@ -13,6 +13,7 @@ function FormationForm() {
     price: '',
     website: '',
     description: '',
+    user_id: 2,
   });
 
   const handleSubmit = (event) => {

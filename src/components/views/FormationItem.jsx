@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './FormationItem.css';
 
 function FormationItem(props) {
   const { title, description, category, date, price, website } = props;
@@ -8,15 +9,15 @@ function FormationItem(props) {
     <div className="box-item">
       <h1 className="title">{title}</h1>
       <p className="description">{description}</p>
-      <p>
-        <span className="categorie">Catégorie :</span> {category}
-      </p>
-      <p>{date}</p>
-      <p>
-        lien du site pour s &apos;inscrire à la formation : <br />
-        <a href={website}>{website}</a>
-      </p>
+      <hr />
+      <p className="categorie">Catégorie : {category}</p>
+      <p className="date">Date : {date}</p>
       <p className="price">Prix : {price}€</p>
+      <div className="discover">
+        <a href={website} className="link-website">
+          Voir et s&lsquo;inscrire !
+        </a>
+      </div>
     </div>
   );
 }
