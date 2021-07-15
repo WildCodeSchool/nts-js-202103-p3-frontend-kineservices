@@ -6,7 +6,6 @@ import ServiceList from '../views/ServiceList';
 import DocumentationForm from '../views/DocumentationForm';
 import DocumentationList from '../views/DocumentationList';
 import FormationList from '../views/FormationList';
-import Profile from '../views/Profile';
 import SignUpSummary from '../views/SignUpSummary';
 import SignIn from '../views/SignIn';
 import SignUpKine from '../views/SignUpKine';
@@ -14,7 +13,7 @@ import SignUpCompany from '../views/SignUpCompany';
 import NavBar from './NavBar';
 import DocumentationItem from '../views/DocumentationItem';
 import Header from './Header';
-import DocumentationForm from '../views/DocumentationForm';
+import Profile from '../views/Profile';
 
 function GeneralRouter() {
   return (
