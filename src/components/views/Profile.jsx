@@ -15,16 +15,16 @@ function Profile() {
   const [user, setUser] = useState(null);
   const id = localStorage.getItem('USERID');
   const [updateUser, setUpdateUser] = useState({
-    RPPS: '',
-    SIRET: '',
+    firstname: '',
+    lastname: '',
+    SIRET: 0,
     address: '',
     birthdate: '',
     country: '',
     email: '',
-    firstname: '',
-    lastname: '',
+    RPPS: 0,
     password: '',
-    phone: '',
+    phone: 0,
     picture: '',
     role_id: '',
     website: '',
@@ -38,11 +38,14 @@ function Profile() {
           id,
         })
         .then((response) => {
-          const date = response.data[0].birthdate;
-          const dateParsed = new Date(date);
-          const dateFormated = dateParsed.toLocaleDateString('fr-FR');
-          response.data[0].birthdate = dateFormated;
-          setUser(response.data[0]);
+          if (id !== null) {
+            const date = response.data[0].birthdate;
+            const dateParsed = new Date(date);
+            const dateFormated = dateParsed.toLocaleDateString('fr-FR');
+            response.data[0].birthdate = dateFormated;
+            setUser(response.data[0]);
+            setUpdateUser(response.data[0]);
+          }
         });
     } catch (error) {
       console.error(error);
@@ -78,8 +81,7 @@ function Profile() {
 
   useEffect(() => {
     getUser();
-    setUpdateUser(user);
-  }, [updateUser]);
+  }, []);
 
   return (
     <div className="container_profil">
@@ -108,7 +110,7 @@ function Profile() {
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        firstname: event.target.value || user.firstname,
+                        firstname: event.target.value,
                       });
                     }}
                   />
@@ -122,7 +124,7 @@ function Profile() {
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        lastname: event.target.value || user.lastname,
+                        lastname: event.target.value,
                       });
                     }}
                   />
@@ -130,7 +132,7 @@ function Profile() {
                 <Form.Group className="container-form-top">
                   <Form.Label className="label-form-profil">Email</Form.Label>
                   <Form.Control
-                    value={user.email}
+                    defaultValue={user.email}
                     name="email"
                     htmlFor="email"
                     onChange={(event) => {
@@ -146,7 +148,7 @@ function Profile() {
                     Numéro de téléphone
                   </Form.Label>
                   <Form.Control
-                    value={user.phone}
+                    defaultValue={user.phone}
                     name="phone"
                     htmlFor="phone"
                     onChange={(event) => {
@@ -163,7 +165,7 @@ function Profile() {
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Adresse</Form.Label>
               <Form.Control
-                value={user.address}
+                defaultValue={user.address}
                 name="address"
                 htmlFor="address"
                 onChange={(event) => {
@@ -179,7 +181,7 @@ function Profile() {
                 Date de naissance
               </Form.Label>
               <Form.Control
-                value={user.birthdate}
+                defaultValue={user.birthdate}
                 name="birthdate"
                 htmlFor="birthdate"
                 onChange={(event) => {
@@ -193,7 +195,7 @@ function Profile() {
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Pays</Form.Label>
               <Form.Control
-                value={user.country}
+                defaultValue={user.country}
                 name="country"
                 htmlFor="country"
                 onChange={(event) => {
@@ -207,7 +209,7 @@ function Profile() {
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Site web</Form.Label>
               <Form.Control
-                value={user.website}
+                defaultValue={user.website}
                 name="website"
                 htmlFor="website"
                 onChange={(event) => {
@@ -220,18 +222,14 @@ function Profile() {
             </Form.Group>
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Numéro RPPS</Form.Label>
-              <Form.Control value={user.RPPS} name="RPPS" htmlFor="RPPS" />
-            </Form.Group>
-            <Form.Group className="container-form-text">
-              <Form.Label className="label-form-profil">Role</Form.Label>
               <Form.Control
-                value={user.role_id}
-                name="role_id"
-                htmlFor="role_id"
+                defaultValue={user.RPPS}
+                name="RPPS"
+                htmlFor="RPPS"
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    role_id: event.target.value || user.role_id,
+                    RPPS: event.target.value || user.RPPS,
                   });
                 }}
               />
@@ -240,7 +238,17 @@ function Profile() {
               <Form.Label className="label-form-profil">
                 Numéro SIRET
               </Form.Label>
-              <Form.Control value={user.SIRET} name="SIRET" htmlFor="SIRET" />
+              <Form.Control
+                defaultValue={user.SIRET}
+                name="SIRET"
+                htmlFor="SIRET"
+                onChange={(event) => {
+                  setUpdateUser({
+                    ...updateUser,
+                    SIRET: event.target.value || user.SIRET,
+                  });
+                }}
+              />
             </Form.Group>
           </form>
         </div>
