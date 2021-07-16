@@ -108,7 +108,7 @@ function Profile() {
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        firstname: event.target.value || user.firstname,
+                        firstname: event.target.value,
                       });
                     }}
                   />
@@ -122,7 +122,7 @@ function Profile() {
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        lastname: event.target.value || user.lastname,
+                        lastname: event.target.value,
                       });
                     }}
                   />
@@ -136,7 +136,7 @@ function Profile() {
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        email: event.target.value || user.email,
+                        email: event.target.value,
                       });
                     }}
                   />
@@ -152,7 +152,7 @@ function Profile() {
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        phone: event.target.value || user.phone,
+                        phone: event.target.value,
                       });
                     }}
                   />
@@ -169,7 +169,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    address: event.target.value || user.address,
+                    address: event.target.value,
                   });
                 }}
               />
@@ -185,7 +185,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    birthdate: event.target.value || user.birthdate,
+                    birthdate: event.target.value,
                   });
                 }}
               />
@@ -199,7 +199,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    country: event.target.value || user.country,
+                    country: event.target.value,
                   });
                 }}
               />
@@ -213,7 +213,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    website: event.target.value || user.website,
+                    website: event.target.value,
                   });
                 }}
               />
@@ -231,7 +231,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    role_id: event.target.value || user.role_id,
+                    role_id: event.target.value,
                   });
                 }}
               />
