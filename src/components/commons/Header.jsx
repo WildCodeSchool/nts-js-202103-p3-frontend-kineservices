@@ -61,12 +61,13 @@ function Header() {
             </Link>
           </div>
           <div>
-            <Link to="/profil">
+            <Link to="/profil" className="container-logo-profil">
               <img
                 className="avatar-profil"
                 src={`${process.env.REACT_APP_BACKEND_URL}/${user[0].picture}`}
                 alt={user[0].firstname + user[0].lastname}
               />
+              <p>{user[0].firstname + user[0].lastname}</p>
             </Link>
           </div>
         </>
