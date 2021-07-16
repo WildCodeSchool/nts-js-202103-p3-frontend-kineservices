@@ -42,14 +42,14 @@ export default function Home() {
             kinésithérapeute hospitalier, kinésithérapeute ayant créé une
             micro-entreprise, kinésithérapeute ayant créé une SARL.
           </p>
-          <span className="priceText">Premier mois remboursé !</span>
+          <span className="titre">Gratuit !</span>
         </div>
         <hr />
         <div>
           <h1>Je ne suis pas un kiné</h1>
           <p>
             Je fais partie de cette catégorie et bénéficie du tarif de
-            <strong>10€ par mois</strong> si je ne suis pas kinésithérapeute.
+            <strong> 10€ par mois</strong> si je ne suis pas kinésithérapeute.
             Mon statut juridique est : libéral, auto-entrepreneur ou entreprise
             individuelle. Par exemple : rédacteur web, graphiste, comptable,
             avocat, photographe, conseillé financier, informaticien… Si je
@@ -62,6 +62,7 @@ export default function Home() {
             à partir de <br />
             <span className="priceText">10 €/mois</span>
           </h3>
+          <span className="titre">Premier mois remboursé</span>
         </div>
         <Link to="/inscription-kine">
           <button type="button" className="signUp">
