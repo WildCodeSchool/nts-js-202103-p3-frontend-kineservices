@@ -13,7 +13,7 @@ function Header() {
           userId,
         })
         .then((response) => {
-          setUser(response.data);
+          setUser(response.data[0]);
         });
     } catch (error) {
       console.error(error);
@@ -61,13 +61,17 @@ function Header() {
             </Link>
           </div>
           <div>
-            <Link to="/profil">
-              <img
-                className="avatar-profil"
-                src={`${process.env.REACT_APP_BACKEND_URL}/${user[0].picture}`}
-                alt={`${user[0].firstname} + ${user[0].lastname}`}
-              />
-            </Link>
+
+            {user && (
+              <Link to="/profil">
+                <img
+                  className="avatar-profil"
+                  src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
+                  alt="avatar"
+                />
+              </Link>
+            )}
+
           </div>
         </>
       )}

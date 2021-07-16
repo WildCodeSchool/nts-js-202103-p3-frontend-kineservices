@@ -13,8 +13,8 @@ function FormationList() {
       .get(`${process.env.REACT_APP_BACKEND_URL}/formation`)
       .then((response) => {
         setFormations(response.data);
-      }, []);
-  });
+      });
+  }, []);
   return (
     <>
       <h1 className="allformations">Toutes les formations</h1>
