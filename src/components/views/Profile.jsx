@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { button, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import document from '../../media/documentation.svg';
