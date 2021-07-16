@@ -108,7 +108,7 @@ function Profile() {
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        firstname: event.target.value || user.firstname,
+                        firstname: event.target.value,
                       });
                     }}
                   />
@@ -122,7 +122,7 @@ function Profile() {
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        lastname: event.target.value || user.lastname,
+                        lastname: event.target.value,
                       });
                     }}
                   />
@@ -130,13 +130,13 @@ function Profile() {
                 <Form.Group className="container-form-top">
                   <Form.Label className="label-form-profil">Email</Form.Label>
                   <Form.Control
-                    value={user.email}
+                    defaultValue={user.email}
                     name="email"
                     htmlFor="email"
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        email: event.target.value || user.email,
+                        email: event.target.value,
                       });
                     }}
                   />
@@ -146,13 +146,13 @@ function Profile() {
                     Numéro de téléphone
                   </Form.Label>
                   <Form.Control
-                    value={user.phone}
+                    defaultValue={user.phone}
                     name="phone"
                     htmlFor="phone"
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        phone: event.target.value || user.phone,
+                        phone: event.target.value,
                       });
                     }}
                   />
@@ -163,13 +163,13 @@ function Profile() {
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Adresse</Form.Label>
               <Form.Control
-                value={user.address}
+                defaultValue={user.address}
                 name="address"
                 htmlFor="address"
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    address: event.target.value || user.address,
+                    address: event.target.value,
                   });
                 }}
               />
@@ -179,13 +179,13 @@ function Profile() {
                 Date de naissance
               </Form.Label>
               <Form.Control
-                value={user.birthdate}
+                defaultValue={user.birthdate}
                 name="birthdate"
                 htmlFor="birthdate"
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    birthdate: event.target.value || user.birthdate,
+                    birthdate: event.target.value,
                   });
                 }}
               />
@@ -193,13 +193,13 @@ function Profile() {
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Pays</Form.Label>
               <Form.Control
-                value={user.country}
+                defaultValue={user.country}
                 name="country"
                 htmlFor="country"
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    country: event.target.value || user.country,
+                    country: event.target.value,
                   });
                 }}
               />
@@ -207,31 +207,27 @@ function Profile() {
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Site web</Form.Label>
               <Form.Control
-                value={user.website}
+                defaultValue={user.website}
                 name="website"
                 htmlFor="website"
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    website: event.target.value || user.website,
+                    website: event.target.value,
                   });
                 }}
               />
             </Form.Group>
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Numéro RPPS</Form.Label>
-              <Form.Control value={user.RPPS} name="RPPS" htmlFor="RPPS" />
-            </Form.Group>
-            <Form.Group className="container-form-text">
-              <Form.Label className="label-form-profil">Role</Form.Label>
               <Form.Control
-                value={user.role_id}
-                name="role_id"
-                htmlFor="role_id"
+                defaultValue={user.RPPS}
+                name="RPPS"
+                htmlFor="RPPS"
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    role_id: event.target.value || user.role_id,
+                    RPPS: event.target.value,
                   });
                 }}
               />
@@ -240,7 +236,17 @@ function Profile() {
               <Form.Label className="label-form-profil">
                 Numéro SIRET
               </Form.Label>
-              <Form.Control value={user.SIRET} name="SIRET" htmlFor="SIRET" />
+              <Form.Control
+                defaultValue={user.SIRET}
+                name="SIRET"
+                htmlFor="SIRET"
+                onChange={(event) => {
+                  setUpdateUser({
+                    ...updateUser,
+                    SIRET: event.target.value,
+                  });
+                }}
+              />
             </Form.Group>
           </form>
         </div>
