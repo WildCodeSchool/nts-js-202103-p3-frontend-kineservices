@@ -33,3 +33,21 @@
   font-size: 40px;
   font-family: 'Roboto';
 }
+
+.container-onglet {
+  display: flex;
+}
+
+.onglet {
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-top: 2%;
+  font-size: 26px;
+}
+
+.avatar-profil {
+  text-decoration: none;
+  font-size: larger;
+}

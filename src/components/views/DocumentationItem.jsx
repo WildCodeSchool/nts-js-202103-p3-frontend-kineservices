@@ -1,19 +1,25 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './DocumentationItem.css';
-import { Link } from 'react-router-dom';
 
 function DocumentationItem(props) {
-  const { title, description, category, price, id } = props;
+  const { title, description, category, price, file } = props;
   return (
     <div className="container-docitem">
       <div className="box-item">
         <h1 className="title">{title}</h1>
         <p className="description">{description}</p>
-        <p>{category}</p>
-        <p>Prix : {price}€</p>
+        <hr />
+        <p className="category">Catégorie : {category}</p>
+        <p className="price">Prix : {price}€</p>
         <div className="discover">
-          <Link to={`/documentation/${id}`}>Découvrir !</Link>
+          <a
+            href={`${process.env.REACT_APP_BACKEND_URL}/${file}`}
+            className="download-file"
+            download
+          >
+            Télécharger !
+          </a>
         </div>
       </div>
     </div>
