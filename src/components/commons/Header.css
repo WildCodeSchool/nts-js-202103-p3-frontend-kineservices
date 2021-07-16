@@ -45,13 +45,20 @@
   cursor: pointer;
   margin-top: 2%;
   font-size: 26px;
+  padding: 20px;
 }
-
+.onglet:hover {
+  color: white;
+  transform: scale(1.2);
+  text-shadow: 1px 1px 1px #7a77f2;
+}
 .avatar-profil {
   text-decoration: none;
   font-size: larger;
 }
+
 .container-logo-profil {
   display: flex;
   align-items: center;
 }
+

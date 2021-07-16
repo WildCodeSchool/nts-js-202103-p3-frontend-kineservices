@@ -157,6 +157,12 @@ hr {
   font-weight: 600;
 }
 
+.titre {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
+
 .kine-container {
   margin-bottom: 5%;
 }

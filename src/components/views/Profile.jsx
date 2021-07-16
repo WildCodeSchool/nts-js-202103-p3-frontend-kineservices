@@ -15,16 +15,16 @@ function Profile() {
   const [user, setUser] = useState(null);
   const id = localStorage.getItem('USERID');
   const [updateUser, setUpdateUser] = useState({
-    RPPS: '',
-    SIRET: '',
+    firstname: '',
+    lastname: '',
+    SIRET: 0,
     address: '',
     birthdate: '',
     country: '',
     email: '',
-    firstname: '',
-    lastname: '',
+    RPPS: 0,
     password: '',
-    phone: '',
+    phone: 0,
     picture: '',
     role_id: '',
     website: '',
@@ -38,11 +38,14 @@ function Profile() {
           id,
         })
         .then((response) => {
-          const date = response.data[0].birthdate;
-          const dateParsed = new Date(date);
-          const dateFormated = dateParsed.toLocaleDateString('fr-FR');
-          response.data[0].birthdate = dateFormated;
-          setUser(response.data[0]);
+          if (id !== null) {
+            const date = response.data[0].birthdate;
+            const dateParsed = new Date(date);
+            const dateFormated = dateParsed.toLocaleDateString('fr-FR');
+            response.data[0].birthdate = dateFormated;
+            setUser(response.data[0]);
+            setUpdateUser(response.data[0]);
+          }
         });
     } catch (error) {
       console.error(error);
@@ -78,7 +81,6 @@ function Profile() {
 
   useEffect(() => {
     getUser();
-    setUpdateUser(user);
   }, []);
 
   return (
@@ -136,7 +138,7 @@ function Profile() {
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        email: event.target.value,
+                        email: event.target.value || user.email,
                       });
                     }}
                   />
@@ -152,7 +154,7 @@ function Profile() {
                     onChange={(event) => {
                       setUpdateUser({
                         ...updateUser,
-                        phone: event.target.value,
+                        phone: event.target.value || user.phone,
                       });
                     }}
                   />
@@ -169,7 +171,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    address: event.target.value,
+                    address: event.target.value || user.address,
                   });
                 }}
               />
@@ -185,7 +187,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    birthdate: event.target.value,
+                    birthdate: event.target.value || user.birthdate,
                   });
                 }}
               />
@@ -199,7 +201,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    country: event.target.value,
+                    country: event.target.value || user.country,
                   });
                 }}
               />
@@ -213,7 +215,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    website: event.target.value,
+                    website: event.target.value || user.website,
                   });
                 }}
               />
@@ -227,7 +229,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    RPPS: event.target.value,
+                    RPPS: event.target.value || user.RPPS,
                   });
                 }}
               />
@@ -243,7 +245,7 @@ function Profile() {
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    SIRET: event.target.value,
+                    SIRET: event.target.value || user.SIRET,
                   });
                 }}
               />
@@ -255,6 +257,8 @@ function Profile() {
         <button type="button" className="bouton_save" onClick={handleSubmit}>
           Enregistrer
         </button>
+      </div>
+      <div className="container_bouton">
         <button type="button" className="bouton-logout" onClick={handleLogout}>
           Se déconnecter
         </button>

@@ -12,8 +12,8 @@ const ServiceList = () => {
       .get(`${process.env.REACT_APP_BACKEND_URL}/service`)
       .then((response) => {
         setServices(response.data);
-      }, []);
-  });
+      });
+  }, []);
   return (
     <>
       <h1 className="allservices">Tous les services</h1>

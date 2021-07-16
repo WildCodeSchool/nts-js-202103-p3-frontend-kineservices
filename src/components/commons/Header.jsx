@@ -13,7 +13,7 @@ function Header() {
           userId,
         })
         .then((response) => {
-          setUser(response.data);
+          setUser(response.data[0]);
         });
     } catch (error) {
       console.error(error);
@@ -26,7 +26,7 @@ function Header() {
   return (
     <div className="container-header">
       <h1 className="title-header">kinés.fr</h1>
-      {(!user[0] && (
+      {(!user && (
         <>
           <div className="container-header-button">
             <Link to="/connexion">
@@ -61,14 +61,16 @@ function Header() {
             </Link>
           </div>
           <div>
-            <Link to="/profil" className="container-logo-profil">
-              <img
-                className="avatar-profil"
-                src={`${process.env.REACT_APP_BACKEND_URL}/${user[0].picture}`}
-                alt={user[0].firstname + user[0].lastname}
-              />
-              <p>{user[0].firstname + user[0].lastname}</p>
-            </Link>
+
+            {user && (
+              <Link to="/profil">
+                <img
+                  className="avatar-profil"
+                  src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
+                  alt="avatar"
+                />
+              </Link>
+            )}
           </div>
         </>
       )}

@@ -27,7 +27,7 @@ function ServiceForm() {
           Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Documentation ajoutée avec succès!',
+            title: 'Service ajouté avec succès!',
             showConfirmButton: false,
             timer: 3000,
           })

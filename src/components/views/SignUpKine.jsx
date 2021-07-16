@@ -114,7 +114,7 @@ export default function SignUpKine() {
         .catch(
           (error) => JSON.stringify(error),
           Swal.fire({
-            position: 'center',
+            position: 'cnter',
             icon: 'error',
             title: 'Veuillez vérifier les informations saisies',
           })

@@ -49,13 +49,13 @@ function FormationForm() {
       );
   };
 
-  useEffect(function () {
+  useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/category`)
       .then((response) => {
         setSelect(response.data);
-      }, []);
-  });
+      });
+  }, []);
 
   return (
     <div>
@@ -119,7 +119,7 @@ function FormationForm() {
               })}
             </select>
           </label>
-          *
+
           <FormInput
             label="Prix"
             name="price"
