@@ -265,7 +265,7 @@ function Profile() {
       </div>
       <div className="container_bouton">
         <Link to="/documentation-form">
-          <button type="button" className="bouton">
+          <button type="button" className="bouton-creation">
             <img
               className="logo-documentation"
               src={document}
@@ -275,7 +275,7 @@ function Profile() {
           </button>
         </Link>
         <Link to="/formation-form">
-          <button type="button" className="bouton">
+          <button type="button" className="bouton-creation">
             <img
               className="logo-formation"
               src={formation}
@@ -285,7 +285,7 @@ function Profile() {
           </button>
         </Link>
         <Link to="/service-form">
-          <button type="button" className="bouton">
+          <button type="button" className="bouton-creation">
             <img
               className="logo-service"
               src={service}

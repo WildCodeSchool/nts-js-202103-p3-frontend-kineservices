@@ -56,6 +56,9 @@ function GeneralRouter() {
           <Route exact path="/profil">
             <Profile />
           </Route>
+          <Route exact path="/profil/:id">
+            <Profile />
+          </Route>
           <Route exact path="/connexion">
             <SignIn />
           </Route>
