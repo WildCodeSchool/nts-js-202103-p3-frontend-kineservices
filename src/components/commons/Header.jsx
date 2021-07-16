@@ -26,7 +26,7 @@ function Header() {
   return (
     <div className="container-header">
       <h1 className="title-header">kinés.fr</h1>
-      {(!user[0] && (
+      {(!user && (
         <>
           <div className="container-header-button">
             <Link to="/connexion">
