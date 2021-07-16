@@ -30,6 +30,8 @@ function Profile() {
     website: '',
     id,
   });
+  const [password, setPassword] = useState(null);
+  const [confirmPassword, setConfirmPassword] = useState(null);
 
   const getUser = async () => {
     try {
@@ -51,7 +53,6 @@ function Profile() {
       console.error(error);
     }
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
@@ -65,7 +66,39 @@ function Profile() {
           Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Votre profil a été mise à jour !',
+            title: 'Votre profil a été mis à jour !',
+            showConfirmButton: false,
+            timer: 3000,
+          })
+        );
+      });
+  };
+  const handleSubmitPassword = (e) => {
+    e.preventDefault();
+    if (
+      password !== confirmPassword &&
+      confirmPassword !== password &&
+      confirmPassword === null &&
+      password === null
+    ) {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Veuillez vérifier les informations saisies',
+      });
+    }
+    axios
+      .put(`${process.env.REACT_APP_BACKEND_URL}/putBcrypt`, {
+        updateUser,
+        password,
+      })
+      .then((response) => {
+        JSON.stringify(
+          response,
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Votre profil a été mis à jour !',
             showConfirmButton: false,
             timer: 3000,
           })
@@ -161,7 +194,6 @@ function Profile() {
                 </Form.Group>
               </div>
             </div>
-
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Adresse</Form.Label>
               <Form.Control
@@ -250,15 +282,61 @@ function Profile() {
                 }}
               />
             </Form.Group>
+            <Form.Group className="container-form-text">
+              <div className="container_bouton_logout">
+                <button
+                  type="button"
+                  className="bouton_save"
+                  onClick={handleSubmit}
+                >
+                  Enregistrer
+                </button>
+              </div>{' '}
+              <Form.Label className="label-form-profil">
+                Nouveau mot de passe
+              </Form.Label>
+              <Form.Control
+                name="password"
+                htmlFor="password"
+                type="password"
+                size="6"
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+              />
+            </Form.Group>
+            <Form.Group className="container-form-text">
+              <Form.Label className="label-form-profil">
+                Confirmez votre nouveau mot de passe
+              </Form.Label>
+              <Form.Control
+                name="password"
+                htmlFor="password"
+                type="password"
+                size="6"
+                onChange={(event) => {
+                  setConfirmPassword(event.target.value);
+                }}
+              />
+            </Form.Group>
+            {password !== confirmPassword && confirmPassword !== password ? (
+              <p>Les mots de passe ne correspondent pas</p>
+            ) : (
+              ''
+            )}
+            <div className="container_bouton_logout">
+              <button
+                type="button"
+                className="bouton_save"
+                onClick={handleSubmitPassword}
+              >
+                Enregistrer mon mot de passe
+              </button>
+            </div>
           </form>
         </div>
       )}
-      <div className="container_bouton_save">
-        <button type="button" className="bouton_save" onClick={handleSubmit}>
-          Enregistrer
-        </button>
-      </div>
-      <div className="container_bouton_logout">
+      <div className="container_bouton">
         <button type="button" className="bouton-logout" onClick={handleLogout}>
           Se déconnecter
         </button>
