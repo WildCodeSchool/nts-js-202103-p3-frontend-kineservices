@@ -61,6 +61,7 @@ function Header() {
             </Link>
           </div>
           <div>
+
             {user && (
               <Link to="/profil">
                 <img
@@ -70,6 +71,7 @@ function Header() {
                 />
               </Link>
             )}
+
           </div>
         </>
       )}
