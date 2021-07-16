@@ -53,15 +53,13 @@ const DocumentationList = () => {
                 documentation.description.toLowerCase().includes(searchValue)
             )
             .map((documentation) => (
-              <p>
-                <DocumentationItem
-                  title={documentation.title}
-                  description={documentation.description}
-                  category={documentation.name}
-                  price={documentation.price}
-                  key={documentation.id}
-                />
-              </p>
+              <DocumentationItem
+                title={documentation.title}
+                description={documentation.description}
+                category={documentation.name}
+                price={documentation.price}
+                key={documentation.id}
+              />
             ))
         )}
         {!searchValue ? (
@@ -74,17 +72,15 @@ const DocumentationList = () => {
                 formation.description.toLowerCase().includes(searchValue)
             )
             .map((formation) => (
-              <p>
-                <FormationItem
-                  title={formation.title}
-                  description={formation.description}
-                  category={formation.name}
-                  date={formation.date}
-                  website={formation.website}
-                  price={formation.price}
-                  key={formation.id}
-                />
-              </p>
+              <FormationItem
+                title={formation.title}
+                description={formation.description}
+                category={formation.name}
+                date={formation.date}
+                website={formation.website}
+                price={formation.price}
+                key={formation.id}
+              />
             ))
         )}
         {!searchValue ? (
@@ -97,16 +93,14 @@ const DocumentationList = () => {
                 service.description.toLowerCase().includes(searchValue)
             )
             .map((service) => (
-              <p>
-                <ServiceItem
-                  title={service.title}
-                  description={service.description}
-                  category={service.name}
-                  website={service.website}
-                  price={service.price}
-                  key={service.id}
-                />
-              </p>
+              <ServiceItem
+                title={service.title}
+                description={service.description}
+                category={service.name}
+                website={service.website}
+                price={service.price}
+                key={service.id}
+              />
             ))
         )}
       </div>
