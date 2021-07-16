@@ -3,8 +3,9 @@
 .addFormation {
   padding: 10px;
   text-align: center;
-  text-shadow: 2px 2px 2px white;
+  text-shadow: 1px 1px 1px #7a77f2;
 }
+
 .formationGlobal {
   text-align: center;
   padding: 10px;
