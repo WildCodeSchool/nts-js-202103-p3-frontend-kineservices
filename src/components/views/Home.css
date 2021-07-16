@@ -123,13 +123,6 @@ body:after {
   color: white;
 }
 
-/* text-align: center;
-  0 {
-    transform: translateX(-50%) translateY(-50%) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-50%) rotate(360deg);
-  } */
 
 .title-home {
   color: #ffffff;
