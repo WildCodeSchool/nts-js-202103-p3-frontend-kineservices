@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { Card, Form, Col } from 'react-bootstrap';
-import avatar from '../../media/avatar.png';
 import './SignUp.css';
+import DisplayAvatar from './DisplayAvatar';
 
 export default function SignUpKine() {
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -114,7 +114,7 @@ export default function SignUpKine() {
         .catch(
           (error) => JSON.stringify(error),
           Swal.fire({
-            position: 'cnter',
+            position: 'center',
             icon: 'error',
             title: 'Veuillez vérifier les informations saisies',
           })
@@ -129,17 +129,7 @@ export default function SignUpKine() {
           <Card className="card-signup">
             <Card.Body className="card-body-signup">
               <form onSubmit={handleSubmit} encType="multipart/form-data">
-                <div className="container-avatar">
-                  <input
-                    src={avatar}
-                    alt="avatar"
-                    className="avatar"
-                    type="file"
-                    name="file"
-                    action="/inscription-kine"
-                    onChange={(e) => setPicture(e.target.files[0])}
-                  />
-                </div>
+                <DisplayAvatar />
                 <Form.Group className="container-form">
                   <Form.Control
                     htmlFor="lastname"

@@ -63,6 +63,9 @@ input#siret.siret.form-control {
 .container-form {
   display: flex;
   align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
 }
 
 .container-card-form {

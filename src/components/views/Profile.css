@@ -15,8 +15,7 @@
   justify-content: space-around;
   margin-right: 16%;
   flex-direction: column;
-  margin-top: 3%;
-  margin-bottom: 3%;
+  margin-bottom: 8%;
 }
 
 .container_bouton {
@@ -25,10 +24,16 @@
   justify-content: space-evenly;
   margin-right: 16%;
   margin-left: 12%;
-  margin-bottom: 10%;
+  margin-bottom: 8%;
+}
+.container_bouton_save {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 16%;
+  margin-top: 1%;
 }
 
-.bouton {
+.bouton-creation {
   font-family: 'Roboto';
   height: 70px;
   background: #7a77f2;
@@ -41,6 +46,7 @@
   align-items: center;
   width: 260px;
   cursor: pointer;
+  margin-bottom: 5%;
 }
 
 .bouton_save {
@@ -98,6 +104,13 @@ input.form-control {
   border-radius: 50%;
   height: 240px;
 }
+.avatar-profil {
+  height: 50px;
+  display: flex;
+  margin: 5%;
+  border: 1px solid blue;
+  border-radius: 50%;
+}
 
 .container-form-text {
   width: 100%;
@@ -117,12 +130,13 @@ input.form-control {
   background-color: white;
   color: #7a77f2;
 }
-.bouton-loyout {
+.bouton-logout {
   text-decoration: none;
   border: none;
-  background-color: white;
   cursor: pointer;
   margin-top: 2%;
+  background: none;
+  font-size: 17px;
 }
 
 @media screen and (max-width: 768px) {
@@ -133,12 +147,12 @@ input.form-control {
   }
   .container_profil {
     width: 100%;
-    margin-bottom: 10%;
+    margin-bottom: 30%;
   }
   .container_bouton {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
   }
   .container_bouton_logout {
     margin-top: 10%;
