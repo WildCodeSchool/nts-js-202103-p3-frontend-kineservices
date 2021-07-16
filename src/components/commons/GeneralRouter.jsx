@@ -53,8 +53,9 @@ function GeneralRouter() {
           <Route exact path="/formation-item">
             <FormationItem />
           </Route>
-          <Route exact path="/profil/:id" />
-          <Profile />
+          <Route exact path="/profil/">
+            <Profile />
+          </Route>
           <Route exact path="/connexion">
             <SignIn />
           </Route>
