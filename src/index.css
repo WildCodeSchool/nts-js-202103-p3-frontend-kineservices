@@ -2,7 +2,7 @@
 body {
   font-family: 'Hind';
   margin: 0;
-  
+  cursor: url('./media/768x492_tous-trolls.cur');
 }
 
 * {

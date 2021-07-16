@@ -65,12 +65,12 @@ export default function Home() {
           <span className="titre">Premier mois remboursé</span>
         </div>
         <Link to="/inscription-kine">
-          <button type="button" className="signUp">
-            Je m&lsquo;inscris !
+          <button type="button" className="bouton-inscription">
+            Je m&apos;inscris !
           </button>
         </Link>
         <Link to="/connexion">
-          <button type="button" className="signIn">
+          <button type="button" className="bouton-connexion">
             Je me connecte
           </button>
         </Link>

@@ -3,6 +3,7 @@
 .signInForm {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .container-title {
@@ -108,7 +109,7 @@
   }
 
   .container-title {
-    margin-top:3vw;
+    margin-top: 3vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,13 +121,12 @@
 
   .container-forgotpassword {
     height: 1px;
-    margin-bottom: .1vw;
+    margin-bottom: 0.1vw;
   }
 
   .text-newMember {
     height: 1.5vw;
-    margin-bottom:.5vw;
-
+    margin-bottom: 0.5vw;
   }
 
   .button-signIn {
@@ -134,11 +134,11 @@
     cursor: pointer;
   }
   .container-button-signIn {
-    height:5vw;
+    height: 5vw;
   }
   .textSignUp {
     height: 1.5vw;
     margin-bottom: 1vw;
+    margin-bottom: 5%;
   }
-
 }
