@@ -253,12 +253,12 @@ function Profile() {
           </form>
         </div>
       )}
-      <div className="container_bouton_logout">
+      <div className="container_bouton_save">
         <button type="button" className="bouton_save" onClick={handleSubmit}>
           Enregistrer
         </button>
       </div>
-      <div className="container_bouton">
+      <div className="container_bouton_logout">
         <button type="button" className="bouton-logout" onClick={handleLogout}>
           Se déconnecter
         </button>
