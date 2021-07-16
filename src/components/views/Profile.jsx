@@ -130,7 +130,7 @@ function Profile() {
                 <Form.Group className="container-form-top">
                   <Form.Label className="label-form-profil">Email</Form.Label>
                   <Form.Control
-                    value={user.email}
+                    defaultValue={user.email}
                     name="email"
                     htmlFor="email"
                     onChange={(event) => {
@@ -146,7 +146,7 @@ function Profile() {
                     Numéro de téléphone
                   </Form.Label>
                   <Form.Control
-                    value={user.phone}
+                    defaultValue={user.phone}
                     name="phone"
                     htmlFor="phone"
                     onChange={(event) => {
@@ -163,7 +163,7 @@ function Profile() {
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Adresse</Form.Label>
               <Form.Control
-                value={user.address}
+                defaultValue={user.address}
                 name="address"
                 htmlFor="address"
                 onChange={(event) => {
@@ -179,7 +179,7 @@ function Profile() {
                 Date de naissance
               </Form.Label>
               <Form.Control
-                value={user.birthdate}
+                defaultValue={user.birthdate}
                 name="birthdate"
                 htmlFor="birthdate"
                 onChange={(event) => {
@@ -193,7 +193,7 @@ function Profile() {
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Pays</Form.Label>
               <Form.Control
-                value={user.country}
+                defaultValue={user.country}
                 name="country"
                 htmlFor="country"
                 onChange={(event) => {
@@ -207,7 +207,7 @@ function Profile() {
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Site web</Form.Label>
               <Form.Control
-                value={user.website}
+                defaultValue={user.website}
                 name="website"
                 htmlFor="website"
                 onChange={(event) => {
@@ -220,18 +220,14 @@ function Profile() {
             </Form.Group>
             <Form.Group className="container-form-text">
               <Form.Label className="label-form-profil">Numéro RPPS</Form.Label>
-              <Form.Control value={user.RPPS} name="RPPS" htmlFor="RPPS" />
-            </Form.Group>
-            <Form.Group className="container-form-text">
-              <Form.Label className="label-form-profil">Role</Form.Label>
               <Form.Control
-                value={user.role_id}
-                name="role_id"
-                htmlFor="role_id"
+                defaultValue={user.RPPS}
+                name="RPPS"
+                htmlFor="RPPS"
                 onChange={(event) => {
                   setUpdateUser({
                     ...updateUser,
-                    role_id: event.target.value,
+                    RPPS: event.target.value,
                   });
                 }}
               />
@@ -240,7 +236,17 @@ function Profile() {
               <Form.Label className="label-form-profil">
                 Numéro SIRET
               </Form.Label>
-              <Form.Control value={user.SIRET} name="SIRET" htmlFor="SIRET" />
+              <Form.Control
+                defaultValue={user.SIRET}
+                name="SIRET"
+                htmlFor="SIRET"
+                onChange={(event) => {
+                  setUpdateUser({
+                    ...updateUser,
+                    SIRET: event.target.value,
+                  });
+                }}
+              />
             </Form.Group>
           </form>
         </div>
