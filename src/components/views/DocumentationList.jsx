@@ -12,8 +12,8 @@ const DocumentationList = () => {
       .get(`${process.env.REACT_APP_BACKEND_URL}/documentation`)
       .then((response) => {
         setDocumentations(response.data);
-      }, []);
-  });
+      });
+  }, []);
   return (
     <>
       <h1 className="alldoc">Toutes les documentations</h1>
@@ -28,10 +28,11 @@ const DocumentationList = () => {
             .filter(
               (documentation) =>
                 documentation.title.toLowerCase().includes(searchValue) ||
-                documentation.description.toLowerCase().includes(searchValue)
+                documentation.description.toLowerCase().includes(searchValue) ||
+                documentation.name.toLowerCase().includes(searchValue)
             )
-            .map((documentation) => (
-              <p className="doc-card">
+            .map((documentation) => {
+              return (
                 <DocumentationItem
                   file={documentation.file}
                   title={documentation.title}
@@ -40,8 +41,8 @@ const DocumentationList = () => {
                   price={documentation.price}
                   key={documentation.id}
                 />
-              </p>
-            ))}
+              );
+            })}
         </div>
       </div>
     </>
