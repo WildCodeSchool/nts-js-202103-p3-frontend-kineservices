@@ -15,7 +15,6 @@
   justify-content: space-around;
   margin-right: 16%;
   flex-direction: column;
-  margin-top: 5%;
   margin-bottom: 8%;
 }
 
@@ -25,7 +24,13 @@
   justify-content: space-evenly;
   margin-right: 16%;
   margin-left: 12%;
-  margin-bottom: 10%;
+  margin-bottom: 8%;
+}
+.container_bouton_save {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 16%;
+  margin-top: 1%;
 }
 
 .bouton-creation {
@@ -41,6 +46,7 @@
   align-items: center;
   width: 260px;
   cursor: pointer;
+  margin-bottom: 5%;
 }
 
 .bouton_save {
@@ -141,12 +147,12 @@ input.form-control {
   }
   .container_profil {
     width: 100%;
-    margin-bottom: 10%;
+    margin-bottom: 30%;
   }
   .container_bouton {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
   }
   .container_bouton_logout {
     margin-top: 10%;
