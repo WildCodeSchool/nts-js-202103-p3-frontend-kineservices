@@ -123,9 +123,20 @@ body:after {
   color: white;
 }
 
+
 .title-home {
-  text-align: center;
+  font-size: 55px;
+  letter-spacing: -3px;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
 }
+
 
 hr {
   border: none;
@@ -142,8 +153,39 @@ hr {
   font-weight: 600;
 }
 
+.titre {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
+
 .kine-container {
   margin-bottom: 5%;
+}
+
+.bouton-inscription {
+  font-family: 'Roboto';
+  height: 70px;
+  background: #7a77f2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  width: 260px;
+  cursor: pointer;
+  justify-content: center;
+  margin-top: 10%;
+}
+.bouton-connexion {
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  margin-top: 20%;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 768px) {
