@@ -84,7 +84,7 @@ function Profile() {
       Swal.fire({
         position: 'center',
         icon: 'error',
-        title: 'Veuillez verifier les informations saisies',
+        title: 'Veuillez vérifier les informations saisies',
       });
     }
     axios
@@ -293,7 +293,7 @@ function Profile() {
                 </button>
               </div>{' '}
               <Form.Label className="label-form-profil">
-                Nouveau mot de mot de passe
+                Nouveau mot de passe
               </Form.Label>
               <Form.Control
                 name="password"
@@ -320,7 +320,7 @@ function Profile() {
               />
             </Form.Group>
             {password !== confirmPassword && confirmPassword !== password ? (
-              <p>les mots de pasess ne conresspondent pas</p>
+              <p>Les mots de passe ne correspondent pas</p>
             ) : (
               ''
             )}
