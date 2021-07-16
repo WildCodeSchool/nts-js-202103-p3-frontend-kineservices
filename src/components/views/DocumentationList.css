@@ -1,7 +1,11 @@
 .alldoc {
   text-align: center;
   font-size: 40px;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #7a77f2;
 }
+
 .search-engine {
   font-family: 'Hind';
   padding-left: 2%;

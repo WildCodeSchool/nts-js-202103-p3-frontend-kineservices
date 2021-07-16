@@ -65,7 +65,7 @@ function Header() {
               <img
                 className="avatar-profil"
                 src={`${process.env.REACT_APP_BACKEND_URL}/${user[0].picture}`}
-                alt={user[0].firstname + user[0].lastname}
+                alt={`${user[0].firstname} + ${user[0].lastname}`}
               />
             </Link>
           </div>
