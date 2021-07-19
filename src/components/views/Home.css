@@ -123,20 +123,19 @@ body:after {
   color: white;
 }
 
-
 .title-home {
-  font-size: 55px;
+  font-size: 40px;
   letter-spacing: -3px;
-  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 30px;
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-10%);
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  text-align: center;
 }
-
 
 hr {
   border: none;
