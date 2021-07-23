@@ -5,7 +5,7 @@ import ServiceItem from './ServiceItem';
 import FormationItem from './FormationItem';
 import SearchContent from '../commons/SearchContent';
 import './DocumentationList.css';
-import './GlobalSearch.css';
+// import './GlobalSearch.css';
 
 const DocumentationList = () => {
   const [documentations, setDocumentations] = useState([]);
