@@ -5,7 +5,6 @@ import ServiceItem from './ServiceItem';
 import FormationItem from './FormationItem';
 import SearchContent from '../commons/SearchContent';
 import './DocumentationList.css';
-import './GlobalSearch.css';
 
 const DocumentationList = () => {
   const [documentations, setDocumentations] = useState([]);
@@ -29,7 +28,7 @@ const DocumentationList = () => {
           setServices(responses[0].data);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
   return (
