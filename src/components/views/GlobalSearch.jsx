@@ -24,8 +24,8 @@ const DocumentationList = () => {
         .all([requestOne, requestTwo, requestThree])
         .then((responses) => {
           setDocumentations(responses[0].data);
-          setFormations(responses[0].data);
-          setServices(responses[0].data);
+          setFormations(responses[1].data);
+          setServices(responses[2].data);
         });
     } catch (error) {
       console.error(error);
