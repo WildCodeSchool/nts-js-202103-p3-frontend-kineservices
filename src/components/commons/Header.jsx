@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
-  const userId = localStorage.getItem('USERID');
-  const [user, setUser] = useState(' ');
-  const getUser = async () => {
+  const [user, setUser] = useState(null);
+  const [userId, setUserId] = useState(null);
+  useEffect(() => {
+    setUserId(localStorage.getItem('USERID'));
+  }, []);
+  const getUser = () => {
     try {
-      await axios
+      axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/utilisateur/${userId}`, {
           userId,
         })
@@ -22,11 +25,12 @@ function Header() {
 
   useEffect(() => {
     getUser();
-  }, [user]);
+  }, []);
   return (
     <div className="container-header">
+      {' '}
       <h1 className="title-header">kinés.fr</h1>
-      {(!user && (
+      {(!userId && (
         <>
           <div className="container-header-button">
             <Link to="/connexion">

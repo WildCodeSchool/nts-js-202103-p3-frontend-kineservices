@@ -7,6 +7,7 @@ import Carousel from '../commons/Carousel';
 export default function Home() {
   return (
     <div className="home">
+      <meta httpEquiv="refresh" />
       <div className="landing-page-container">
         <div className="intro">
           <h1>Bienvenue sur Kinés.fr</h1>
