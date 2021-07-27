@@ -7,20 +7,17 @@ import Carousel from '../commons/Carousel';
 export default function Home() {
   return (
     <div className="home">
-      <div className="landing-page-container">
-        <div className="intro">
-          <h1>Bienvenue sur Kinés.fr</h1>
-          <h3>Qui sommes-nous ?</h3>
-          <p>
-            Kinés.fr est une plateforme collaborative et de partage pour les
-            kinésithérapeutes. Elle permet à ces praticiens, et aux
-            professionnels en lien avec ce domaine, de proposer de la
-            documentation, des formations et des services de façon centralisée.
-            Kinés.fr est une plateforme alimentée par et pour les
-            kinésithérapeutes.
-          </p>
-        </div>
+      <div className="intro">
+        <h1>Bienvenue sur Kinés.fr</h1>
+        <h3>Qui sommes-nous ?</h3>
+        <p>
+          Kinés.fr est une plateforme collaborative et de partage pour les
+          kinésithérapeutes. Elle permet à ces praticiens, et aux professionnels
+          en lien avec ce domaine, de proposer de la documentation, des
+          formations et des services de façon centralisée.
+        </p>
       </div>
+
       <div>
         <h4 className="title-home">Ce que nous proposons</h4>
         <div>
