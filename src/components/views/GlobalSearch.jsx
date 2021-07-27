@@ -5,7 +5,6 @@ import ServiceItem from './ServiceItem';
 import FormationItem from './FormationItem';
 import SearchContent from '../commons/SearchContent';
 import './DocumentationList.css';
-import './GlobalSearch.css';
 
 const DocumentationList = () => {
   const [documentations, setDocumentations] = useState([]);
@@ -25,11 +24,11 @@ const DocumentationList = () => {
         .all([requestOne, requestTwo, requestThree])
         .then((responses) => {
           setDocumentations(responses[0].data);
-          setFormations(responses[0].data);
-          setServices(responses[0].data);
+          setFormations(responses[1].data);
+          setServices(responses[2].data);
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, []);
   return (

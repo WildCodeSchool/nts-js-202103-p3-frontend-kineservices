@@ -77,9 +77,8 @@ function Profile() {
   const handleSubmitPassword = (e) => {
     e.preventDefault();
     if (
-      password === confirmPassword &&
-      confirmPassword === password &&
-      password === !null
+      (password === confirmPassword && confirmPassword === !null) ||
+      (confirmPassword === password && password === !null)
     ) {
       axios
         .put(`${process.env.REACT_APP_BACKEND_URL}/putBcrypt`, {

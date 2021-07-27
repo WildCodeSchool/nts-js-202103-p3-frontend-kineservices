@@ -10,6 +10,7 @@
   .search-input {
     display: flex;
     flex-direction: column;
+    padding: 12px;
     align-items: center;
   }
 }

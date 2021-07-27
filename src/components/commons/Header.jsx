@@ -66,7 +66,7 @@ function Header() {
           </div>
           <div>
             {user && (
-              <Link to="/profil">
+              <Link to="/profil" className="noAvatar">
                 <img
                   className="avatar-profil"
                   src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
