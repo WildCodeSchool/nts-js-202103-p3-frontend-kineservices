@@ -18,6 +18,12 @@ import FormationForm from '../views/FormationForm';
 import ServiceForm from '../views/ServiceForm';
 
 function GeneralRouter() {
+  // setTimeout(
+  //   20000,
+  //   localStorage.removeItem('USERID'),
+  //   localStorage.removeItem('TOKEN')
+  // );
+
   return (
     <Router>
       <div>
