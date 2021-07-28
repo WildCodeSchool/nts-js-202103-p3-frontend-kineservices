@@ -25,7 +25,7 @@ export default function DisplayAvatar() {
         accept="image/*"
         style={{ display: 'none' }}
       />
-      <label className="container-avatar-text" htmlFor="upload">
+      <label htmlFor="upload">
         <IconButton
           color="red"
           aria-label="upload picture"

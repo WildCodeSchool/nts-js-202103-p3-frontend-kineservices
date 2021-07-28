@@ -5,7 +5,6 @@ import './Header.css';
 
 function Header() {
   const userId = localStorage.getItem('USERID');
-  console.log('userId', userId);
   const [user, setUser] = useState(null);
   const getUser = async () => {
     try {
@@ -14,7 +13,6 @@ function Header() {
           userId,
         })
         .then((response) => {
-          console.log('response', response.data);
           setUser(response.data[0]);
         });
     } catch (error) {
@@ -72,7 +70,7 @@ function Header() {
               <img
                 className="avatar-profil"
                 src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
-                alt="avatar"
+                alt={user.firstname + user.lastname}
               />
             </Link>
           </div>
