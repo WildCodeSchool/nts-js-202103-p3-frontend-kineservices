@@ -54,7 +54,7 @@
 
 .bouton_save {
   font-family: 'Roboto';
-  height: 50px;
+  height: 60px;
   background: #7a77f2;
   border: 1px solid white;
   box-sizing: border-box;
@@ -182,12 +182,14 @@ input.form-control {
 @media screen and (max-width: 768px) {
   .container-avatar-text {
     display: flex;
-    width: 100%;
     flex-direction: column;
   }
   .container_profil {
     width: 100%;
     margin-bottom: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .container_bouton {
     display: flex;
@@ -200,6 +202,7 @@ input.form-control {
   .container-form-profil {
     margin-left: 8%;
     margin-right: 8%;
+    width: 80%;
   }
   .container_bouton {
     margin-right: 16%;

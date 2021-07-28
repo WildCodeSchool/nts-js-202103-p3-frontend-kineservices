@@ -69,23 +69,22 @@ function Header() {
 
           <div className="header-container-avatar-text">
             <div>
-              {' '}
-              <Link to="/profil">
-                <div>
-                 {user === null ? (
+              {user === null ? (
                 <p />
               ) : (
-                  <img
-                    className="avatar-profil"
-                    src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
-                    alt="avatar"
-                  />
-                )}
-                </div>
-                <div className="avatar-text">
-                  {user.firstname + user.lastname}
-                </div>
-              </Link>
+                <Link to="/profil">
+                  <div>
+                    <img
+                      className="avatar-profil"
+                      src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
+                      alt="avatar"
+                    />
+                  </div>
+                  <div className="avatar-text">
+                    {user.firstname + user.lastname}
+                  </div>
+                </Link>
+              )}
             </div>
           </div>
         </>
