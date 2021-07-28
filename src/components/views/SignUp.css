@@ -88,6 +88,10 @@ input#siret.siret.form-control {
   display: flex;
   justify-content: center;
 }
+.container-button p {
+  display: flex;
+  justify-content: center;
+}
 
 .container-avatar {
   display: flex;

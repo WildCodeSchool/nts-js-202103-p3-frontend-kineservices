@@ -5,7 +5,7 @@ import './Header.css';
 
 function Header() {
   const userId = localStorage.getItem('USERID');
-  const [user, setUser] = useState(' ');
+  const [user, setUser] = useState(null);
   const getUser = async () => {
     try {
       await axios
@@ -21,8 +21,13 @@ function Header() {
   };
 
   useEffect(() => {
-    getUser();
-  }, [user]);
+    if (userId) {
+      getUser();
+    } else {
+      setUser(null);
+    }
+  }, [userId]);
+
   return (
     <div className="container-header">
       <h1 className="title-header">kinés.fr</h1>
@@ -61,15 +66,13 @@ function Header() {
             </Link>
           </div>
           <div>
-            {user && (
-              <Link to="/profil" className="noAvatar">
-                <img
-                  className="avatar-profil"
-                  src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
-                  alt="avatar"
-                />
-              </Link>
-            )}
+            <Link to="/profil">
+              <img
+                className="avatar-profil"
+                src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
+                alt={user.firstname + user.lastname}
+              />
+            </Link>
           </div>
         </>
       )}

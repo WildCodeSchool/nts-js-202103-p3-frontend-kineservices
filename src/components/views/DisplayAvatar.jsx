@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import Avatar from '@material-ui/core/Avatar';
+import './SignUp.css';
 
 export default function DisplayAvatar({ setFile }) {
   const [picture, setPicture] = useState(null);
