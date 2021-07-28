@@ -13,6 +13,7 @@ import './Profile.css';
 function Profile() {
   const history = useHistory(null);
   const [user, setUser] = useState(null);
+
   const id = localStorage.getItem('USERID');
   const [updateUser, setUpdateUser] = useState({
     firstname: '',
@@ -76,34 +77,33 @@ function Profile() {
   const handleSubmitPassword = (e) => {
     e.preventDefault();
     if (
-      password !== confirmPassword &&
-      confirmPassword !== password &&
-      confirmPassword === null &&
-      password === null
+      (password === confirmPassword && confirmPassword === !null) ||
+      (confirmPassword === password && password === !null)
     ) {
+      axios
+        .put(`${process.env.REACT_APP_BACKEND_URL}/putBcrypt`, {
+          updateUser,
+          password,
+        })
+        .then((response) => {
+          JSON.stringify(
+            response,
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Votre profil a été mis à jour !',
+              showConfirmButton: false,
+              timer: 3000,
+            })
+          );
+        });
+    } else {
       Swal.fire({
         position: 'center',
         icon: 'error',
         title: 'Veuillez vérifier les informations saisies',
       });
     }
-    axios
-      .put(`${process.env.REACT_APP_BACKEND_URL}/putBcrypt`, {
-        updateUser,
-        password,
-      })
-      .then((response) => {
-        JSON.stringify(
-          response,
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Votre profil a été mis à jour !',
-            showConfirmButton: false,
-            timer: 3000,
-          })
-        );
-      });
   };
 
   const handleLogout = () => {
@@ -362,7 +362,7 @@ function Profile() {
                 className="bouton_save"
                 onClick={handleSubmitPassword}
               >
-                Enregistrer mon mot de passe
+                Enregistrer mon mot de passe{' '}
               </button>
             </div>
           </form>

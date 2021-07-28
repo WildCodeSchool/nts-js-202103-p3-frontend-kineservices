@@ -8,7 +8,7 @@ function Header() {
   const [user, setUser] = useState(null);
   const getUser = async () => {
     try {
-      await axios
+      axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/utilisateur/${userId}`, {
           userId,
         })
@@ -30,8 +30,9 @@ function Header() {
 
   return (
     <div className="container-header">
+      {' '}
       <h1 className="title-header">kinés.fr</h1>
-      {(!user && (
+      {(!userId && (
         <>
           <div className="container-header-button">
             <Link to="/connexion">
@@ -65,16 +66,21 @@ function Header() {
               </button>
             </Link>
           </div>
+
           <div className="header-container-avatar-text">
             <div>
               {' '}
               <Link to="/profil">
                 <div>
+                 {user === null ? (
+                <p />
+              ) : (
                   <img
                     className="avatar-profil"
                     src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
                     alt="avatar"
                   />
+                )}
                 </div>
                 <div className="avatar-text">
                   {user.firstname + user.lastname}
