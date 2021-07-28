@@ -64,7 +64,8 @@ body:after {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 450px;
+  height: 500px;
+  z-index: -1;
 }
 .intro p {
   text-align: center;
@@ -72,6 +73,8 @@ body:after {
   text-shadow: white 3px 0 2px;
   font-size: x-large;
   margin-top: 7%;
+  margin-left: 10%;
+  margin-right: 10%;
   font-family: 'Roboto', sans-serif;
 }
 .intro h1 {
@@ -166,7 +169,7 @@ hr {
   font-family: 'Roboto';
   height: 70px;
   background: #7a77f2;
-  border: 1px solid #000000;
+  border: 1px solid white;
   box-sizing: border-box;
   border-radius: 8px;
   color: white;
@@ -178,6 +181,9 @@ hr {
   justify-content: center;
   margin-top: 10%;
 }
+.bouton-inscription:hover {
+  transform: scale(1.05);
+}
 .bouton-connexion {
   text-decoration: none;
   border: none;
@@ -185,6 +191,9 @@ hr {
   cursor: pointer;
   margin-top: 20%;
   font-size: 18px;
+}
+.bouton-connexion:hover {
+  transform: scale(1.05);
 }
 
 @media screen and (max-width: 768px) {
