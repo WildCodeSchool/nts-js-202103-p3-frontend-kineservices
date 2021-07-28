@@ -130,6 +130,9 @@ export default function SignUpKine() {
             <Card.Body className="card-body-signup">
               <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <DisplayAvatar file={picture} setFile={setPicture} />
+                <p className="acceptedFiles">
+                  types de fichier acceptés : .jpg .jpeg .png .svg
+                </p>
                 <Form.Group className="container-form">
                   <Form.Control
                     htmlFor="lastname"
