@@ -32,23 +32,19 @@ export default function SignUpKine() {
   const [picture, setPicture] = useState(null);
 
   const checkValidation = (e) => {
-    const confPass = e.target.value;
-    setConfirmPassword(confPass);
-    if (user.password !== confPass) {
+    setConfirmPassword(e.target.value);
+    if (user.password !== e.target.value || e.target.value !== user.password) {
       setIsError('Les mots de passe ne correspondent pas');
     } else {
-      setIsError('');
       setValidation(true);
     }
   };
 
   const checkValidationMail = (e) => {
-    const confMail = e.target.value;
-    setConfirmEmail(confMail);
-    if (user.email !== confMail) {
+    setConfirmEmail(e.target.value);
+    if (user.email !== e.target.value) {
       setIsErrorMail('Les mails ne sont pas identiques');
     } else {
-      setIsErrorMail('');
       setValidationMail(true);
     }
   };
