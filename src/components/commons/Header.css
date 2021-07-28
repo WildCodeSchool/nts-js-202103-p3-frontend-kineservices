@@ -75,6 +75,12 @@
   .noAvatar {
     display: none;
   }
+  .container-onglet {
+    display: none;
+  }
+  .container-header {
+    justify-content: space-around;
+  }
 }
 
 @media screen and (min-width: 768px) {
