@@ -71,6 +71,7 @@ body {
   font-size: 23px;
   padding-left: 5%;
   padding-right: 5%;
+  cursor:pointer;
 }
 
 .link-website:visited {

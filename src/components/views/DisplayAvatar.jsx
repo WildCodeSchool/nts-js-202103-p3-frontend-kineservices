@@ -1,16 +1,17 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useState } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import Avatar from '@material-ui/core/Avatar';
 import './SignUp.css';
 
-export default function DisplayAvatar() {
-  const [file, setFile] = React.useState(null);
-
+export default function DisplayAvatar({ setFile }) {
+  const [picture, setPicture] = useState(null);
   const handleChange = function loadFile(event) {
     if (event.target.files.length > 0) {
-      const files = URL.createObjectURL(event.target.files[0]);
+      const files = event.target.files[0];
       setFile(files);
+      setPicture(URL.createObjectURL(event.target.files[0]));
     }
   };
   return (
@@ -35,7 +36,7 @@ export default function DisplayAvatar() {
           <Avatar
             id="avatar"
             name="upload"
-            src={file}
+            src={picture}
             style={{
               width: '160px',
               height: '160px',
