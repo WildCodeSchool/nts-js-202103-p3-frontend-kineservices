@@ -23,6 +23,13 @@
   margin-right: auto;
 }
 
+.acceptedFiles{
+  display: flex;
+  justify-content: center;
+  margin-bottom:12vw;
+  text-align:center;
+}
+
 .login-btn:hover {
   background-color: white;
   color: #1ebe73;
@@ -93,6 +100,7 @@ input#siret.siret.form-control {
   display: flex;
   justify-content: center;
   margin: 8%;
+  margin-bottom:1px;
 }
 
 .container-choose-radio {
