@@ -69,6 +69,9 @@ body {
   padding-left: 5%;
   padding-right: 5%;
 }
+.link-website:hover {
+  transform: scale(1.05);
+}
 
 .link-website:visited {
   color: white;

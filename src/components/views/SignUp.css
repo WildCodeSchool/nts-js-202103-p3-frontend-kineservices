@@ -9,7 +9,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin: 2%;
+  margin: 1%;
 }
 
 .login-btn {
@@ -23,11 +23,11 @@
   margin-right: auto;
 }
 
-.acceptedFiles{
+.acceptedFiles {
   display: flex;
   justify-content: center;
-  margin-bottom:12vw;
-  text-align:center;
+  margin-bottom: 4vw;
+  text-align: center;
 }
 
 .login-btn:hover {
@@ -72,7 +72,7 @@ input#siret.siret.form-control {
   align-items: center;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 .container-card-form {
@@ -82,13 +82,17 @@ input#siret.siret.form-control {
 .button-signup {
   height: 54px;
   background: #7a77f2;
-  border: 1px solid #000000;
+  border: 1px solid white;
   box-sizing: border-box;
   border-radius: 8px;
   width: 65%;
   margin: 5%;
   color: white;
   font-size: 18px;
+}
+.button-signup:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .container-button {
@@ -104,7 +108,7 @@ input#siret.siret.form-control {
   display: flex;
   justify-content: center;
   margin: 8%;
-  margin-bottom:1px;
+  margin-bottom: 1px;
 }
 
 .container-choose-radio {
@@ -113,11 +117,9 @@ input#siret.siret.form-control {
   margin: 2%;
 }
 .container-radio-kine {
-  margin: 2%;
   font-size: 20px;
 }
 .container-radio-entreprise {
-  margin: 2%;
   font-size: 20px;
 }
 #kineCheck,
@@ -158,4 +160,14 @@ hr {
   display: flex;
   justify-content: center;
   font-size: 18px;
+}
+
+@media (max-width: 680px) {
+  .container-form {
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 10%;
+  }
 }
