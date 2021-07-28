@@ -4,12 +4,9 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
+  const userId = localStorage.getItem('USERID');
   const [user, setUser] = useState(null);
-  const [userId, setUserId] = useState(null);
-  useEffect(() => {
-    setUserId(localStorage.getItem('USERID'));
-  }, []);
-  const getUser = () => {
+  const getUser = async () => {
     try {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/utilisateur/${userId}`, {
@@ -24,8 +21,13 @@ function Header() {
   };
 
   useEffect(() => {
-    getUser();
-  }, []);
+    if (userId) {
+      getUser();
+    } else {
+      setUser(null);
+    }
+  }, [userId]);
+
   return (
     <div className="container-header">
       {' '}
@@ -65,15 +67,17 @@ function Header() {
             </Link>
           </div>
           <div>
-            {user && (
-              <Link to="/profil" className="noAvatar">
+            <Link to="/profil">
+              {user === null ? (
+                <p />
+              ) : (
                 <img
                   className="avatar-profil"
                   src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
-                  alt="avatar"
+                  alt={user.firstname + user.lastname}
                 />
-              </Link>
-            )}
+              )}
+            </Link>
           </div>
         </>
       )}
