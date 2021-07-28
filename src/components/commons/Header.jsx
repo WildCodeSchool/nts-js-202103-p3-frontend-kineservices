@@ -81,7 +81,7 @@ function Header() {
                     />
                   </div>
                   <div className="avatar-text">
-                    {user.firstname + user.lastname}
+                    {`${user.firstname} ${user.lastname}`}
                   </div>
                 </Link>
               )}
