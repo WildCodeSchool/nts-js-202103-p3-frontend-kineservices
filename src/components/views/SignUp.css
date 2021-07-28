@@ -88,11 +88,20 @@ input#siret.siret.form-control {
   display: flex;
   justify-content: center;
 }
+.container-button p {
+  display: flex;
+  justify-content: center;
+}
 
 .container-avatar {
   display: flex;
   justify-content: center;
   margin: 8%;
+}
+.container-avatar-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container-choose-radio {

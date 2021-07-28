@@ -2,6 +2,7 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import Avatar from '@material-ui/core/Avatar';
+import './SignUp.css';
 
 export default function DisplayAvatar() {
   const [file, setFile] = React.useState(null);
@@ -24,7 +25,7 @@ export default function DisplayAvatar() {
         accept="image/*"
         style={{ display: 'none' }}
       />
-      <label htmlFor="upload">
+      <label className="container-avatar-text" htmlFor="upload">
         <IconButton
           color="red"
           aria-label="upload picture"
@@ -41,6 +42,12 @@ export default function DisplayAvatar() {
             }}
           />
         </IconButton>
+        <p>
+          Choisir ton avatar ! Et n&apos;oublie pas de sourire !{' '}
+          <span role="img" aria-label="sheep">
+            😉
+          </span>
+        </p>
       </label>
       <label htmlFor="avatar" />
     </div>

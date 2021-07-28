@@ -5,7 +5,8 @@ import './Header.css';
 
 function Header() {
   const userId = localStorage.getItem('USERID');
-  const [user, setUser] = useState(' ');
+  console.log('userId', userId);
+  const [user, setUser] = useState(null);
   const getUser = async () => {
     try {
       await axios
@@ -13,6 +14,7 @@ function Header() {
           userId,
         })
         .then((response) => {
+          console.log('response', response.data);
           setUser(response.data[0]);
         });
     } catch (error) {
@@ -21,8 +23,13 @@ function Header() {
   };
 
   useEffect(() => {
-    getUser();
-  }, [user]);
+    if (userId) {
+      getUser();
+    } else {
+      setUser(null);
+    }
+  }, [userId]);
+
   return (
     <div className="container-header">
       <h1 className="title-header">kinés.fr</h1>
@@ -61,15 +68,13 @@ function Header() {
             </Link>
           </div>
           <div>
-            {user && (
-              <Link to="/profil">
-                <img
-                  className="avatar-profil"
-                  src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
-                  alt="avatar"
-                />
-              </Link>
-            )}
+            <Link to="/profil">
+              <img
+                className="avatar-profil"
+                src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
+                alt="avatar"
+              />
+            </Link>
           </div>
         </>
       )}
