@@ -42,12 +42,6 @@ export default function DisplayAvatar() {
             }}
           />
         </IconButton>
-        <p>
-          Choisir ton avatar ! Et n&apos;oublie pas de sourire !{' '}
-          <span role="img" aria-label="sheep">
-            😉
-          </span>
-        </p>
       </label>
       <label htmlFor="avatar" />
     </div>

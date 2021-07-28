@@ -98,11 +98,6 @@ input#siret.siret.form-control {
   justify-content: center;
   margin: 8%;
 }
-.container-avatar-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .container-choose-radio {
   display: flex;
