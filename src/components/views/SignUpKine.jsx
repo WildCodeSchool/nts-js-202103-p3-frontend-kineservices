@@ -72,7 +72,7 @@ export default function SignUpKine() {
       Swal.fire({
         position: 'center',
         icon: 'error',
-        title: `Votre mot de passe ou votre mail ne sont pas identique`,
+        title: `Votre mot de passe ou votre mail ne sont pas identiques`,
       });
     } else if (
       validation &&
@@ -131,7 +131,8 @@ export default function SignUpKine() {
               <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <DisplayAvatar file={picture} setFile={setPicture} />
                 <p className="acceptedFiles">
-                  types de fichier acceptés : .jpg .jpeg .png .svg
+                  Choisissez une image de profil <br />
+                  types de fichier acceptés : .jpg .jpeg .png
                 </p>
                 <Form.Group className="container-form">
                   <Form.Control
