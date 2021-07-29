@@ -57,6 +57,7 @@ const DocumentationList = () => {
                 description={documentation.description}
                 category={documentation.name}
                 price={documentation.price}
+                file={documentation.file}
                 key={documentation.id}
               />
             ))
