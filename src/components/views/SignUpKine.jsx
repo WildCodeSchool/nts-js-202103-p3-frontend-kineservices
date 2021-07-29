@@ -250,6 +250,7 @@ export default function SignUpKine() {
                   ) : (
                     ''
                   )}
+
                   <label className="field" htmlFor="RPPS">
                     {user.role_id === 1 ? (
                       <Form.Group className="container-form">
