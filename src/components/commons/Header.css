@@ -61,9 +61,25 @@
   align-items: center;
 }
 
+.header-container-avatar-text a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;
+}
+.avatar-text {
+  margin-left: 10%;
+}
+
 @media screen and (max-width: 768px) {
   .noAvatar {
     display: none;
+  }
+  .container-onglet {
+    display: none;
+  }
+  .container-header {
+    justify-content: space-around;
   }
 }
 

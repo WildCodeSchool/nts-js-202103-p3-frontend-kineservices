@@ -16,15 +16,15 @@
   margin-right: 16%;
   flex-direction: column;
   margin-bottom: 8%;
+  margin-top: 2%;
 }
 
 .container_bouton {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  margin-right: 16%;
-  margin-left: 12%;
   margin-bottom: 8%;
+  margin-top: 5%;
+  flex-direction: column;
 }
 .container_bouton_save {
   display: flex;
@@ -37,7 +37,7 @@
   font-family: 'Roboto';
   height: 70px;
   background: #7a77f2;
-  border: 1px solid #000000;
+  border: 1px solid white;
   box-sizing: border-box;
   border-radius: 8px;
   color: white;
@@ -48,17 +48,23 @@
   cursor: pointer;
   margin-bottom: 5%;
 }
+.bouton-creation:hover {
+  transform: scale(1.05);
+}
 
 .bouton_save {
   font-family: 'Roboto';
-  height: 50px;
+  height: 60px;
   background: #7a77f2;
-  border: 1px solid #000000;
+  border: 1px solid white;
   box-sizing: border-box;
   border-radius: 8px;
   color: white;
   font-size: 22px;
   cursor: pointer;
+}
+.bouton_save:hover {
+  transform: scale(1.05);
 }
 
 input.form-control {
@@ -75,9 +81,9 @@ input.form-control {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 20%;
-  margin-right: 20%;
+  width: 50%;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .logo-documentation,
@@ -103,9 +109,11 @@ input.form-control {
   border: 2px solid blue;
   border-radius: 50%;
   height: 240px;
+  width: 240px;
 }
 .avatar-profil {
   height: 50px;
+  width: 50px;
   display: flex;
   margin: 5%;
   border: 1px solid blue;
@@ -118,9 +126,10 @@ input.form-control {
 
 .container-avatar-profil {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 2%;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 .label-form-profil {
@@ -129,25 +138,58 @@ input.form-control {
   left: 18px;
   background-color: white;
   color: #7a77f2;
+  border-radius: 20px;
 }
 .bouton-logout {
   text-decoration: none;
   border: none;
   cursor: pointer;
   margin-top: 2%;
-  background: none;
   font-size: 17px;
+  height: 35px;
+  border-radius: 10px;
+  color: #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all 0.35s;
+  position: relative;
+  z-index: 2;
+}
+.bouton-logout:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff003b;
+  transition: all 0.35s;
+  border-radius: 10px;
+  z-index: -1;
+}
+.bouton-logout:hover {
+  color: #fff;
+}
+.bouton-logout:hover:after {
+  width: 100%;
+}
+.container_profil {
+  display: flex;
+  justify-content: space-around;
 }
 
 @media screen and (max-width: 768px) {
   .container-avatar-text {
     display: flex;
-    width: 100%;
     flex-direction: column;
   }
   .container_profil {
     width: 100%;
     margin-bottom: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .container_bouton {
     display: flex;
@@ -160,6 +202,7 @@ input.form-control {
   .container-form-profil {
     margin-left: 8%;
     margin-right: 8%;
+    width: 80%;
   }
   .container_bouton {
     margin-right: 16%;

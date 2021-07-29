@@ -118,6 +118,38 @@ function Profile() {
 
   return (
     <div className="container_profil">
+      <div className="container_bouton">
+        <Link to="/documentation-form">
+          <button type="button" className="bouton-creation">
+            <img
+              className="logo-documentation"
+              src={document}
+              alt="logo doc navbar"
+            />
+            Créer une documentation
+          </button>
+        </Link>
+        <Link to="/formation-form">
+          <button type="button" className="bouton-creation">
+            <img
+              className="logo-formation"
+              src={formation}
+              alt="logo formation navbar"
+            />
+            Créer une formation
+          </button>
+        </Link>
+        <Link to="/service-form">
+          <button type="button" className="bouton-creation">
+            <img
+              className="logo-service"
+              src={service}
+              alt="logo service navbar"
+            />
+            Créer un service
+          </button>
+        </Link>
+      </div>
       {!id ? (
         history.push('/connexion')
       ) : !user ? (
@@ -130,7 +162,7 @@ function Profile() {
                 <img
                   className="avatar"
                   src={`${process.env.REACT_APP_BACKEND_URL}/${user.picture}`}
-                  alt={`${user.firstname} ${user.lastname}`}
+                  alt="avatar"
                 />
               </div>
               <div className="text-top">
@@ -340,38 +372,6 @@ function Profile() {
         <button type="button" className="bouton-logout" onClick={handleLogout}>
           Se déconnecter
         </button>
-      </div>
-      <div className="container_bouton">
-        <Link to="/documentation-form">
-          <button type="button" className="bouton-creation">
-            <img
-              className="logo-documentation"
-              src={document}
-              alt="logo doc navbar"
-            />
-            Créer une documentation
-          </button>
-        </Link>
-        <Link to="/formation-form">
-          <button type="button" className="bouton-creation">
-            <img
-              className="logo-formation"
-              src={formation}
-              alt="logo formation navbar"
-            />
-            Créer une formation
-          </button>
-        </Link>
-        <Link to="/service-form">
-          <button type="button" className="bouton-creation">
-            <img
-              className="logo-service"
-              src={service}
-              alt="logo service navbar"
-            />
-            Créer un service
-          </button>
-        </Link>
       </div>
     </div>
   );

@@ -62,7 +62,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   background: #7a77f2;
-  border: 1px solid #000000;
+  border: 1px solid white;
   box-sizing: border-box;
   border-radius: 10px;
   height: 6vw;
@@ -71,7 +71,10 @@ body {
   font-size: 23px;
   padding-left: 5%;
   padding-right: 5%;
-  cursor:pointer;
+  cursor: pointer;
+}
+.link-website:hover {
+  transform: scale(1.05) !important;
 }
 
 .link-website:visited {
