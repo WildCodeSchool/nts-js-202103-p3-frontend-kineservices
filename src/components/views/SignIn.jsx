@@ -27,7 +27,6 @@ export default function SignIn() {
       .then((results) => {
         localStorage.setItem('USERID', results.data.user.id);
         localStorage.setItem('TOKEN', results.data.token);
-        localStorage.setItem('PICTURE', results.data.user.picture);
       })
       .then(() => history.push('/profil'));
   };

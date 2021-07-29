@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
 import React, { useState } from 'react';
@@ -9,12 +10,8 @@ import DisplayAvatar from './DisplayAvatar';
 
 export default function SignUpKine() {
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [isError, setIsError] = useState('');
-  const [validation, setValidation] = useState(false);
   const [confirmEmail, setConfirmEmail] = useState('');
-  const [isErrorMail, setIsErrorMail] = useState('');
   const [servicesTerms, setServicesTerms] = useState(false);
-  const [validationMail, setValidationMail] = useState(false);
   const [user, setUser] = useState({
     RPPS: 0,
     role_id: 0,
@@ -30,24 +27,6 @@ export default function SignUpKine() {
     website: '',
   });
   const [picture, setPicture] = useState(null);
-
-  const checkValidation = (e) => {
-    setConfirmPassword(e.target.value);
-    if (user.password !== e.target.value || e.target.value !== user.password) {
-      setIsError('Les mots de passe ne correspondent pas');
-    } else {
-      setValidation(true);
-    }
-  };
-
-  const checkValidationMail = (e) => {
-    setConfirmEmail(e.target.value);
-    if (user.email !== e.target.value) {
-      setIsErrorMail('Les mails ne sont pas identiques');
-    } else {
-      setValidationMail(true);
-    }
-  };
   const handleSubmit = (event) => {
     event.preventDefault();
     if (user.role_id === 0) {
@@ -64,18 +43,16 @@ export default function SignUpKine() {
         title: `Veuillez accepter les conditions générales d'utilisation`,
       });
     }
-    if (!validation || !validationMail) {
+    if (
+      (user.email !== confirmEmail && confirmEmail !== user.email) ||
+      (user.password !== confirmPassword && confirmPassword !== user.password)
+    ) {
       Swal.fire({
         position: 'center',
         icon: 'error',
         title: `Votre mot de passe ou votre mail ne sont pas identiques`,
       });
-    } else if (
-      validation &&
-      validationMail &&
-      servicesTerms &&
-      user.role_id !== 0
-    ) {
+    } else if (servicesTerms && user.role_id !== 0) {
       const formUser = new FormData();
       formUser.append('picture', picture);
       formUser.append('RPPS', user.RPPS);
@@ -218,11 +195,15 @@ export default function SignUpKine() {
                     variant="outlined"
                     name="confirmeEmail"
                     value={confirmEmail}
-                    onChange={(e) => checkValidationMail(e)}
+                    onChange={(e) => setConfirmEmail(e.target.value)}
                     required
                   />
                 </Form.Group>
-                <span className="alertError">{isErrorMail}</span>
+                {user.email !== confirmEmail && confirmEmail !== user.email ? (
+                  <p className="alertError">Les mails ne sont pas identiques</p>
+                ) : (
+                  ''
+                )}
                 <div className="signUpForm">
                   <Form.Group className="container-form">
                     <Form.Control
@@ -257,11 +238,18 @@ export default function SignUpKine() {
                       name="confirmPassword"
                       type="password"
                       value={confirmPassword}
-                      onChange={(e) => checkValidation(e)}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
                       required
                     />
                   </Form.Group>
-                  <span className="alertError">{isError}</span>
+                  {user.password !== confirmPassword &&
+                  confirmPassword !== user.password ? (
+                    <p className="alertError">
+                      Les mots de passe ne correspondent pas
+                    </p>
+                  ) : (
+                    ''
+                  )}
                   <label className="field" htmlFor="RPPS">
                     {user.role_id === 1 ? (
                       <Form.Group className="container-form">
@@ -283,7 +271,6 @@ export default function SignUpKine() {
                       ''
                     )}
                   </label>
-
                   <div className="container-choose-radio">
                     <div className="container-radio-kine">
                       <Form.Group className="container-form">
@@ -370,7 +357,6 @@ export default function SignUpKine() {
                       </optgroup>
                     </Form.Control>
                   </Form.Group>
-
                   <Form.Group className="container-form">
                     <Form.Control
                       htmlFor="address"
